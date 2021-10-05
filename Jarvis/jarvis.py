@@ -24,7 +24,13 @@ from botsettings import API_TOKEN
 # -------------------------------------------------------------------- #
 class Jarvis:
     def __init__(self):
-        pass
+        self.currentState = 'Idle'
+
+    def start_training(self):
+        self.currentState = 'Training'
+
+    def stop_training(self):
+        self.currentState = 'Idle'
 
 # -------------------------------------------------------------------- #
 # Database                                                             # 
