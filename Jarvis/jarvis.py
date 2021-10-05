@@ -29,6 +29,11 @@ except ImportError:
 from botsettings import API_TOKEN
 
 
+# ----------------------------------------------------------------------
+# NOTE: ALL CODE BELOW THIS POINT IS A ROUGH DRAFT SKELETON/OUTLINE AND
+# IS SUBJECT TO CHANGE. THIS IS JUST TO PROVIDE A STARTING POINT FOR OUR
+# DESIGN.
+# ----------------------------------------------------------------------
 class Jarvis:
     def __init__(self):
         self.currentState = 'Idle'
