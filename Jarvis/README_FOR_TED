@@ -1,0 +1,32 @@
+DELETE THIS FILE AFTER PROJECT IS DONE LOLOLOL
+
+Dear my good friend Ted,
+
+After re-reading the instructions for the project, it appears we can
+put both the main Jarvis code logic and database code in the same file
+(jarvis.py). We will discuss how this will work in the next meeting. For
+now, I just wanted to give you an idea of how sqlit3 works in general and
+how it will look when you create the database. In the jarvis.py file, you
+will add some code logic blah blah blah for setting up the database and 
+when you run it, it will create a database file called jarvis.db in this
+same directory (Jarvis/Jarvis). Then, you will write some more code logic
+that will add/remove items to/from the database, read items that are in 
+the database, etc. We can then connect this code logic to our code so 
+that it executes when someone types something in the Slack workspace.
+Most/all of your code will be in functions so they are easy to call. We
+will discuss/scheme the exact layout during the meeting. I promise you,
+sqlit3 isn't as hardcore and scary as it appears, especially if you have
+previous experience working with mySQL. It is literally just a Python 
+interface to the database management system SQLite (which is very similar)
+to mySQL. For example, instead of going pr0 h4xx0r mode in your terminal
+or whatever and typing out commands, you would write something like:
+    
+    CONNECT_DATABASE_OBJECT_NAME.execute('''CREATE TABLE blah blah blah''') or
+    CONNECT_DATABASE_OBJECT_NAME.execute("INSERT INTO blah blah blah)
+
+in the code and it would execute when you ran the script. Hopefully that
+clarifies things a little. Once again, we will talk about it more next
+meeting. Don't worry about doing anything right now, just look up the 
+basic commands for sqlit3!  
+
+- Alex
