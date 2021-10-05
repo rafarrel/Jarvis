@@ -15,7 +15,7 @@
     license with the approval of its sponsor, Bagrow Industries.
 """
 import sqlite3
-#import websocket
+import websocket
 from botsettings import API_TOKEN
 
 
