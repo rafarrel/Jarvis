@@ -22,7 +22,7 @@ to mySQL. For example, instead of going pr0 h4xx0r mode in your terminal
 or whatever and typing out commands, you would write something like:
     
     CONNECTED_DATABASE_OBJECT_NAME.execute('''CREATE TABLE blah blah blah''') or
-    CONNECTED_DATABASE_OBJECT_NAME.execute("INSERT INTO blah blah blah)
+    CONNECTED_DATABASE_OBJECT_NAME.execute("INSERT INTO blah blah blah")
 
 in the code and it would execute when you ran the script. Hopefully that
 clarifies things a little. Once again, we will talk about it more next
