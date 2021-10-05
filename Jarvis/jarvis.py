@@ -14,8 +14,17 @@
     This project is released as open-source under the permissive MIT 
     license with the approval of its sponsor, Bagrow Industries.
 """
+# Database management
 import sqlite3
+
+# Slack interaction
 import websocket
+try:
+    import thread 
+except ImportError:
+    import _thread as thread
+
+# Slack connection token
 from botsettings import API_TOKEN
 
 
