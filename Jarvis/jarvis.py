@@ -28,9 +28,6 @@ except ImportError:
 from botsettings import API_TOKEN
 
 
-# -------------------------------------------------------------------- #
-# Jarvis                                                               #               
-# -------------------------------------------------------------------- #
 class Jarvis:
     def __init__(self):
         self.currentState = 'Idle'
@@ -41,17 +38,14 @@ class Jarvis:
     def stop_training(self):
         self.currentState = 'Idle'
 
-# -------------------------------------------------------------------- #
-# Database                                                             # 
-# -------------------------------------------------------------------- #
-def create_database():
-    pass
+    def create_database(self):
+        pass
 
-def store_training_data(msg_txt, action):
-    pass
+    def store_training_data(self, msg_txt, action):
+        pass
 
-def get_stored_data():
-    pass
+    def get_stored_data(self):
+        pass
 
 # ==================================================================== #
 
