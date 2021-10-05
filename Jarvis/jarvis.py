@@ -15,5 +15,33 @@
     license with the approval of its sponsor, Bagrow Industries.
 """
 import sqlite3
-import websocket
+#import websocket
 from botsettings import API_TOKEN
+
+
+# -------------------------------------------------------------------- #
+# Jarvis                                                               #               
+# -------------------------------------------------------------------- #
+class Jarvis:
+    def __init__(self):
+        pass
+
+# -------------------------------------------------------------------- #
+# Database                                                             # 
+# -------------------------------------------------------------------- #
+def create_database():
+    pass
+
+def store_training_data(msg_txt, action):
+    pass
+
+def get_stored_data():
+    pass
+
+# ==================================================================== #
+
+# This is run when the script is run. So for example, calling: 
+# python jarvis.py will execute this. This is where we will call all
+# the main code. Functions will be defined above and called here.
+if __name__ == '__main__':
+    pass
