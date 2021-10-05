@@ -16,6 +16,7 @@
 """
 # Database management
 import sqlite3
+from sqlite3.dbapi2 import connect
 
 # Slack interaction
 import websocket
@@ -47,10 +48,40 @@ class Jarvis:
     def get_stored_data(self):
         pass
 
+    def on_message(connection, msg):
+        pass
+
+    def on_error(connection, error):
+        pass
+
+    def on_close(connection):
+        pass
+
+    def on_open(connection):
+        pass
+
 # ==================================================================== #
 
 # This is run when the script is run. So for example, calling: 
 # python jarvis.py will execute this. This is where we will call all
 # the main code. Functions will be defined above and called here.
 if __name__ == '__main__':
-    pass
+    # Initiate Jarvis
+    jarvis = Jarvis()
+
+    # Enable/Disable debugging messages for websocket:
+    #   1) Enable  -> True
+    #   2) Disable -> False
+    websocket.enableTrace(True)
+
+    # Start websocket connection
+    connection = websocket.WebSocketApp('URL_PLACEHOLDER',
+                                         on_message = jarvis.on_message,
+                                         on_error   = jarvis.on_error,
+                                         on_close   = jarvis.on_close)
+
+    # Set initial behavior when connection is established
+    connection.on_open = jarvis.on_open
+
+    # Run Jarvis
+    connection.run_forever()
