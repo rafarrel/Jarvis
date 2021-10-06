@@ -62,18 +62,18 @@ class Jarvis:
 class Database:
     """Class for interacting with Jarvis' database."""
     def __init__(self):
-        # On setup, the database class should create the
-        # database if it does not exist and open the 
-        # database into self.conn (or something like that).
-        self.create_database()
+        pass
 
     def create_database(self):
         pass
-
-    def store_training_data(self, msg_txt, action):
+    
+    def open_database():
+        pass
+    
+    def close_database():
         pass
 
-    def get_stored_data(self):
+    def store_training_data(self, msg_txt, action):
         pass
     
 # ==================================================================== #
