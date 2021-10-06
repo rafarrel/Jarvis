@@ -7,15 +7,24 @@ except ImportError:
     import _thread as thread
 import time
 
+
+# This will be called every time a message is received so all
+# code inside can be used to perform an action for that message. 
 def on_message(ws, message):
     print(message)
 
+# This will be called whenever there is an error and can be used for
+# debugging.
 def on_error(ws, error):
     print(error)
 
+# This will be called when the connection is closed and can be used
+# to perform any finishing actions or cleanup if necessary.
 def on_close(ws):
     print("### closed ###")
 
+# This will be called when a connection is established and can be used
+# to perform any initial actions or setup if necessary.
 def on_open(ws):
     def run(*args):
         for i in range(3):
@@ -28,11 +37,18 @@ def on_open(ws):
 
 
 if __name__ == "__main__":
+    # This enables error debugging messages for the websocket
     websocket.enableTrace(True)
-    ws = websocket.WebSocketApp(url_string,
+    
+    # This creates the websocket object that can be used to establish
+    # a connection.
+    ws = websocket.WebSocketApp('PLACEHOLDER_URL',
                               on_message = on_message,
                               on_error = on_error,
                               on_close = on_close)
     ws.on_open = on_open
+    
+    # This runs the websocket indefinitely so that it can keep performing 
+    # actions on established connections.
     ws.run_forever()
 

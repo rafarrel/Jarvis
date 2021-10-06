@@ -79,7 +79,7 @@ class Database:
 # ==================================================================== #
 
 # This is run when the script is run. So for example, calling: 
-# python jarvis.py will execute this. This is where we will call all
+# python jarvis.py will execute this. This is where we will put all
 # the main code. Functions will be defined above and called here.
 if __name__ == '__main__':
     # Initiate Jarvis and open the database
