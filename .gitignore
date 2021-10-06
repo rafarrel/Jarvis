@@ -1,4 +1,5 @@
-# Jarvis specific files to ignore
+# Jarvis specific files/directories to ignore
+Prototyping/
 botsettings.py
 jarvis.db
 
