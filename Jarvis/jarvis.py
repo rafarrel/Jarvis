@@ -58,23 +58,32 @@ class Jarvis:
     def on_open(connection):
         pass
     
-
 class Database:
     """Class for interacting with Jarvis' database."""
     def __init__(self):
-        pass
-
-    def create_database(self):
-        pass
+        # Open connection to database on startup
+        self.open_connection()
     
-    def open_database():
-        pass
+    def open_connection(self):
+        # Set up the database connection. If the database or table
+        # in the database don't exist, create them. 
+        self.conn = sqlite3.connect('jarvis.db')
+        self.curr = self.conn.cursor()
+        
+        try:
+            self.curr.execute("INSERT TABLE CREATE COMMAND HERE BECAUSE IM LAZY")
+        except sqlite3.OperationalError:
+            print('TABLE FOUND')
     
-    def close_database():
-        pass
+    def close_connection(self):
+        # This should be called when Jarvis is finished running to close 
+        # the connection to the database.
+        self.conn.close()
 
     def store_training_data(self, msg_txt, action):
-        pass
+        # This will store the message text and action (training data) 
+        # into the database.
+        pass 
     
 # ==================================================================== #
 
@@ -100,3 +109,6 @@ if __name__ == '__main__':
 
     # Run Jarvis
     connection.run_forever()
+    
+    # Close database when done
+    database.close_connection()
