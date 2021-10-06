@@ -40,13 +40,13 @@ if __name__ == "__main__":
     # This enables error debugging messages for the websocket
     websocket.enableTrace(True)
     
-    # This creates the websocket object that can be used to establish
-    # a connection.
+    # This creates the websocket object and establishes a connection to
+    # the URL passed to it.
     ws = websocket.WebSocketApp('PLACEHOLDER_URL',
                               on_message = on_message,
                               on_error = on_error,
+                              on_open  = on_open,
                               on_close = on_close)
-    ws.on_open = on_open
     
     # This runs the websocket indefinitely so that it can keep performing 
     # actions on established connections.
