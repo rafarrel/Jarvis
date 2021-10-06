@@ -11,6 +11,10 @@ import time
 # This will be called every time a message is received so all
 # code inside can be used to perform an action for that message. 
 def on_message(ws, message):
+    message = json.loads(message)
+    envelope_id = message['envelope_id']
+    resp = {'envelope_id': envelope_id }
+    ws.send(str.encode(json.dumps(resp )))
     print(message)
 
 # This will be called whenever there is an error and can be used for
