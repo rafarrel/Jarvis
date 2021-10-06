@@ -12,4 +12,7 @@
     a separate branch to overwrite this file with personal prototyping.
 """
 # Add imports that will be used in jarvis.py
-# Add prototype code and run this file to test things
+
+if __name__ == '__main__':
+    # Add prototype code and run this file to test things
+    pass
