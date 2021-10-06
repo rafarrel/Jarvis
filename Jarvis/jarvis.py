@@ -95,10 +95,8 @@ if __name__ == '__main__':
     connection = websocket.WebSocketApp('URL_PLACEHOLDER',
                                          on_message = jarvis.on_message,
                                          on_error   = jarvis.on_error,
+                                         on_open    = jarvis.on_open,
                                          on_close   = jarvis.on_close)
-
-    # Set initial behavior when connection is established
-    connection.on_open = jarvis.on_open
 
     # Run Jarvis
     connection.run_forever()
