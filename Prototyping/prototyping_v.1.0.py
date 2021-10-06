@@ -11,16 +11,5 @@
     Keep this file in the master branch as is without any edits. Create
     a separate branch to overwrite this file with personal prototyping.
 """
-# Database management
-import sqlite3
-from sqlite3.dbapi2 import connect
-
-# Slack interaction
-import websocket
-try:
-    import thread 
-except ImportError:
-    import _thread as thread
-
-# Slack connection token
-from botsettings import API_TOKEN
+# Add imports that will be used in jarvis.py
+# Add prototype code and run this file to test things
