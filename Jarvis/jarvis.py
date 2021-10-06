@@ -19,6 +19,7 @@ import sqlite3
 from sqlite3.dbapi2 import connect
 
 # Slack interaction
+import requests
 import websocket
 try:
     import thread 
@@ -35,6 +36,7 @@ from botsettings import API_TOKEN
 # DESIGN.
 # ----------------------------------------------------------------------
 class Jarvis:
+    """Class that will contain all logic for Jarvis."""
     def __init__(self):
         self.currentState = 'Idle'
 
@@ -43,15 +45,6 @@ class Jarvis:
 
     def stop_training(self):
         self.currentState = 'Idle'
-
-    def create_database(self):
-        pass
-
-    def store_training_data(self, msg_txt, action):
-        pass
-
-    def get_stored_data(self):
-        pass
 
     def on_message(connection, msg):
         pass
@@ -64,15 +57,34 @@ class Jarvis:
 
     def on_open(connection):
         pass
+    
 
+class Database:
+    """Class for interacting with Jarvis' database."""
+    def __init__(self):
+        # On setup, the database class should create the
+        # database if it does not exist and open the 
+        # database into self.conn (or something like that).
+        self.create_database()
+
+    def create_database(self):
+        pass
+
+    def store_training_data(self, msg_txt, action):
+        pass
+
+    def get_stored_data(self):
+        pass
+    
 # ==================================================================== #
 
 # This is run when the script is run. So for example, calling: 
 # python jarvis.py will execute this. This is where we will call all
 # the main code. Functions will be defined above and called here.
 if __name__ == '__main__':
-    # Initiate Jarvis
-    jarvis = Jarvis()
+    # Initiate Jarvis and open the database
+    jarvis   = Jarvis()
+    database = Database()
 
     # Enable/Disable debugging messages for websocket:
     #   1) Enable  -> True
