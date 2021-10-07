@@ -17,6 +17,8 @@
 # Database management
 import sqlite3
 
+import json
+
 # Slack interaction
 import requests
 import websocket
@@ -46,6 +48,10 @@ class Jarvis:
         # Jarvis settings
         self.currentState = self.IDLE      # Starting state for Jarvis
         self.database     = Database()     # Database containing training data
+        
+    def __del__(self):
+        # Clean up when Jarvis is finished.
+        self.database.close_connection()
 
     def start_training(self):
         # Start training mode.
@@ -55,21 +61,28 @@ class Jarvis:
         # Stop training and switch to idle mode.
         self.currentState = self.IDLE
 
-    def on_message(self, connection, msg):
-        pass
+    def on_message(self, connection, message):
+        # Called when a message is received in the websocket connection. 
+        # Prepare response for received message to confirm that it
+        # was received.
+        message     = json.loads(message)
+        envelope_id = message['envelope_id']
+        response    = {'envelope_id': envelope_id}
+        
+        # Send response to Slack
+        connection.send(str.encode(json.dumps(response)))
 
     def on_error(self, connection, error):
+        # Called when an error occurs in the websocket connection.
         pass
 
     def on_close(self, connection, close_status_code, close_msg):
+        # Called when websocket connection is closed.
         pass
 
     def on_open(self, connection):
-        print("Connection Established - Jarvis is here!")
-        
-    def __del__(self):
-        # Clean up when Jarvis is finished.
-        self.database.close_connection()
+        # Called when websocket connection is first established.
+        print("Connection Established - Jarvis has arrived!")
     
     
 class Database:
