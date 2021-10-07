@@ -71,7 +71,7 @@ class Database:
         self.curr = self.conn.cursor()
         
         try:
-            self.curr.execute("INSERT TABLE CREATE COMMAND HERE BECAUSE IM LAZY")
+            self.curr.execute("CREATE TABLE training_data (txt TEXT, action TEXT)")
         except sqlite3.OperationalError:
             print('TABLE FOUND')
     
@@ -83,7 +83,16 @@ class Database:
     def store_training_data(self, msg_txt, action):
         # This will store the message text and action (training data) 
         # into the database.
-        pass 
+        self.curr.execute("INSERT INTO training_data VALUES (?, ?)", (msg_txt, action))
+        self.conn.commit()
+    
+    def print_training_data(self):
+        # This will print the message text and action (training data)
+        # currently in the database, with message text of common actions
+        # grouped together.
+        self.curr.execute("SELECT * FROM training_data ORDER BY action")
+        for row in self.curr.fetchall():
+            print(row)
     
 # ==================================================================== #
 
