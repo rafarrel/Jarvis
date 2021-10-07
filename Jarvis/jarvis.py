@@ -16,7 +16,6 @@
 """
 # Database management
 import sqlite3
-from sqlite3.dbapi2 import connect
 
 # Slack interaction
 import requests
@@ -28,6 +27,7 @@ except ImportError:
 
 # Slack connection token
 from botsettings import API_TOKEN
+from botsettings import APP_TOKEN
 
 
 # ----------------------------------------------------------------------
@@ -38,30 +38,43 @@ from botsettings import API_TOKEN
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
     def __init__(self):
-        self.currentState = 'Idle'
+        # Jarvis states
+        self.IDLE  = 'Idle'
+        self.TRAIN = 'Training'
+        
+        # Jarvis settings
+        self.currentState = self.IDLE      # Starting state for Jarvis
+        self.database     = Database()     # Database containing training data
 
     def start_training(self):
-        self.currentState = 'Training'
+        # Start training mode.
+        self.currentState = self.TRAIN
 
     def stop_training(self):
-        self.currentState = 'Idle'
+        # Stop training and switch to idle mode.
+        self.currentState = self.IDLE
 
-    def on_message(connection, msg):
+    def on_message(self, connection, msg):
         pass
 
-    def on_error(connection, error):
+    def on_error(self, connection, error):
         pass
 
-    def on_close(connection):
+    def on_close(self, connection, close_status_code, close_msg):
         pass
 
-    def on_open(connection):
-        pass
+    def on_open(self, connection):
+        print("Connection Established - Jarvis is here!")
+        
+    def __del__(self):
+        # Called when Jarvis is finished.
+        self.database.close_connection()
+    
     
 class Database:
     """Class for interacting with Jarvis' database."""
     def __init__(self):
-        # Open connection to database on startup
+        # Open connection to database on startup.
         self.open_connection()
     
     def open_connection(self):
@@ -100,17 +113,26 @@ class Database:
 # python jarvis.py will execute this. This is where we will put all
 # the main code. Functions will be defined above and called here.
 if __name__ == '__main__':
-    # Initiate Jarvis and open the database
-    jarvis   = Jarvis()
-    database = Database()
+    # Slack workspace authentication headers. This allows Jarvis to have 
+    # access to the Slack workspace
+    authentication = {'Content-type' : "application/x-www-form-urlencoded",
+                      'Authorization': "Bearer " + APP_TOKEN}
+  
+    # Request websocket url for the Slack Workspace using the authentication
+    # headers.
+    SLACK_API_URL = 'https://slack.com/api/apps.connections.open'
+    WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authentication).json()["url"]
+
+    # Initiate Jarvis
+    jarvis = Jarvis()
 
     # Enable/Disable debugging messages for websocket:
     #   1) Enable  -> True
     #   2) Disable -> False
-    websocket.enableTrace(True)
+    websocket.enableTrace(False)
 
-    # Start websocket connection
-    connection = websocket.WebSocketApp('URL_PLACEHOLDER',
+    # Start websocket connection, connecting Jarvis to the Slack workspace.
+    connection = websocket.WebSocketApp(WORKSPACE_URL,
                                          on_message = jarvis.on_message,
                                          on_error   = jarvis.on_error,
                                          on_open    = jarvis.on_open,
@@ -118,6 +140,3 @@ if __name__ == '__main__':
 
     # Run Jarvis
     connection.run_forever()
-    
-    # Close database when done
-    database.close_connection()
