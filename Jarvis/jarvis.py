@@ -17,9 +17,8 @@
 # Database management
 import sqlite3
 
-import json
-
 # Slack interaction
+import json
 import requests
 import websocket
 try:
@@ -73,16 +72,26 @@ class Jarvis:
         connection.send(str.encode(json.dumps(response)))
 
     def on_error(self, connection, error):
-        # Called when an error occurs in the websocket connection.
-        pass
+        # Called when an error occurs in the websocket connection. This can
+        # be used for debugging purposes. To enable/disable error messages:
+        #   1) True  -> Enable
+        #   2) False -> Disable
+        debug_mode = False
+        
+        if debug_mode:
+            print("ERROR ->", error)
 
     def on_close(self, connection, close_status_code, close_msg):
         # Called when websocket connection is closed.
-        pass
+        print("------------------------------------------------------")
+        print("| Jarvis disconnected - See ya later alligator :)    |") 
+        print("------------------------------------------------------")
 
     def on_open(self, connection):
         # Called when websocket connection is first established.
-        print("Connection Established - Jarvis has arrived!")
+        print("------------------------------------------------------")
+        print("| Connection Established - Jarvis is in the houuuse! |")
+        print("------------------------------------------------------")
     
     
 class Database:
