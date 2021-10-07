@@ -1,7 +1,7 @@
 # Jarvis
 The most epic chatbot for Slack ever written (actually just a project for CS 287 Data Science I).
 
-### Developers
+### Our Team
 | Name          | Role                  |
 |---------------|-----------------------|
 | Alex Farrell  | Development Team Lead |
