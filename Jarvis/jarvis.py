@@ -30,17 +30,18 @@ from botsettings import API_TOKEN
 from botsettings import APP_TOKEN
 
 
-# ----------------------------------------------------------------------
-# NOTE: ALL CODE BELOW THIS POINT IS A ROUGH DRAFT SKELETON/OUTLINE AND
-# IS SUBJECT TO CHANGE. THIS IS JUST TO PROVIDE A STARTING POINT FOR OUR
-# DESIGN.
-# ----------------------------------------------------------------------
+# -------------------------------------------------------------------- #
+# Any definitions for Jarvis go here and will be called in the main    #
+# section below. Essentially, all Jarvis logic will be written here    #
+# and the actual websocket connection will be established below in the # 
+# main section.                                                        #
+# -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
     def __init__(self):
         # Jarvis states
-        self.IDLE  = 'Idle'
-        self.TRAIN = 'Training'
+        self.IDLE  = 0
+        self.TRAIN = 1
         
         # Jarvis settings
         self.currentState = self.IDLE      # Starting state for Jarvis
@@ -67,7 +68,7 @@ class Jarvis:
         print("Connection Established - Jarvis is here!")
         
     def __del__(self):
-        # Called when Jarvis is finished.
+        # Clean up when Jarvis is finished.
         self.database.close_connection()
     
     
@@ -86,7 +87,7 @@ class Database:
         try:
             self.curr.execute("CREATE TABLE training_data (txt TEXT, action TEXT)")
         except sqlite3.OperationalError:
-            print('TABLE FOUND')
+            print("TABLE FOUND")
     
     def close_connection(self):
         # This should be called when Jarvis is finished running to close 
@@ -109,18 +110,21 @@ class Database:
     
 # ==================================================================== #
 
-# This is run when the script is run. So for example, calling: 
-# python jarvis.py will execute this. This is where we will put all
-# the main code. Functions will be defined above and called here.
+# -------------------------------------------------------------------- #
+# This is the main section which is run when the script is run by      #
+# calling: "python jarvis.py." All main code (initializing Jarvis,     #
+# establishing the websocket connection, etc.) will be written here,   #
+# making use of the above definitions.                                 #
+# -------------------------------------------------------------------- #
 if __name__ == '__main__':
-    # Authentication headers to allow Jarvis to connect to the workspace. 
-    authentication = {'Content-type' : "application/x-www-form-urlencoded",
-                      'Authorization': "Bearer " + APP_TOKEN}
+    # Authorization headers to allow Jarvis to connect to the workspace. 
+    authorization = {'Content-type' : "application/x-www-form-urlencoded",
+                     'Authorization': "Bearer " + APP_TOKEN}
   
-    # Get websocket url from the Slack API for connecting to the Slack 
-    # workspace using the authentication headers.
-    SLACK_API_URL = 'https://slack.com/api/apps.connections.open'
-    WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authentication).json()["url"]
+    # Get workspace url from the Slack API that is compatible with the
+    # websocket protocol using the authentication headers.
+    SLACK_API_URL = "https://slack.com/api/apps.connections.open"
+    WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authorization).json()['url']
 
     # Initiate Jarvis
     jarvis = Jarvis()
@@ -130,7 +134,7 @@ if __name__ == '__main__':
     #   2) Disable -> False
     websocket.enableTrace(False)
 
-    # Start websocket connection, connecting Jarvis to the Slack workspace.
+    # Start websocket to connect Jarvis to the Slack workspace.
     connection = websocket.WebSocketApp(WORKSPACE_URL,
                                          on_message = jarvis.on_message,
                                          on_error   = jarvis.on_error,
