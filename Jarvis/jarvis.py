@@ -25,7 +25,7 @@ try:
 except ImportError:
     import _thread as thread
 
-# Slack connection token
+# Slack connection tokens
 from botsettings import API_TOKEN
 from botsettings import APP_TOKEN
 
@@ -113,13 +113,12 @@ class Database:
 # python jarvis.py will execute this. This is where we will put all
 # the main code. Functions will be defined above and called here.
 if __name__ == '__main__':
-    # Slack workspace authentication headers. This allows Jarvis to have 
-    # access to the Slack workspace
+    # Authentication headers to allow Jarvis to connect to the workspace. 
     authentication = {'Content-type' : "application/x-www-form-urlencoded",
                       'Authorization': "Bearer " + APP_TOKEN}
   
-    # Request websocket url for the Slack Workspace using the authentication
-    # headers.
+    # Get websocket url from the Slack API for connecting to the Slack 
+    # workspace using the authentication headers.
     SLACK_API_URL = 'https://slack.com/api/apps.connections.open'
     WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authentication).json()["url"]
 
