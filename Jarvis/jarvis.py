@@ -107,8 +107,7 @@ class Database:
         self.curr.execute("SELECT * FROM training_data ORDER BY action")
         for row in self.curr.fetchall():
             print(row)
-    
-# ==================================================================== #
+
 
 # -------------------------------------------------------------------- #
 # This is the main section which is run when the script is run by      #
