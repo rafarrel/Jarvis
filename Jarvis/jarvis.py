@@ -52,6 +52,8 @@ class Jarvis:
         # Clean up when Jarvis is finished.
         self.database.close_connection()
 
+    # ---------------------------------------------------------------------- #
+
     def start_training(self):
         # Start training mode.
         self.currentState = self.TRAIN
@@ -60,6 +62,8 @@ class Jarvis:
         # Stop training and switch to idle mode.
         self.currentState = self.IDLE
         
+    # ---------------------------------------------------------------------- #
+            
     def display_message(self, message):
         # Display received message from Slack.
         if 'payload' in message:
@@ -69,35 +73,30 @@ class Jarvis:
             print('--------------------------')
         
     def send_message_confirmation(self, connection, message):
-        # Send a response to Slack to confirm that the message was received.
+        # Send a response message to Slack to confirm that the incoming 
+        # message was received.
         if 'envelope_id' in message:
-            # Prepare the message response.
-            envelope_id = message['envelope_id']
-            response    = {'envelope_id': envelope_id}
-            
-            # Send the message to Slack.
+            response = {'envelope_id': message['envelope_id']}
             connection.send(str.encode(json.dumps(response)))
+
+    # ---------------------------------------------------------------------- #
 
     def on_message(self, connection, message):
         # Called when a message is received in the websocket connection. 
-        # Load message into dictionary
-        # TODO: FIND A WAY TO DO THIS IN A SEPARATE THREAD TO NOT
-        #       DELAY MESSAGES.
+        # --------------------------------------------------------------
+        # Load message into a dictionary.
         message = json.loads(message)
         
-        # Actions for received messages ->
-        #   Run as separate threads for concurrent execution.
-        thread.start_new_thread(self.display_message, (message,))
-        thread.start_new_thread(self.send_message_confirmation, (connection, message))
-
+        # Perform processing.
+        self.display_message(message)
+        self.send_message_confirmation(connection, message)
+    
     def on_error(self, connection, error):
         # Called when an error occurs in the websocket connection. This can
         # be used for debugging purposes. To enable/disable error messages:
         #   1) True  -> Enable
         #   2) False -> Disable
-        debug_mode = False
-        
-        if debug_mode:
+        if False:
             print("ERROR ->", error)
 
     def on_close(self, connection, close_status_code, close_msg):
