@@ -89,7 +89,7 @@ class Jarvis:
         
         # Perform processing.
         self.display_message(message)
-        self.send_message_confirmation(connection, message)
+        #self.send_message_confirmation(connection, message)
     
     def on_error(self, connection, error):
         # Called when an error occurs in the websocket connection. This can
@@ -98,19 +98,19 @@ class Jarvis:
         #   2) False -> Disable
         if False:
             print("ERROR ->", error)
+            
+    def on_open(self, connection):
+        # Called when websocket connection is first established.
+        print("------------------------------------------------------")
+        print("| Connection Established - Jarvis is in the houuuse! |")
+        print("------------------------------------------------------")
 
     def on_close(self, connection, close_status_code, close_msg):
         # Called when websocket connection is closed.
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
         print("------------------------------------------------------")
-
-    def on_open(self, connection):
-        # Called when websocket connection is first established.
-        print("------------------------------------------------------")
-        print("| Connection Established - Jarvis is in the houuuse! |")
-        print("------------------------------------------------------")
-    
+ 
     
 class Database:
     """Class for interacting with Jarvis' database."""
