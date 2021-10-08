@@ -89,7 +89,7 @@ class Jarvis:
         
         # Perform processing.
         self.display_message(message)
-        #self.send_message_confirmation(connection, message)
+        self.send_message_confirmation(connection, message)
     
     def on_error(self, connection, error):
         # Called when an error occurs in the websocket connection. This can
