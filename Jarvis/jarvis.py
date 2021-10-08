@@ -59,17 +59,36 @@ class Jarvis:
     def stop_training(self):
         # Stop training and switch to idle mode.
         self.currentState = self.IDLE
+        
+    def display_message(self, message):
+        # Display received message from Slack.
+        if 'payload' in message:
+            print('--------------------------')
+            print('New Message:')
+            print(message['payload']['event']['text'])
+            print('--------------------------')
+        
+    def send_message_confirmation(self, connection, message):
+        # Send a response to Slack to confirm that the message was received.
+        if 'envelope_id' in message:
+            # Prepare the message response.
+            envelope_id = message['envelope_id']
+            response    = {'envelope_id': envelope_id}
+            
+            # Send the message to Slack.
+            connection.send(str.encode(json.dumps(response)))
 
     def on_message(self, connection, message):
         # Called when a message is received in the websocket connection. 
-        # Prepare response for received message to confirm that it
-        # was received.
-        message     = json.loads(message)
-        envelope_id = message['envelope_id']
-        response    = {'envelope_id': envelope_id}
+        # Load message into dictionary
+        # TODO: FIND A WAY TO DO THIS IN A SEPARATE THREAD TO NOT
+        #       DELAY MESSAGES.
+        message = json.loads(message)
         
-        # Send response to Slack
-        connection.send(str.encode(json.dumps(response)))
+        # Actions for received messages ->
+        #   Run as separate threads for concurrent execution.
+        thread.start_new_thread(self.display_message, (message,))
+        thread.start_new_thread(self.send_message_confirmation, (connection, message))
 
     def on_error(self, connection, error):
         # Called when an error occurs in the websocket connection. This can
