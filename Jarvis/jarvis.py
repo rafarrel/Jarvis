@@ -105,7 +105,7 @@ class Jarvis:
         print("| Connection Established - Jarvis is in the houuuse! |")
         print("------------------------------------------------------")
 
-    def on_close(self, connection):
+    def on_close(self, connection, *args):
         # Called when websocket connection is closed.
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
