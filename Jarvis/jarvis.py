@@ -16,9 +16,9 @@
 """
 # Database management
 import sqlite3
-from sqlite3.dbapi2 import connect
-#something random
+
 # Slack interaction
+import json
 import requests
 import websocket
 try:
@@ -26,42 +26,166 @@ try:
 except ImportError:
     import _thread as thread
 
-# Slack connection token
+# Slack connection tokens
 from botsettings import API_TOKEN
+from botsettings import APP_TOKEN
 
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
-# ----------------------------------------------------------------------
-# NOTE: ALL CODE BELOW THIS POINT IS A ROUGH DRAFT SKELETON/OUTLINE AND
-# IS SUBJECT TO CHANGE. THIS IS JUST TO PROVIDE A STARTING POINT FOR OUR
-# DESIGN.
-# ----------------------------------------------------------------------
+import os
+from slack import WebClient
+from slak.errors import SlackApiError
+
+client = WebClient(token=API_TOKEN)
+# -------------------------------------------------------------------- #
+# Any definitions for Jarvis go here and will be called in the main    #
+# section below. Essentially, all Jarvis logic will be written here    #
+# and the actual websocket connection will be established below in the # 
+# main section.                                                        #
+# -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
     def __init__(self):
-        self.currentState = 'Idle'
+        # Jarvis states
+        self.IDLE  = 0
+        self.TRAIN = 1
+        
+        # Jarvis settings
+        self.currentState = self.IDLE      # Starting state for Jarvis
+        self.database     = Database()     # Database containing training data
+        
+    def __del__(self):
+        # Clean up when Jarvis is finished.
+        self.database.close_connection()
+
+    # ---------------------------------------------------------------------- #
 
     def start_training(self):
-        self.currentState = 'Training'
-
+        # Start training mode.
+        self.currentState = self.TRAIN
+        
     def stop_training(self):
-        self.currentState = 'Idle'
+        # Stop training and switch to idle mode.
+        self.currentState = self.IDLE
+        
+    # ---------------------------------------------------------------------- #
+            
+    def display_message(self, message):
+        # Display received message from Slack.
+        if 'payload' in message:
+            print('--------------------------')
+            print('New Message:')
+            print(message['payload']['event']['text'])
+            print('--------------------------')
+        # Try to display received message to the Jarvis output Slack channel
+        try:
+            response = client.chat_postMessage(
+                channel = "jarvis_output",
+                text=message['payload']['event']['text']
+            )
+        # Return an error in the case of a Slack API Error
+        except SlackApiError as e:
+            assert e.response["error"]
+                
+    def send_message_confirmation(self, connection, message):
+        # Send a response message to Slack to confirm that the incoming 
+        # message was received.
+        if 'envelope_id' in message:
+            the_response = {'envelope_id': message['envelope_id']}
+            connection.send(str.encode(json.dumps(the_response)))
+        
+        # Try to display received message to the Jarvis output Slack channel
+        try:
+            response = client.chat_postMessage(
+                channel = "jarvis_output",
+                text= the_response
+            )
+        # Return an error in the case of a Slack API Error
+        except SlackApiError as e:
+            assert e.response["error"]
+            
+    def process_message(self, message):
+        if message == "training time":
+            self.start_training()
+            print("OK, I'm ready for training.  What NAME should this ACTION be?")
+            # Try to display received message to the Jarvis output Slack channel
+            try:
+                response = client.chat_postMessage(
+                    channel = "jarvis_output",
+                    text= "OK, I'm ready for training.  What NAME should this ACTION be?"
+                )
+            # Return an error in the case of a Slack API Error
+            except SlackApiError as e:
+                assert e.response["error"]
+        if message == "done":
+            self.stop_training()
+            print("OK, I'm finished training")
+            # Try to display received message to the Jarvis output Slack channel
+            try:
+                response = client.chat_postMessage(
+                    channel = "jarvis_output",
+                    text= "OK, I'm finished training"
+                )
+            # Return an error in the case of a Slack API Error
+            except SlackApiError as e:
+                assert e.response["error"]
+    # ---------------------------------------------------------------------- #
 
-    def on_message(connection, msg):
-        pass
+    def on_message(self, connection, message):
+        # Called when a message is received in the websocket connection. 
+        # --------------------------------------------------------------
+        # Load message into a dictionary.
+        message = json.loads(message)
+        
+        # Perform processing.
+        self.display_message(message)
+        self.send_message_confirmation(connection, message)
+        self.process_message(message)
+    
+    def on_error(self, connection, error):
+        # Called when an error occurs in the websocket connection. This can
+        # be used for debugging purposes. To enable/disable error messages:
+        #   1) True  -> Enable
+        #   2) False -> Disable
+        if False:
+            print("ERROR ->", error)
+            
+    def on_open(self, connection):
+        # Called when websocket connection is first established.
+        print("------------------------------------------------------")
+        print("| Connection Established - Jarvis is in the houuuse! |")
+        print("------------------------------------------------------")
+        # Try to display received message to the Jarvis output Slack channel
+        try:
+            response = client.chat_postMessage(
+                channel = "jarvis_output",
+                text= "OK, I'm ready for training.  What NAME should this ACTION be?"
+            )
+        # Return an error in the case of a Slack API Error
+        except SlackApiError as e:
+            assert e.response["error"]
 
-    def on_error(connection, error):
-        pass
+    def on_close(self, connection, close_status_code, close_msg):
+        # Called when websocket connection is closed.
+        print("------------------------------------------------------")
+        print("| Jarvis disconnected - See ya later alligator :)    |") 
+        print("------------------------------------------------------")
+        # Try to display received message to the Jarvis output Slack channel
+        try:
+            response = client.chat_postMessage(
+                channel = "jarvis_output",
+                text= "Jarvis disconnected - See ya later alligator"
+            )
+        # Return an error in the case of a Slack API Error
+        except SlackApiError as e:
+            assert e.response["error"]
 
-    def on_close(connection):
-        pass
-
-    def on_open(connection):
-        pass
     
 class Database:
     """Class for interacting with Jarvis' database."""
     def __init__(self):
-        # Open connection to database on startup
+        # Open connection to database on startup.
         self.open_connection()
     
     def open_connection(self):
@@ -71,9 +195,9 @@ class Database:
         self.curr = self.conn.cursor()
         
         try:
-            self.curr.execute("INSERT TABLE CREATE COMMAND HERE BECAUSE IM LAZY")
+            self.curr.execute("CREATE TABLE training_data (txt TEXT, action TEXT)")
         except sqlite3.OperationalError:
-            print('TABLE FOUND')
+            print("TABLE FOUND")
     
     def close_connection(self):
         # This should be called when Jarvis is finished running to close 
@@ -83,32 +207,49 @@ class Database:
     def store_training_data(self, msg_txt, action):
         # This will store the message text and action (training data) 
         # into the database.
-        pass 
+        self.curr.execute("INSERT INTO training_data VALUES (?, ?)", (msg_txt, action))
+        self.conn.commit()
     
-# ==================================================================== #
+    def print_training_data(self):
+        # This will print the message text and action (training data)
+        # currently in the database, with message text of common actions
+        # grouped together.
+        self.curr.execute("SELECT * FROM training_data ORDER BY action")
+        for row in self.curr.fetchall():
+            print(row)
 
-# This is run when the script is run. So for example, calling: 
-# python jarvis.py will execute this. This is where we will put all
-# the main code. Functions will be defined above and called here.
+
+# -------------------------------------------------------------------- #
+# This is the main section which is run when the script is run by      #
+# calling: "python jarvis.py." All main code (initializing Jarvis,     #
+# establishing the websocket connection, etc.) will be written here,   #
+# making use of the above definitions.                                 #
+# -------------------------------------------------------------------- #
 if __name__ == '__main__':
-    # Initiate Jarvis and open the database
-    jarvis   = Jarvis()
-    database = Database()
+    # Authorization headers to allow Jarvis to connect to the workspace. 
+    authorization = {'Content-type' : "application/x-www-form-urlencoded",
+                     'Authorization': "Bearer " + APP_TOKEN}
+  
+    # Get workspace url from the Slack API that is compatible with the
+    # websocket protocol using the authentication headers.
+    SLACK_API_URL = "https://slack.com/api/apps.connections.open"
+    WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authorization).json()['url']
+
+    # Initiate Jarvis
+    jarvis = Jarvis()
 
     # Enable/Disable debugging messages for websocket:
     #   1) Enable  -> True
     #   2) Disable -> False
-    websocket.enableTrace(True)
+    websocket.enableTrace(False)
 
-    # Start websocket connection
-    connection = websocket.WebSocketApp('URL_PLACEHOLDER',
+    # Start websocket to connect Jarvis to the Slack workspace.
+    connection = websocket.WebSocketApp(WORKSPACE_URL,
                                          on_message = jarvis.on_message,
                                          on_error   = jarvis.on_error,
                                          on_open    = jarvis.on_open,
                                          on_close   = jarvis.on_close)
+    
 
     # Run Jarvis
     connection.run_forever()
-    
-    # Close database when done
-    database.close_connection()
