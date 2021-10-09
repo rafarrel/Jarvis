@@ -168,9 +168,6 @@ if __name__ == '__main__':
     # Initiate Jarvis
     jarvis = Jarvis()
 
-    def on_message_wrapper(connection, message):
-        jarvis.on_message(connection, message)
-
     # Enable/Disable debugging messages for websocket:
     #   1) Enable  -> True
     #   2) Disable -> False
@@ -178,7 +175,7 @@ if __name__ == '__main__':
 
     # Start websocket to connect Jarvis to the Slack workspace.
     connection = websocket.WebSocketApp(WORKSPACE_URL,
-                                         on_message = lambda _: jarvis.on_message_wrapper,#jarvis.on_message,
+                                         on_message = jarvis.on_message,
                                          on_error   = jarvis.on_error,
                                          on_open    = jarvis.on_open,
                                          on_close   = jarvis.on_close)
