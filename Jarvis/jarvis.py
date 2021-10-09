@@ -168,8 +168,8 @@ if __name__ == '__main__':
     # Initiate Jarvis
     jarvis = Jarvis()
 
-    def on_message_wrapper(connection, message):
-        jarvis.on_message(connection, message)
+    #def on_message_wrapper(connection, message):
+    #    jarvis.on_message(connection, message)
 
     # Enable/Disable debugging messages for websocket:
     #   1) Enable  -> True
