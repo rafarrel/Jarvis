@@ -88,7 +88,7 @@ class Jarvis:
         if 'envelope_id' in message:
             response = {'envelope_id': message['envelope_id']}
             self.connection.send(str.encode(json.dumps(response)))
-
+        
     # ---------------------------------------------------------------------- #
 
     def on_message(self, message):
@@ -120,7 +120,7 @@ class Jarvis:
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
         print("------------------------------------------------------")
-
+    
     
 class Database:
     """Class for interacting with Jarvis' database."""
