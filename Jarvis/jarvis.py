@@ -81,7 +81,7 @@ class Jarvis:
 
     # ---------------------------------------------------------------------- #
 
-    def on_message(self, connection, message):
+    def on_message(self, message, *args):
         # Called when a message is received in the websocket connection. 
         # --------------------------------------------------------------
         # Load message into a dictionary.
@@ -99,13 +99,13 @@ class Jarvis:
         if False:
             print("ERROR ->", error)
             
-    def on_open(self, connection):
+    def on_open(self, *args):
         # Called when websocket connection is first established.
         print("------------------------------------------------------")
         print("| Connection Established - Jarvis is in the houuuse! |")
         print("------------------------------------------------------")
 
-    def on_close(self, connection, *args):
+    def on_close(self, *args):
         # Called when websocket connection is closed.
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
