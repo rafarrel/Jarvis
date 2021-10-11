@@ -87,15 +87,7 @@ class Jarvis:
             print('New Message:')
             print(message['payload']['event']['text'])
             print('--------------------------')
-        # Try to display received message to the Jarvis output Slack channel
-        try:
-            response = client.chat_postMessage(
-                channel = "jarvis_output",
-                text=message['payload']['event']['text']
-            )
-        # Return an error in the case of a Slack API Error
-        except SlackApiError as e:
-            assert e.response["error"]
+
                 
     def send_message_confirmation(self, connection, message):
         # Send a response message to Slack to confirm that the incoming 
@@ -104,42 +96,18 @@ class Jarvis:
             the_response = {'envelope_id': message['envelope_id']}
             connection.send(str.encode(json.dumps(the_response)))
         
-        # Try to display received message to the Jarvis output Slack channel
-        try:
-            response = client.chat_postMessage(
-                channel = "jarvis_output",
-                text= the_response
-            )
-        # Return an error in the case of a Slack API Error
-        except SlackApiError as e:
-            assert e.response["error"]
+
             
     def process_message(self, message):
         if message.lower() == "training time":
             self.start_training()
             print("OK, I'm ready for training.  What NAME should this ACTION be?")
-            # Try to display received message to the Jarvis output Slack channel
-            try:
-                response = client.chat_postMessage(
-                    channel = "jarvis_output",
-                    text= "OK, I'm ready for training.  What NAME should this ACTION be?"
-                )
-            # Return an error in the case of a Slack API Error
-            except SlackApiError as e:
-                assert e.response["error"]
+
         
         if message.lower() == "done":
             self.stop_training()
             print("OK, I'm finished training")
-            # Try to display received message to the Jarvis output Slack channel
-            try:
-                response = client.chat_postMessage(
-                    channel = "jarvis_output",
-                    text= "OK, I'm finished training"
-                )
-            # Return an error in the case of a Slack API Error
-            except SlackApiError as e:
-                assert e.response["error"]
+
     # ---------------------------------------------------------------------- #
 
     def on_message(self, connection, message):
@@ -166,30 +134,14 @@ class Jarvis:
         print("------------------------------------------------------")
         print("| Connection Established - Jarvis is in the houuuse! |")
         print("------------------------------------------------------")
-        # Try to display received message to the Jarvis output Slack channel
-        try:
-            response = client.chat_postMessage(
-                channel = "jarvis_output",
-                text= "Connection Established - Jarvis is in the houuuse!"
-            )
-        # Return an error in the case of a Slack API Error
-        except SlackApiError as e:
-            assert e.response["error"]
+
 
     def on_close(self, connection, close_status_code, close_msg):
         # Called when websocket connection is closed.
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
         print("------------------------------------------------------")
-        # Try to display received message to the Jarvis output Slack channel
-        try:
-            response = client.chat_postMessage(
-                channel = "jarvis_output",
-                text= "Jarvis disconnected - See ya later alligator"
-            )
-        # Return an error in the case of a Slack API Error
-        except SlackApiError as e:
-            assert e.response["error"]
+
 
     
 class Database:
