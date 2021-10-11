@@ -48,6 +48,17 @@ class Jarvis:
         self.currentState = self.IDLE      # Starting state for Jarvis
         self.database     = Database()     # Database containing training data
         
+        # Start websocket to connect Jarvis to the Slack workspace.
+        self.connection = websocket.WebSocketApp(WORKSPACE_URL,
+                                             on_message = self.on_message,
+                                             on_error   = self.on_error,
+                                             on_open    = self.on_open,
+                                             on_close   = self.on_close)
+        
+
+        # Run Jarvis
+        self.connection.run_forever()
+        
     def __del__(self):
         # Clean up when Jarvis is finished.
         self.database.close_connection()
@@ -72,16 +83,16 @@ class Jarvis:
             print(message['payload']['event']['text'])
             print('--------------------------')
         
-    def send_message_confirmation(self, connection, message):
+    def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
         # message was received.
         if 'envelope_id' in message:
             response = {'envelope_id': message['envelope_id']}
-            connection.send(str.encode(json.dumps(response)))
+            self.connection.send(str.encode(json.dumps(response)))
 
     # ---------------------------------------------------------------------- #
 
-    def on_message(self, connection, message):
+    def on_message(self, message):
         # Called when a message is received in the websocket connection. 
         # --------------------------------------------------------------
         # Load message into a dictionary.
@@ -89,9 +100,9 @@ class Jarvis:
         
         # Perform processing.
         self.display_message(message)
-        self.send_message_confirmation(connection, message)
+        self.send_message_confirmation(message)
     
-    def on_error(self, connection, error):
+    def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
         # be used for debugging purposes. To enable/disable error messages:
         #   1) True  -> Enable
@@ -99,13 +110,13 @@ class Jarvis:
         if False:
             print("ERROR ->", error)
             
-    def on_open(self, connection):
+    def on_open(self):
         # Called when websocket connection is first established.
         print("------------------------------------------------------")
         print("| Connection Established - Jarvis is in the houuuse! |")
         print("------------------------------------------------------")
 
-    def on_close(self, connection, *args):
+    def on_close(self):
         # Called when websocket connection is closed.
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
@@ -172,13 +183,3 @@ if __name__ == '__main__':
     #   1) Enable  -> True
     #   2) Disable -> False
     websocket.enableTrace(False)
-
-    # Start websocket to connect Jarvis to the Slack workspace.
-    connection = websocket.WebSocketApp(WORKSPACE_URL,
-                                         on_message = jarvis.on_message,
-                                         on_error   = jarvis.on_error,
-                                         on_open    = jarvis.on_open,
-                                         on_close   = jarvis.on_close)
-
-    # Run Jarvis
-    connection.run_forever()
