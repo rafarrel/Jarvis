@@ -55,7 +55,6 @@ class Jarvis:
                                              on_open    = self.on_open,
                                              on_close   = self.on_close)
         
-
         # Run Jarvis
         self.connection.run_forever()
         
