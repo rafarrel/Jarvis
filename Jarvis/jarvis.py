@@ -34,8 +34,9 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 import os
+import slack
 from slack import WebClient
-from slak.errors import SlackApiError
+from slack.errors import SlackApiError
 
 client = WebClient(token=API_TOKEN)
 # -------------------------------------------------------------------- #
