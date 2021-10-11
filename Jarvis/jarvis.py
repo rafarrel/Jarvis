@@ -72,12 +72,35 @@ class Jarvis:
             print(message['payload']['event']['text'])
             print('--------------------------')
         
-    def send_message_confirmation(self, connection, message):
-        # Send a response message to Slack to confirm that the incoming 
+    def send_message_confirmation(self, message):
+        # Send a response message to Slack to confirm that the incoming
         # message was received.
         if 'envelope_id' in message:
             response = {'envelope_id': message['envelope_id']}
-            connection.send(str.encode(json.dumps(response)))
+            self.connection.send(str.encode(json.dumps(response)))
+            
+    def message_to_slack(self, text):
+        SLACK_URL = "https://slack.com/api/chat.postMessage"
+        auth = {'Content-type' : "application/json",
+                'Authorization': "Bearer " + APP_TOKEN}
+        WORK_URL = requests.post(SLACK_URL, headers=auth).json()['url']
+        data = {'text': text}
+        response = requests.post(WORK_URL, json.dumps(data))
+        if response.status_code != 200:
+            raise ValueError('error')
+        
+    def process_message(self, message):
+        if message.lower() == "hi":
+            print("Hi there!")
+            self.message_to_slack("Hi there!")
+        if message.lower() == "training time":
+            #self.start_training()
+            print("OK, I'm ready for training.  What NAME should this ACTION be?")
+            self.message_to_slack("OK, I'm ready for training.  What NAME should this ACTION be?")
+        if message.lower() == "done":
+            #self.stop_training()
+            print("OK, I'm finished training")
+            self.message_to_slack("OK, I'm finished training")
 
     # ---------------------------------------------------------------------- #
 
