@@ -144,7 +144,10 @@ def on_close(self, connection, close_status_code, close_msg):
 
 def run_program(connection):
     TRAIN = 0
+    #if message = "training time":
+    
     pass
+
 
 class Database:
     """Class for interacting with Jarvis' database."""
