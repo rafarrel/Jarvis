@@ -64,12 +64,25 @@ class Jarvis:
     def start_training(self):
         # Start training mode.
         self.currentState = self.TRAIN
+        self.classify_msg()
         
     def stop_training(self):
         # Stop training and switch to idle mode.
         self.currentState = self.IDLE
         
     # ---------------------------------------------------------------------- #
+    def classify_msg(self, message):
+        #classify a message as a specific action based on keywords:
+        labels = ['time', 'pizza', 'greet', 'weather', 'joke']
+        action = ''
+        for l in labels:
+            if message.lower.contains(l) and l == '':
+                action = l.upper()
+        #once an action has been defined for a message, the message and its action are added to the database
+        self.store_training_data(message,action)
+        #the data acquired so far is printed from the database to the console.
+        self.print_training_data()
+    
             
     def display_message(self, message):
         # Display received message from Slack.
@@ -106,7 +119,7 @@ class Jarvis:
             assert e.response["error"]
             
     def process_message(self, message):
-        if message == "training time":
+        if message.lower() == "training time":
             self.start_training()
             print("OK, I'm ready for training.  What NAME should this ACTION be?")
             # Try to display received message to the Jarvis output Slack channel
@@ -118,7 +131,8 @@ class Jarvis:
             # Return an error in the case of a Slack API Error
             except SlackApiError as e:
                 assert e.response["error"]
-        if message == "done":
+        
+        if message.lower() == "done":
             self.stop_training()
             print("OK, I'm finished training")
             # Try to display received message to the Jarvis output Slack channel
@@ -160,7 +174,7 @@ class Jarvis:
         try:
             response = client.chat_postMessage(
                 channel = "jarvis_output",
-                text= "OK, I'm ready for training.  What NAME should this ACTION be?"
+                text= "Connection Established - Jarvis is in the houuuse!"
             )
         # Return an error in the case of a Slack API Error
         except SlackApiError as e:
