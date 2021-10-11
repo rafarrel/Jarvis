@@ -33,12 +33,7 @@ from botsettings import APP_TOKEN
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-import os
-import slack
-from slack import WebClient
-from slack.errors import SlackApiError
 
-client = WebClient(token=API_TOKEN)
 # -------------------------------------------------------------------- #
 # Any definitions for Jarvis go here and will be called in the main    #
 # section below. Essentially, all Jarvis logic will be written here    #
