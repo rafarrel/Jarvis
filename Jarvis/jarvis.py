@@ -112,7 +112,7 @@ class Jarvis:
             # Make sure message isn't from Jarvis.
             if 'bot_profile' not in message['payload']['event']:
                 self.display_message(msg_text)
-                self.set_mode(msg_text, channel)
+                self.insert(msg_text, channel)
                 
     def remove_jarvis_tag(self, message):
         # Remove Jarvis user ID from message
@@ -155,8 +155,8 @@ class Jarvis:
         # Send the message to the Slack workspace.
         requests.post(self.POST_MESSAGE_URL, data=message, headers=self.POST_AUTH)
         
-    def set_mode(self, message, channel):
-        # Set the mode if message entered calls for the mode to be set.
+    def interact(self, message, channel):
+        # Interact with the Slack Workspace
         if 'training time' in message.lower():
             self.start_action()
             self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
@@ -235,6 +235,7 @@ class Database:
     
     def clear_table(self):
         self.curr.execute("DELETE FROM training_data")
+        self.curr.commit()
     
     def print_training_data(self):
         # This will print the message text and action (training data)
