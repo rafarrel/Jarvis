@@ -235,7 +235,7 @@ class Database:
     
     def clear_table(self):
         self.curr.execute("DELETE FROM training_data")
-
+    
     def print_training_data(self):
         # This will print the message text and action (training data)
         # currently in the database, with message text of common actions
