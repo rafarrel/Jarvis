@@ -40,8 +40,9 @@ class Jarvis:
     """Class that will contain all logic for Jarvis."""
     def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display_mode=False):
         # Jarvis states
-        self.IDLE  = 0
-        self.TRAIN = 1
+        self.IDLE   = 0  # Jarvis remains idle
+        self.ACTION = 1  # Jarvis waits to receive the action name
+        self.TRAIN  = 2  # Jarvis waits to receive training text
         
         # Jarvis authorization headers
         self.WORKSPACE_AUTH = WORKSPACE_AUTH
@@ -55,6 +56,7 @@ class Jarvis:
         self.database = Database()
         
         # Jarvis settings
+        self.current_action = ''            # Starting action for Jarvis
         self.current_state  = self.IDLE     # Starting state for Jarvis
         self.display_mode   = display_mode  # Display Slack messages to console (on/off)
         
@@ -77,13 +79,16 @@ class Jarvis:
 
     # ---------------------------------------------------------------------- #
     # Jarvis States
+    def start_action(self):
+        # Start action mode
+        self.current_state = self.ACTION
 
     def start_training(self):
         # Start training mode.
         self.current_state = self.TRAIN
 
-    def stop_training(self):
-        # Stop training and switch to idle mode.
+    def start_idle(self):
+        # Start idle mode.
         self.current_state = self.IDLE
         
     # ---------------------------------------------------------------------- #
@@ -136,11 +141,18 @@ class Jarvis:
     def set_mode(self, message, channel):
         # Set the mode if message entered calls for the mode to be set.
         if 'training time' in message.lower():
-            self.start_training()
+            self.start_action()
             self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
         elif 'done' in message.lower():
-            self.stop_training()
+            self.start_idle()
+            self.current_action = ''
             self.post_message("OK, I'm finished training.", channel)
+        elif self.current_state == self.ACTION:
+            self.start_training()
+            self.current_action = message
+            self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(message), channel)
+        elif self.current_state == self.TRAIN:
+            self.post_message("OK, I've got it! What else?", channel)
        
     # ---------------------------------------------------------------------- #
     # Websocket Events
@@ -232,4 +244,4 @@ if __name__ == '__main__':
     # Initiate Jarvis
     jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
                     debug_mode   = False, 
-                    display_mode = False)
+                    display_mode = True)
