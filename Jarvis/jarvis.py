@@ -39,10 +39,14 @@ from botsettings import APP_TOKEN
 # -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
-    def __init__(self):
+    def __init__(self, workspace_url):
         # Jarvis states
         self.IDLE  = 0
         self.TRAIN = 1
+        
+        # Jarvis URLS
+        self.WORKSPACE_URL    = workspace_url
+        self.SEND_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
         
         # Jarvis settings
         self.currentState = self.IDLE      # Starting state for Jarvis
@@ -89,17 +93,19 @@ class Jarvis:
             response = {'envelope_id': message['envelope_id']}
             self.connection.send(str.encode(json.dumps(response)))
             
-    def send_message(self, message):
+    def send_message(self, message, channel):
         # Send messages back to the Slack repo
-        message = {'channel': 'C02GG6Z8R24',
+        # ------------------------------------
+        # Message payload
+        message = {'channel': channel,
                    'text'   : message}
         
-        URL = 'https://slack.com/api/chat.postMessage'
-        
+        # Authorization headers to send the message.
         authorization = {'Content-type' : "application/x-www-form-urlencoded",
                          'Authorization': "Bearer " + API_TOKEN}
         
-        requests.post(URL, data=message, headers=authorization)
+        # Send the message to the Slack workspace.
+        requests.post(self.SEND_MESSAGE_URL, data=message, headers=authorization)
         
 
     # ---------------------------------------------------------------------- #
@@ -114,7 +120,7 @@ class Jarvis:
         # Perform processing.
         self.display_message(message)
         self.send_message_confirmation(message)
-        self.send_message(message)
+        self.send_message(message, 'C02GG6Z8R24')
     
     def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
@@ -196,4 +202,4 @@ if __name__ == '__main__':
     websocket.enableTrace(False)
 
     # Initiate Jarvis
-    jarvis = Jarvis()
+    jarvis = Jarvis(WORKSPACE_URL)
