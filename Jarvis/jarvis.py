@@ -38,7 +38,7 @@ from botsettings import APP_TOKEN
 # -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
-    def __init__(self, workspace_url, debug_mode=False):
+    def __init__(self, workspace_url, debug_mode=False, display=False):
         # Jarvis states
         self.IDLE  = 0
         self.TRAIN = 1
@@ -48,9 +48,12 @@ class Jarvis:
         self.POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
         
         # Jarvis settings
-        websocket.enableTrace(debug_mode)  # Debug mode on/off for troubleshooting
         self.currentState = self.IDLE      # Starting state for Jarvis
         self.database     = Database()     # Database containing training data
+        self.display      = display        # Display Slack messages to console on/off
+        
+        # Websocket settings
+        websocket.enableTrace(debug_mode)  # Debug mode on/off for troubleshooting
         
         # Start websocket to connect Jarvis to the Slack workspace.
         self.connection = websocket.WebSocketApp(WORKSPACE_URL,
@@ -78,31 +81,31 @@ class Jarvis:
         self.currentState = self.IDLE
         
     # ---------------------------------------------------------------------- #
-    # Message Actions        
+    # Message Actions     
     
-    def display_message(self, message):
-        # Display received message from Slack.
-        if 'payload' in message:
-            print('--------------------------')
-            print('New Message:')
-            print(message)
-            print('--------------------------')
-        
     def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
         # message was received.
         if 'envelope_id' in message:
             response = {'envelope_id': message['envelope_id']}
             self.connection.send(str.encode(json.dumps(response)))
+    
+    def display_message(self, message):
+        # Display received message from Slack.
+        if self.display:
+            print('--------------------------')
+            print('New Message:')
+            print(message)
+            print('--------------------------')
             
-    def send_message(self, message, channel):
+    def post_message(self, message, channel):
         # Send messages back to the Slack repo
         # ------------------------------------
         # Message payload
         message = {'channel': channel,
                    'text'   : message}
         
-        # Authorization headers to send the message.
+        # Authorization headers to send the message to the Slack workspace.
         authorization = {'Content-type' : "application/x-www-form-urlencoded",
                          'Authorization': "Bearer " + API_TOKEN}
         
@@ -113,12 +116,12 @@ class Jarvis:
         # Training mode start
         if "training time" in message.lower():
             self.start_training()
-            self.send_message("OK, I'm ready for training.  What NAME should this ACTION be?", channel)
+            self.post_message("OK, I'm ready for training.  What NAME should this ACTION be?", channel)
             
         # Training mode end
         if "done" in message.lower():
             self.stop_training()
-            self.send_message("I'm finished training", channel)
+            self.post_message("I'm finished training", channel)
         
     # ---------------------------------------------------------------------- #
     # Websocket Events
@@ -129,13 +132,16 @@ class Jarvis:
         # Load message into a dictionary.
         message = json.loads(message)
         
+        # Send confirmation to Slack that the message was received.
+        self.send_message_confirmation(message)
+        
+        # Process the message and perform necessary actions.
         if 'payload' in message:
             channel = message['payload']['event']['channel']
             msg_txt = message['payload']['event']['text']
         
-            # Perform processing.
-            #self.display_message(message)
-            self.send_message_confirmation(message)
+            # Message Actions
+            self.display_message(msg_txt)
             self.process_message(msg_txt, channel)
     
     def on_error(self, error):
@@ -212,4 +218,4 @@ if __name__ == '__main__':
     WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authorization).json()['url']
 
     # Initiate Jarvis
-    jarvis = Jarvis(WORKSPACE_URL, debug_mode=False)
+    jarvis = Jarvis(WORKSPACE_URL, debug_mode=False, display=False)
