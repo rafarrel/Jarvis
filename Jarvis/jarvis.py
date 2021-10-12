@@ -72,10 +72,6 @@ class Jarvis:
         
         # Run Jarvis
         self.connection.run_forever()
-        
-    def __del__(self):
-        # Clean up when Jarvis is finished.
-        self.database.close_connection()
 
     # ---------------------------------------------------------------------- #
     # Jarvis States
@@ -185,6 +181,7 @@ class Jarvis:
         print("| Jarvis disconnected - See ya later alligator :)    |") 
         print("------------------------------------------------------")
         self.database.print_training_data()
+        self.database.close_connection()
 
     
 class Database:
