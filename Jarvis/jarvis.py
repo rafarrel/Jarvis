@@ -43,11 +43,11 @@ class Jarvis:
         self.IDLE  = 0
         self.TRAIN = 1
         
-        # Jarvis Authorization headers
+        # Jarvis authorization headers
         self.WORKSPACE_AUTH = WORKSPACE_AUTH
         self.POST_AUTH      = POST_AUTH
         
-        # Jarvis URLS
+        # Jarvis urls
         self.WORKSPACE_URL    = WORKSPACE_URL
         self.POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
         
@@ -85,7 +85,23 @@ class Jarvis:
         self.currentState = self.IDLE
         
     # ---------------------------------------------------------------------- #
-    # Message Actions     
+    # Message Processing     
+    
+    def process_message(self, message):
+        # Load message into a dictionary.
+        message = json.loads(message)
+        
+        # Send confirmation to Slack that the message was received.
+        self.send_message_confirmation(message)
+        
+        # Process the message and perform necessary actions.
+        if 'payload' in message:
+            channel = message['payload']['event']['channel']
+            msg_txt = message['payload']['event']['text']
+        
+            # Message Actions
+            self.display_message(msg_txt)
+            self.determine_mode(msg_txt, channel)
     
     def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
@@ -112,7 +128,7 @@ class Jarvis:
         # Send the message to the Slack workspace.
         requests.post(self.POST_MESSAGE_URL, data=message, headers=self.POST_AUTH)
         
-    def process_message(self, message, channel):
+    def determine_mode(self, message, channel):
         # Training mode start
         if "training time" in message.lower():
             self.start_training()
@@ -122,28 +138,17 @@ class Jarvis:
         if "done" in message.lower():
             self.stop_training()
             self.post_message("I'm finished training", channel)
-        
+
     # ---------------------------------------------------------------------- #
     # Websocket Events
 
     def on_message(self, message):
         # Called when a message is received in the websocket connection. 
         # --------------------------------------------------------------
-        # Load message into a dictionary.
-        message = json.loads(message)
+        # Added threading to hopefully help with messages being delayed
+        # due to having to wait for previous messages to be processed.
+        thread.start_new_thread(self.process_message, (message,))
         
-        # Send confirmation to Slack that the message was received.
-        self.send_message_confirmation(message)
-        
-        # Process the message and perform necessary actions.
-        if 'payload' in message:
-            channel = message['payload']['event']['channel']
-            msg_txt = message['payload']['event']['text']
-        
-            # Message Actions
-            self.display_message(msg_txt)
-            self.process_message(msg_txt, channel)
-    
     def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
         # be used for debugging purposes. To enable/disable error messages:
