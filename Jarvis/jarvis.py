@@ -109,14 +109,14 @@ class Jarvis:
         
     def process_message(self, message, channel):
         # Training mode start
-        if message.lower() == "training time":
+        if "training time" in message.lower():
             self.start_training()
             print("Jarvis says:")
             print("OK, I'm ready for training.  What NAME should this ACTION be?")
             self.send_message("OK, I'm ready for training.  What NAME should this ACTION be?", channel)
             
         # Training mode end
-        if message.lower() == "done":
+        if "done" in message.lower():
             self.stop_training()
             print("Jarvis says:")
             print("OK, I'm finished training")
@@ -125,19 +125,20 @@ class Jarvis:
 
     # ---------------------------------------------------------------------- #
 
-    def on_message(self, message, text):
+    def on_message(self, message):
         # Called when a message is received in the websocket connection. 
         # --------------------------------------------------------------
         # Load message into a dictionary.
         message = json.loads(message)
-        channel = message['payload']['event']['channel']
-        msg_txt = message['payload']['event']['text']
         
+        if 'payload' in message:
+            channel = message['payload']['event']['channel']
+            msg_txt = message['payload']['event']['text']
         
-        # Perform processing.
-        self.display_message(message)
-        self.send_message_confirmation(message)
-        self.process_message(msg_txt, channel)
+            # Perform processing.
+            #self.display_message(message)
+            self.send_message_confirmation(message)
+            self.process_message(msg_txt, channel)
     
     def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
