@@ -109,12 +109,12 @@ class Jarvis:
                 isAction = False
                 #if message is an action:
                 for n in self.ACTIONS:
-                    if message.upper() == n:
+                    if msg_txt.upper() == n:
                         isAction = True
+                        self.currAction = n
                 if isAction:
-                    self.currAction = n
                     #then the message is the user's response for what the action is for a command
-                    self.post_message("OK, let's call this action '"+n+"'.  Now give me some training text!", channel)
+                    self.post_message("OK, let's call this action '"+self.currAction+"'.  Now give me some training text!", channel)
                 #if action has been defined and the current message is not defining an action
                 if self.currAction in self.ACTIONS and isAction == False:
                     self.database.store_training_data(message, self.currAction)
