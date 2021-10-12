@@ -20,6 +20,7 @@ import sqlite3
 # Slack interaction
 import json
 import requests
+import string
 import websocket
 try:
     import thread 
@@ -104,6 +105,10 @@ class Jarvis:
             channel  = message['payload']['event']['channel']
             msg_text = message['payload']['event']['text'   ]
             
+            # Remove punctuation
+            removePunc = str.maketrans({punc: None for punc in string.punctuation})
+            msg_text   = msg_text.translate(removePunc)
+            
             # Make sure message isn't from Jarvis.
             if 'bot_profile' not in message['payload']['event']:
                 self.display_message(msg_text)
@@ -145,10 +150,10 @@ class Jarvis:
             self.post_message("OK, I'm finished training.", channel)
         elif self.current_state == self.ACTION:
             self.start_training()
-            self.current_action = message
-            self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(message), channel)
+            self.current_action = message.upper()
+            self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(self.current_action), channel)
         elif self.current_state == self.TRAIN:
-            self.database.store_training_data(message, self.current_action)
+            self.database.store_training_data(message.lower(), self.current_action)
             self.post_message("OK, I've got it! What else?", channel)
        
     # ---------------------------------------------------------------------- #
