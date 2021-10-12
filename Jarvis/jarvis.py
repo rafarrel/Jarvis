@@ -90,7 +90,7 @@ class Jarvis:
             self.connection.send(str.encode(json.dumps(response)))
             
     def send_message(self, message):
-        # Test
+        # Send messages back to the Slack repo
         message = {'channel': 'C02GG6Z8R24',
                    'text'   : message}
         
