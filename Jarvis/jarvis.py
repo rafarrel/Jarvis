@@ -105,14 +105,30 @@ class Jarvis:
             channel  = message['payload']['event']['channel']
             msg_text = message['payload']['event']['text'   ]
             
-            # Remove punctuation
-            removePunc = str.maketrans({punc: None for punc in string.punctuation})
-            msg_text   = msg_text.translate(removePunc)
+            # Clean message 
+            msg_text = self.remove_jarvis_tag(msg_text)
+            msg_text = self.remove_punctuation(msg_text)
             
             # Make sure message isn't from Jarvis.
             if 'bot_profile' not in message['payload']['event']:
                 self.display_message(msg_text)
                 self.set_mode(msg_text, channel)
+                
+    def remove_jarvis_tag(self, message):
+        # Remove Jarvis user ID from message
+        id_start_index = message.find('<@')
+        id_end_index   = message.find('>', id_start_index)
+        id_full_string = message[id_start_index:id_end_index+1]
+        message        = message.replace(id_full_string, '').lstrip(' ')
+            
+        return message
+    
+    def remove_punctuation(self, message):
+        # Remove punctuation from message
+        removePunc = str.maketrans({punc: None for punc in string.punctuation})
+        message    = message.translate(removePunc)
+        
+        return message
     
     def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
@@ -248,4 +264,4 @@ if __name__ == '__main__':
     # Initiate Jarvis
     jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
                     debug_mode   = False, 
-                    display_mode = False)
+                    display_mode = True)
