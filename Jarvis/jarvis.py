@@ -26,6 +26,9 @@ try:
 except ImportError:
     import _thread as thread
 
+# String manipulation
+from string import punctuation
+
 # Slack connection tokens
 from botsettings import API_TOKEN
 from botsettings import APP_TOKEN
@@ -40,16 +43,15 @@ class Jarvis:
     """Class that will contain all logic for Jarvis."""
     def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display_mode=False):
         # Jarvis states
-        self.IDLE  = 0
-        self.TRAIN = 1
-        
-        # Current action for Jarvis for training
-        # Set to 'None' when not in training mode
-        self.action = 'None'
+        self.IDLE   = 0  # Jarvis remains idle
+        self.ACTION = 1  # Jarvis waits to receive the action name
+        self.TRAIN  = 2  # Jarvis waits to receive training text
         
         # Jarvis authorization headers
         self.WORKSPACE_AUTH = WORKSPACE_AUTH
         self.POST_AUTH      = POST_AUTH
+        
+        self.EXCLUDE = set(punctuation)
         
         # Jarvis urls
         self.WORKSPACE_URL    = WORKSPACE_URL
@@ -59,6 +61,7 @@ class Jarvis:
         self.database = Database()
         
         # Jarvis settings
+        self.current_action = ''            # Starting action for Jarvis
         self.current_state  = self.IDLE     # Starting state for Jarvis
         self.display_mode   = display_mode  # Display Slack messages to console (on/off)
         
@@ -74,20 +77,19 @@ class Jarvis:
         
         # Run Jarvis
         self.connection.run_forever()
-        
-    def __del__(self):
-        # Clean up when Jarvis is finished.
-        self.database.close_connection()
 
     # ---------------------------------------------------------------------- #
     # Jarvis States
+    def start_action(self):
+        # Start action mode
+        self.current_state = self.ACTION
 
     def start_training(self):
         # Start training mode.
         self.current_state = self.TRAIN
 
-    def stop_training(self):
-        # Stop training and switch to idle mode.
+    def start_idle(self):
+        # Start idle mode.
         self.current_state = self.IDLE
         
     # ---------------------------------------------------------------------- #
@@ -110,10 +112,8 @@ class Jarvis:
             # Make sure message isn't from Jarvis.
             if 'bot_profile' not in message['payload']['event']:
                 self.display_message(msg_text)
-                if self.current_state == self.TRAIN:
-                    self.in_training_mode(msg_txt, channel)
                 self.set_mode(msg_text, channel)
-                
+    
     def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
         # message was received.
@@ -142,22 +142,21 @@ class Jarvis:
     def set_mode(self, message, channel):
         # Set the mode if message entered calls for the mode to be set.
         if 'training time' in message.lower():
-            self.start_training()
+            self.start_action()
             self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
         elif 'done' in message.lower():
-            self.stop_training()
+            self.start_idle()
+            self.current_action = ''
             self.post_message("OK, I'm finished training.", channel)
-            self.action = 'None'
-            
-    def in_training_mode(self, message, channel):
-        # Check if action still needs to be defined
-        if self.action == 'None':
-            self.action == message.upper()
-            self.post_message("OK, let's call this action '" + message.upper() + "'. Now give me some training text!", channel)          
-        elif self.action != 'None' and 'done' not in message.lower():
-            self.database.store_training_data(message.lower(), self.action)
+        elif self.current_state == self.ACTION:
+            self.start_training()
+            self.current_action = message.upper()
+            self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(message.upper()), channel)
+        elif self.current_state == self.TRAIN:
+            char_no_punct = [ char for char in message if char not in self.EXCLUDE ]
+            text_no_punct = "".join(char_no_punct)
+            self.database.store_training_data(text_no_punct.lower(), self.current_action)
             self.post_message("OK, I've got it! What else?", channel)
-            
        
     # ---------------------------------------------------------------------- #
     # Websocket Events
@@ -188,6 +187,8 @@ class Jarvis:
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
         print("------------------------------------------------------")
+        self.database.print_training_data()
+        self.database.close_connection()
 
     
 class Database:
@@ -199,7 +200,7 @@ class Database:
     def open_connection(self):
         # Set up the database connection. If the database or table
         # in the database don't exist, create them. 
-        self.conn = sqlite3.connect('jarvis.db')
+        self.conn = sqlite3.connect('jarvis.db', check_same_thread=False)
         self.curr = self.conn.cursor()
         
         try:
