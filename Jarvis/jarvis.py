@@ -51,10 +51,12 @@ class Jarvis:
         self.WORKSPACE_URL    = WORKSPACE_URL
         self.POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
         
+        # Jarvis database
+        self.database = Database()
+        
         # Jarvis settings
-        self.currentState = self.IDLE      # Starting state for Jarvis
-        self.database     = Database()     # Database containing training data
-        self.display_mode = display_mode   # Display Slack messages to console (on/off)
+        self.current_state  = self.IDLE     # Starting state for Jarvis
+        self.display_mode   = display_mode  # Display Slack messages to console (on/off)
         
         # Websocket settings
         websocket.enableTrace(debug_mode)  # Debug mode for troubleshooting (on/off)
@@ -78,30 +80,33 @@ class Jarvis:
 
     def start_training(self):
         # Start training mode.
-        self.currentState = self.TRAIN
+        self.current_state = self.TRAIN
 
     def stop_training(self):
         # Stop training and switch to idle mode.
-        self.currentState = self.IDLE
+        self.current_state = self.IDLE
         
     # ---------------------------------------------------------------------- #
     # Message Processing     
     
     def process_message(self, message):
+        # Process incoming message and perform any actions in response.
+        # -------------------------------------------------------------
         # Load message into a dictionary.
         message = json.loads(message)
         
         # Send confirmation to Slack that the message was received.
         self.send_message_confirmation(message)
         
-        # Process the message and perform necessary actions.
+        # Perform actions
         if 'payload' in message:
-            channel = message['payload']['event']['channel']
-            msg_txt = message['payload']['event']['text']
-        
-            # Message Actions
-            self.display_message(msg_txt)
-            self.determine_mode(msg_txt, channel)
+            channel  = message['payload']['event']['channel']
+            msg_text = message['payload']['event']['text'   ]
+            
+            # Make sure message isn't from Jarvis.
+            if 'bot_profile' not in message['payload']['event']:
+                self.display_message(msg_text)
+                self.set_mode(msg_text, channel)
     
     def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
@@ -128,17 +133,15 @@ class Jarvis:
         # Send the message to the Slack workspace.
         requests.post(self.POST_MESSAGE_URL, data=message, headers=self.POST_AUTH)
         
-    def determine_mode(self, message, channel):
-        # Training mode start
-        if "training time" in message.lower():
+    def set_mode(self, message, channel):
+        # Set the mode if message entered calls for the mode to be set.
+        if 'training time' in message.lower():
             self.start_training()
-            self.post_message("OK, I'm ready for training.  What NAME should this ACTION be?", channel)
-            
-        # Training mode end
-        if "done" in message.lower():
+            self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
+        elif 'done' in message.lower():
             self.stop_training()
-            self.post_message("I'm finished training", channel)
-
+            self.post_message("OK, I'm finished training.", channel)
+       
     # ---------------------------------------------------------------------- #
     # Websocket Events
 
