@@ -51,6 +51,7 @@ class Jarvis:
         self.WORKSPACE_AUTH = WORKSPACE_AUTH
         self.POST_AUTH      = POST_AUTH
         
+        # Set of characters to exclude when uploading txt to database
         self.EXCLUDE = set(punctuation)
         
         # Jarvis urls
@@ -154,7 +155,7 @@ class Jarvis:
             self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(message.upper()), channel)
         elif self.current_state == self.TRAIN:
             char_no_punct = [ char for char in message if char not in self.EXCLUDE ]
-            text_no_punct = "".join(char_no_punct)
+            text_no_punct = "".join(char_no_punct) # Same as message without punctuation
             self.database.store_training_data(text_no_punct.lower(), self.current_action)
             self.post_message("OK, I've got it! What else?", channel)
        
