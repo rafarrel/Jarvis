@@ -152,6 +152,7 @@ class Jarvis:
             self.current_action = message
             self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(message), channel)
         elif self.current_state == self.TRAIN:
+            self.database.store_training_data(message, self.current_action)
             self.post_message("OK, I've got it! What else?", channel)
        
     # ---------------------------------------------------------------------- #
@@ -183,6 +184,7 @@ class Jarvis:
         print("------------------------------------------------------")
         print("| Jarvis disconnected - See ya later alligator :)    |") 
         print("------------------------------------------------------")
+        self.database.print_training_data()
 
     
 class Database:
@@ -194,7 +196,7 @@ class Database:
     def open_connection(self):
         # Set up the database connection. If the database or table
         # in the database don't exist, create them. 
-        self.conn = sqlite3.connect('jarvis.db')
+        self.conn = sqlite3.connect('jarvis.db', check_same_thread=False)
         self.curr = self.conn.cursor()
         
         try:
@@ -244,4 +246,4 @@ if __name__ == '__main__':
     # Initiate Jarvis
     jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
                     debug_mode   = False, 
-                    display_mode = True)
+                    display_mode = False)
