@@ -16,9 +16,9 @@
 """
 # Database management
 import sqlite3
-from sqlite3.dbapi2 import connect
 
 # Slack interaction
+import json
 import requests
 import websocket
 try:
@@ -26,42 +26,174 @@ try:
 except ImportError:
     import _thread as thread
 
-# Slack connection token
+# Slack connection tokens
 from botsettings import API_TOKEN
+from botsettings import APP_TOKEN
 
 
-# ----------------------------------------------------------------------
-# NOTE: ALL CODE BELOW THIS POINT IS A ROUGH DRAFT SKELETON/OUTLINE AND
-# IS SUBJECT TO CHANGE. THIS IS JUST TO PROVIDE A STARTING POINT FOR OUR
-# DESIGN.
-# ----------------------------------------------------------------------
+# -------------------------------------------------------------------- #
+# Any definitions for Jarvis go here and will be called in the main    #
+# section below. Essentially, all Jarvis logic will be written here    #
+# and called down below in the main section.                           #
+# -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
-    def __init__(self):
-        self.currentState = 'Idle'
+    def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display_mode=False):
+        # Jarvis states
+        self.IDLE  = 0
+        self.TRAIN = 1
+        
+        # Current action for Jarvis for training
+        # Set to 'None' when not in training mode
+        self.action = 'None'
+        
+        # Jarvis authorization headers
+        self.WORKSPACE_AUTH = WORKSPACE_AUTH
+        self.POST_AUTH      = POST_AUTH
+        
+        # Jarvis urls
+        self.WORKSPACE_URL    = WORKSPACE_URL
+        self.POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
+        
+        # Jarvis database
+        self.database = Database()
+        
+        # Jarvis settings
+        self.current_state  = self.IDLE     # Starting state for Jarvis
+        self.display_mode   = display_mode  # Display Slack messages to console (on/off)
+        
+        # Websocket settings
+        websocket.enableTrace(debug_mode)  # Debug mode for troubleshooting (on/off)
+        
+        # Start websocket to connect Jarvis to the Slack workspace.
+        self.connection = websocket.WebSocketApp(self.WORKSPACE_URL,
+                                             on_message = self.on_message,
+                                             on_error   = self.on_error,
+                                             on_open    = self.on_open,
+                                             on_close   = self.on_close)
+        
+        # Run Jarvis
+        self.connection.run_forever()
+        
+    def __del__(self):
+        # Clean up when Jarvis is finished.
+        self.database.close_connection()
+
+    # ---------------------------------------------------------------------- #
+    # Jarvis States
 
     def start_training(self):
-        self.currentState = 'Training'
+        # Start training mode.
+        self.current_state = self.TRAIN
 
     def stop_training(self):
-        self.currentState = 'Idle'
+        # Stop training and switch to idle mode.
+        self.current_state = self.IDLE
+        
+    # ---------------------------------------------------------------------- #
+    # Message Processing     
+    
+    def process_message(self, message):
+        # Process incoming message and perform any actions in response.
+        # -------------------------------------------------------------
+        # Load message into a dictionary.
+        message = json.loads(message)
+        
+        # Send confirmation to Slack that the message was received.
+        self.send_message_confirmation(message)
+        
+        # Perform actions
+        if 'payload' in message:
+            channel  = message['payload']['event']['channel']
+            msg_text = message['payload']['event']['text'   ]
+            
+            # Make sure message isn't from Jarvis.
+            if 'bot_profile' not in message['payload']['event']:
+                self.display_message(msg_text)
+                if self.current_state == self.TRAIN:
+                    self.in_training_mode(msg_txt, channel)
+                self.set_mode(msg_text, channel)
+                
+    def send_message_confirmation(self, message):
+        # Send a response message to Slack to confirm that the incoming 
+        # message was received.
+        if 'envelope_id' in message:
+            response = {'envelope_id': message['envelope_id']}
+            self.connection.send(str.encode(json.dumps(response)))
+    
+    def display_message(self, message):
+        # Display received message from Slack.
+        if self.display_mode:
+            print('--------------------------')
+            print('New Message:')
+            print(message)
+            print('--------------------------')
+            
+    def post_message(self, message, channel):
+        # Send messages back to the Slack repo
+        # ------------------------------------
+        # Message payload
+        message = {'channel': channel,
+                   'text'   : message}
+        
+        # Send the message to the Slack workspace.
+        requests.post(self.POST_MESSAGE_URL, data=message, headers=self.POST_AUTH)
+        
+    def set_mode(self, message, channel):
+        # Set the mode if message entered calls for the mode to be set.
+        if 'training time' in message.lower():
+            self.start_training()
+            self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
+        elif 'done' in message.lower():
+            self.stop_training()
+            self.post_message("OK, I'm finished training.", channel)
+            self.action = 'None'
+            
+    def in_training_mode(self, message, channel):
+        # Check if action still needs to be defined
+        if self.action == 'None':
+            self.action == message.upper()
+            self.post_message("OK, let's call this action '" + message.upper() + "'. Now give me some training text!", channel)          
+        elif self.action != 'None' and 'done' not in message.lower():
+            self.database.store_training_data(message.lower(), self.action)
+            self.post_message("OK, I've got it! What else?", channel)
+            
+       
+    # ---------------------------------------------------------------------- #
+    # Websocket Events
 
-    def on_message(connection, msg):
-        pass
+    def on_message(self, message):
+        # Called when a message is received in the websocket connection. 
+        # --------------------------------------------------------------
+        # Added threading to hopefully help with messages being delayed
+        # due to having to wait for previous messages to be processed.
+        thread.start_new_thread(self.process_message, (message,))
+        
+    def on_error(self, error):
+        # Called when an error occurs in the websocket connection. This can
+        # be used for debugging purposes. To enable/disable error messages:
+        #   1) True  -> Enable
+        #   2) False -> Disable
+        if False:
+            print("ERROR ->", error)
+            
+    def on_open(self):
+        # Called when websocket connection is first established.
+        print("------------------------------------------------------")
+        print("| Connection Established - Jarvis is in the houuuse! |")
+        print("------------------------------------------------------")
 
-    def on_error(connection, error):
-        pass
+    def on_close(self):
+        # Called when websocket connection is closed.
+        print("------------------------------------------------------")
+        print("| Jarvis disconnected - See ya later alligator :)    |") 
+        print("------------------------------------------------------")
 
-    def on_close(connection):
-        pass
-
-    def on_open(connection):
-        pass
     
 class Database:
     """Class for interacting with Jarvis' database."""
     def __init__(self):
-        # Open connection to database on startup
+        # Open connection to database on startup.
         self.open_connection()
     
     def open_connection(self):
@@ -73,7 +205,7 @@ class Database:
         try:
             self.curr.execute("CREATE TABLE training_data (txt TEXT, action TEXT)")
         except sqlite3.OperationalError:
-            print('TABLE FOUND')
+            print("TABLE FOUND")
     
     def close_connection(self):
         # This should be called when Jarvis is finished running to close 
@@ -93,31 +225,28 @@ class Database:
         self.curr.execute("SELECT * FROM training_data ORDER BY action")
         for row in self.curr.fetchall():
             print(row)
-    
-# ==================================================================== #
 
-# This is run when the script is run. So for example, calling: 
-# python jarvis.py will execute this. This is where we will put all
-# the main code. Functions will be defined above and called here.
+
+# -------------------------------------------------------------------- #
+# This is the main section which is run when the script is run by      #
+# calling: "python jarvis.py." All main code will be written here,     #
+# making use of the above definitions to initialize and run Jarvis.    #
+# -------------------------------------------------------------------- #
 if __name__ == '__main__':
-    # Initiate Jarvis and open the database
-    jarvis   = Jarvis()
-    database = Database()
-
-    # Enable/Disable debugging messages for websocket:
-    #   1) Enable  -> True
-    #   2) Disable -> False
-    websocket.enableTrace(True)
-
-    # Start websocket connection
-    connection = websocket.WebSocketApp('URL_PLACEHOLDER',
-                                         on_message = jarvis.on_message,
-                                         on_error   = jarvis.on_error,
-                                         on_open    = jarvis.on_open,
-                                         on_close   = jarvis.on_close)
-
-    # Run Jarvis
-    connection.run_forever()
+    # Authorization headers to allow Jarvis to connect to the workspace. 
+    WORKSPACE_AUTH = {'Content-type' : "application/x-www-form-urlencoded",
+                      'Authorization': "Bearer " + APP_TOKEN}
     
-    # Close database when done
-    database.close_connection()
+    # Authorization headers to allow Jarvis to post messages to the workspace.
+    POST_AUTH = {'Content-type' : "application/x-www-form-urlencoded",
+                 'Authorization': "Bearer " + API_TOKEN}
+  
+    # Get workspace url from the Slack API that is compatible with the
+    # websocket protocol using the workspace authorization headers.
+    SLACK_URL     = "https://slack.com/api/apps.connections.open"
+    WORKSPACE_URL = requests.post(SLACK_URL, headers=WORKSPACE_AUTH).json()['url']
+
+    # Initiate Jarvis
+    jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
+                    debug_mode   = False, 
+                    display_mode = False)
