@@ -131,13 +131,13 @@ class Jarvis:
         # Load message into a dictionary.
         message = json.loads(message)
         channel = message['payload']['event']['channel']
-        mst_txt = message['payload']['event']['text']
+        msg_txt = message['payload']['event']['text']
         
         
         # Perform processing.
         self.display_message(message)
         self.send_message_confirmation(message)
-        self.send_message(msg_txt, channel)
+        self.process_message(msg_txt, channel)
     
     def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
