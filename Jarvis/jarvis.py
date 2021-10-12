@@ -67,7 +67,7 @@ class Jarvis:
         self.database.close_connection()
 
     # ---------------------------------------------------------------------- #
-    # Jarvis states
+    # Jarvis States
 
     def start_training(self):
         # Start training mode.
