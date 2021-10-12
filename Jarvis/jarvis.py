@@ -38,13 +38,17 @@ from botsettings import APP_TOKEN
 # -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
-    def __init__(self, workspace_url, debug_mode=False, display=False):
+    def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display=False):
         # Jarvis states
         self.IDLE  = 0
         self.TRAIN = 1
         
+        # Jarvis Authorization headers
+        self.WORKSPACE_AUTH = WORKSPACE_AUTH
+        self.POST_AUTH      = POST_AUTH
+        
         # Jarvis URLS
-        self.WORKSPACE_URL    = workspace_url
+        self.WORKSPACE_URL    = WORKSPACE_URL
         self.POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
         
         # Jarvis settings
@@ -56,7 +60,7 @@ class Jarvis:
         websocket.enableTrace(debug_mode)  # Debug mode on/off for troubleshooting
         
         # Start websocket to connect Jarvis to the Slack workspace.
-        self.connection = websocket.WebSocketApp(WORKSPACE_URL,
+        self.connection = websocket.WebSocketApp(self.WORKSPACE_URL,
                                              on_message = self.on_message,
                                              on_error   = self.on_error,
                                              on_open    = self.on_open,
@@ -105,12 +109,8 @@ class Jarvis:
         message = {'channel': channel,
                    'text'   : message}
         
-        # Authorization headers to send the message to the Slack workspace.
-        authorization = {'Content-type' : "application/x-www-form-urlencoded",
-                         'Authorization': "Bearer " + API_TOKEN}
-        
         # Send the message to the Slack workspace.
-        requests.post(self.POST_MESSAGE_URL, data=message, headers=authorization)
+        requests.post(self.POST_MESSAGE_URL, data=message, headers=self.POST_AUTH)
         
     def process_message(self, message, channel):
         # Training mode start
@@ -209,13 +209,19 @@ class Database:
 # -------------------------------------------------------------------- #
 if __name__ == '__main__':
     # Authorization headers to allow Jarvis to connect to the workspace. 
-    authorization = {'Content-type' : "application/x-www-form-urlencoded",
-                     'Authorization': "Bearer " + APP_TOKEN}
+    WORKSPACE_AUTH = {'Content-type' : "application/x-www-form-urlencoded",
+                      'Authorization': "Bearer " + APP_TOKEN}
+    
+    # Authorization headers to allow Jarvis to post messages to the workspace.
+    POST_AUTH = {'Content-type' : "application/x-www-form-urlencoded",
+                 'Authorization': "Bearer " + API_TOKEN}
   
     # Get workspace url from the Slack API that is compatible with the
-    # websocket protocol using the authentication headers.
-    SLACK_API_URL = "https://slack.com/api/apps.connections.open"
-    WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authorization).json()['url']
+    # websocket protocol using the workspace authorization headers.
+    SLACK_URL     = "https://slack.com/api/apps.connections.open"
+    WORKSPACE_URL = requests.post(SLACK_URL, headers=WORKSPACE_AUTH).json()['url']
 
     # Initiate Jarvis
-    jarvis = Jarvis(WORKSPACE_URL, debug_mode=False, display=False)
+    jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
+                    debug_mode = False, 
+                    display    = False)
