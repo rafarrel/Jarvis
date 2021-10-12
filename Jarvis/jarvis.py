@@ -116,8 +116,8 @@ class Jarvis:
                     #then the message is the user's response for what the action is for a command
                     self.post_message("OK, let's call this action '"+self.currAction+"'.  Now give me some training text!", channel)
                 #if action has been defined and the current message is not defining an action
-                if self.currAction in self.ACTIONS and isAction == False:
-                    self.database.store_training_data(message, self.currAction)
+                elif self.currAction in self.ACTIONS and len(msg_txt) > 0:
+                    self.database.store_training_data(msg_txt, self.currAction)
                     self.post_message("OK, I've got it! What else?", channel)
             
     
@@ -197,7 +197,7 @@ class Database:
     def open_connection(self):
         # Set up the database connection. If the database or table
         # in the database don't exist, create them. 
-        self.conn = sqlite3.connect('jarvis.db')
+        self.conn = sqlite3.connect('jarvis.db', check_same_thread=False)
         self.curr = self.conn.cursor()
         
         try:
