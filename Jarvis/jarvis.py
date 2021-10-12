@@ -79,7 +79,7 @@ class Jarvis:
         if 'payload' in message:
             print('--------------------------')
             print('New Message:')
-            print(message['payload']['event']['text'])
+            print(message)
             print('--------------------------')
         
     def send_message_confirmation(self, message):
@@ -88,6 +88,19 @@ class Jarvis:
         if 'envelope_id' in message:
             response = {'envelope_id': message['envelope_id']}
             self.connection.send(str.encode(json.dumps(response)))
+            
+    def send_message(self, message):
+        # Test
+        message = {'channel': 'C02GG6Z8R24',
+                   'text'   : message}
+        
+        URL = 'https://slack.com/api/chat.postMessage'
+        
+        authorization = {'Content-type' : "application/x-www-form-urlencoded",
+                         'Authorization': "Bearer " + API_TOKEN}
+        
+        requests.post(URL, data=message, headers=authorization)
+        
 
     # ---------------------------------------------------------------------- #
 
@@ -96,10 +109,12 @@ class Jarvis:
         # --------------------------------------------------------------
         # Load message into a dictionary.
         message = json.loads(message)
+        message = message['payload']['event']['text']
         
         # Perform processing.
         self.display_message(message)
         self.send_message_confirmation(message)
+        self.send_message(message)
     
     def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
