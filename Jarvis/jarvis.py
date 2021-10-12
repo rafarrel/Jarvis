@@ -107,20 +107,37 @@ class Jarvis:
         # Send the message to the Slack workspace.
         requests.post(self.SEND_MESSAGE_URL, data=message, headers=authorization)
         
+    def process_message(self, message, channel):
+        # Training mode start
+        if message.lower() == "training time":
+            self.start_training()
+            print("Jarvis says:")
+            print("OK, I'm ready for training.  What NAME should this ACTION be?")
+            self.send_message("OK, I'm ready for training.  What NAME should this ACTION be?", channel)
+            
+        # Training mode end
+        if message.lower() == "done":
+            self.stop_training()
+            print("Jarvis says:")
+            print("OK, I'm finished training")
+            self.send_message("I'm finished training", channel)
+        
 
     # ---------------------------------------------------------------------- #
 
-    def on_message(self, message):
+    def on_message(self, message, text):
         # Called when a message is received in the websocket connection. 
         # --------------------------------------------------------------
         # Load message into a dictionary.
         message = json.loads(message)
-        message = message['payload']['event']['text']
+        channel = message['payload']['event']['channel']
+        mst_txt = message['payload']['event']['text']
+        
         
         # Perform processing.
         self.display_message(message)
         self.send_message_confirmation(message)
-        self.send_message(message, 'C02GG6Z8R24')
+        self.send_message(msg_txt, channel)
     
     def on_error(self, error):
         # Called when an error occurs in the websocket connection. This can
