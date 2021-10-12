@@ -34,21 +34,21 @@ from botsettings import APP_TOKEN
 # -------------------------------------------------------------------- #
 # Any definitions for Jarvis go here and will be called in the main    #
 # section below. Essentially, all Jarvis logic will be written here    #
-# and the actual websocket connection will be established below in the # 
-# main section.                                                        #
+# and called down below in the main section.                           #
 # -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
-    def __init__(self, workspace_url):
+    def __init__(self, workspace_url, debug_mode=False):
         # Jarvis states
         self.IDLE  = 0
         self.TRAIN = 1
         
         # Jarvis URLS
         self.WORKSPACE_URL    = workspace_url
-        self.SEND_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
+        self.POST_MESSAGE_URL = 'https://slack.com/api/chat.postMessage'
         
         # Jarvis settings
+        websocket.enableTrace(debug_mode)  # Debug mode on/off for troubleshooting
         self.currentState = self.IDLE      # Starting state for Jarvis
         self.database     = Database()     # Database containing training data
         
@@ -67,6 +67,7 @@ class Jarvis:
         self.database.close_connection()
 
     # ---------------------------------------------------------------------- #
+    # Jarvis states
 
     def start_training(self):
         # Start training mode.
@@ -77,7 +78,8 @@ class Jarvis:
         self.currentState = self.IDLE
         
     # ---------------------------------------------------------------------- #
-            
+    # Message Actions        
+    
     def display_message(self, message):
         # Display received message from Slack.
         if 'payload' in message:
@@ -105,25 +107,21 @@ class Jarvis:
                          'Authorization': "Bearer " + API_TOKEN}
         
         # Send the message to the Slack workspace.
-        requests.post(self.SEND_MESSAGE_URL, data=message, headers=authorization)
+        requests.post(self.POST_MESSAGE_URL, data=message, headers=authorization)
         
     def process_message(self, message, channel):
         # Training mode start
         if "training time" in message.lower():
             self.start_training()
-            print("Jarvis says:")
-            print("OK, I'm ready for training.  What NAME should this ACTION be?")
             self.send_message("OK, I'm ready for training.  What NAME should this ACTION be?", channel)
             
         # Training mode end
         if "done" in message.lower():
             self.stop_training()
-            print("Jarvis says:")
-            print("OK, I'm finished training")
             self.send_message("I'm finished training", channel)
         
-
     # ---------------------------------------------------------------------- #
+    # Websocket Events
 
     def on_message(self, message):
         # Called when a message is received in the websocket connection. 
@@ -200,9 +198,8 @@ class Database:
 
 # -------------------------------------------------------------------- #
 # This is the main section which is run when the script is run by      #
-# calling: "python jarvis.py." All main code (initializing Jarvis,     #
-# establishing the websocket connection, etc.) will be written here,   #
-# making use of the above definitions.                                 #
+# calling: "python jarvis.py." All main code will be written here,     #
+# making use of the above definitions to initialize and run Jarvis.    #
 # -------------------------------------------------------------------- #
 if __name__ == '__main__':
     # Authorization headers to allow Jarvis to connect to the workspace. 
@@ -214,10 +211,5 @@ if __name__ == '__main__':
     SLACK_API_URL = "https://slack.com/api/apps.connections.open"
     WORKSPACE_URL = requests.post(SLACK_API_URL, headers=authorization).json()['url']
 
-    # Enable/Disable debugging messages for websocket:
-    #   1) Enable  -> True
-    #   2) Disable -> False
-    websocket.enableTrace(False)
-
     # Initiate Jarvis
-    jarvis = Jarvis(WORKSPACE_URL)
+    jarvis = Jarvis(WORKSPACE_URL, debug_mode=False)
