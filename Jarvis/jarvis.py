@@ -20,14 +20,12 @@ import sqlite3
 # Slack interaction
 import json
 import requests
+import string
 import websocket
 try:
     import thread 
 except ImportError:
     import _thread as thread
-
-# String manipulation
-from string import punctuation
 
 # Slack connection tokens
 from botsettings import API_TOKEN
@@ -50,9 +48,6 @@ class Jarvis:
         # Jarvis authorization headers
         self.WORKSPACE_AUTH = WORKSPACE_AUTH
         self.POST_AUTH      = POST_AUTH
-        
-        # Set of characters to exclude when uploading txt to database
-        self.EXCLUDE = set(punctuation)
         
         # Jarvis urls
         self.WORKSPACE_URL    = WORKSPACE_URL
@@ -110,10 +105,30 @@ class Jarvis:
             channel  = message['payload']['event']['channel']
             msg_text = message['payload']['event']['text'   ]
             
+            # Clean message 
+            msg_text = self.remove_jarvis_tag(msg_text)
+            msg_text = self.remove_punctuation(msg_text)
+            
             # Make sure message isn't from Jarvis.
             if 'bot_profile' not in message['payload']['event']:
                 self.display_message(msg_text)
                 self.set_mode(msg_text, channel)
+                
+    def remove_jarvis_tag(self, message):
+        # Remove Jarvis user ID from message
+        id_start_index = message.find('<@')
+        id_end_index   = message.find('>', id_start_index)
+        id_full_string = message[id_start_index:id_end_index+1]
+        message        = message.replace(id_full_string, '').lstrip(' ')
+            
+        return message
+    
+    def remove_punctuation(self, message):
+        # Remove punctuation from message
+        removePunc = str.maketrans({punc: None for punc in string.punctuation})
+        message    = message.translate(removePunc)
+        
+        return message
     
     def send_message_confirmation(self, message):
         # Send a response message to Slack to confirm that the incoming 
@@ -152,11 +167,9 @@ class Jarvis:
         elif self.current_state == self.ACTION:
             self.start_training()
             self.current_action = message.upper()
-            self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(message.upper()), channel)
+            self.post_message("OK, let's call this action `{}`. Now give me some training text!".format(self.current_action), channel)
         elif self.current_state == self.TRAIN:
-            char_no_punct = [ char for char in message if char not in self.EXCLUDE ]
-            text_no_punct = "".join(char_no_punct) # Same as message without punctuation
-            self.database.store_training_data(text_no_punct.lower(), self.current_action)
+            self.database.store_training_data(message.lower(), self.current_action)
             self.post_message("OK, I've got it! What else?", channel)
        
     # ---------------------------------------------------------------------- #
@@ -220,6 +233,9 @@ class Database:
         self.curr.execute("INSERT INTO training_data VALUES (?, ?)", (msg_txt, action))
         self.conn.commit()
     
+    def clear_table(self):
+        self.curr.execute("DELETE FROM training_data")
+
     def print_training_data(self):
         # This will print the message text and action (training data)
         # currently in the database, with message text of common actions
@@ -251,4 +267,4 @@ if __name__ == '__main__':
     # Initiate Jarvis
     jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
                     debug_mode   = False, 
-                    display_mode = False)
+                    display_mode = True)
