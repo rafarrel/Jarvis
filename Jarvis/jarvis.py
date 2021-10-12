@@ -38,7 +38,7 @@ from botsettings import APP_TOKEN
 # -------------------------------------------------------------------- #
 class Jarvis:
     """Class that will contain all logic for Jarvis."""
-    def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display=False):
+    def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display_mode=False):
         # Jarvis states
         self.IDLE  = 0
         self.TRAIN = 1
@@ -54,10 +54,10 @@ class Jarvis:
         # Jarvis settings
         self.currentState = self.IDLE      # Starting state for Jarvis
         self.database     = Database()     # Database containing training data
-        self.display      = display        # Display Slack messages to console on/off
+        self.display_mode = display_mode   # Display Slack messages to console (on/off)
         
         # Websocket settings
-        websocket.enableTrace(debug_mode)  # Debug mode on/off for troubleshooting
+        websocket.enableTrace(debug_mode)  # Debug mode for troubleshooting (on/off)
         
         # Start websocket to connect Jarvis to the Slack workspace.
         self.connection = websocket.WebSocketApp(self.WORKSPACE_URL,
@@ -112,7 +112,7 @@ class Jarvis:
     
     def display_message(self, message):
         # Display received message from Slack.
-        if self.display:
+        if self.display_mode:
             print('--------------------------')
             print('New Message:')
             print(message)
@@ -228,5 +228,5 @@ if __name__ == '__main__':
 
     # Initiate Jarvis
     jarvis = Jarvis(WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, 
-                    debug_mode = False, 
-                    display    = False)
+                    debug_mode   = False, 
+                    display_mode = False)
