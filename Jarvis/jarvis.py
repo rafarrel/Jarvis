@@ -16,6 +16,8 @@
 """
 # Database management
 import sqlite3
+import pandas as pd
+
 
 # Slack interaction
 import json
@@ -235,7 +237,15 @@ class Database:
     
     def clear_table(self):
         self.curr.execute("DELETE FROM training_data")
+        self.conn.commit()
     
+    def add_batch_data(self, df):
+        # This will add large amounts of data to the training data at once.
+        # Data must be a pandas dataframe.
+        df.to_sql(name='training_data',con=self.conn,if_exists='append',index=False)
+        self.conn.commit()
+        print("{} rows inserted into training data".format(df.size))
+        
     def print_training_data(self):
         # This will print the message text and action (training data)
         # currently in the database, with message text of common actions
