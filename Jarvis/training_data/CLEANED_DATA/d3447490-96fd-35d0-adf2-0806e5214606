@@ -1,0 +1,42 @@
+how late is it?,TIME
+"hey, what's new with you?",GREET
+good afternoon,GREET
+what is the time now?,TIME
+what is it like outside,WEATHER
+what time of day is it?,TIME
+tell me the weather right now,WEATHER
+what time is it?,TIME
+can you please order a small pepperoni with cheese please,PIZZA
+please make me laugh,JOKE
+is it nice outside?,WEATHER
+what is the time?,TIME
+I would like a large pepperoni please,PIZZA
+what's the time,GREET
+tell me something funny,JOKE
+what's the current time?,TIME
+what is the temperature?,WEATHER
+please order a pizza,PIZZA
+is it sunny?,WEATHER
+small cheese for me,PIZZA
+please tell me some jokes,JOKE
+what is something funny that you heard lately,JOKE
+tell me the current weather,WEATHER
+have you heard any good jokes lately?,JOKE
+hello,GREET
+please get some pizza for me,PIZZA
+hi,GREET
+pick up the phone and get me some pizza,PIZZA
+what is the weather right ow?,WEATHER
+is it snowing?,WEATHER
+good morning,GREET
+place an order of pizza for me,PIZZA
+what's up?,TIME
+is it raining?,WEATHER
+what is the hour?,TIME
+how's it going?,GREET
+share a joke with me,JOKE
+tell me a joke,JOKE
+nice to meet you,GREET
+I want to hear a joke,JOKE
+do you know the hour?,TIME
+do you know of any jokes?,JOKE

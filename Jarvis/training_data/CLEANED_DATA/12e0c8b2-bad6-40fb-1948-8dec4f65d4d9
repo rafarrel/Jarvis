@@ -1,0 +1,45 @@
+What time is it?,TIME
+How have things been these days?,GREET
+I want a pizza for here.,PIZZA
+What about giving us a joke?,JOKE
+How are you?,GREET
+Is it hot now?,WEATHER
+How is it going?,GREET
+Can I order a pizza for delivery?,PIZZA
+May I ask the time?,TIME
+How do you do?,GREET
+Why don’t you tell a joke to have fun?,JOKE
+Is it cloudy now?,WEATHER
+What’s the weather like now?,WEATHER
+What temperature is it now?,WEATHER
+"I’m after a pizza, please.",PIZZA
+What’s the joke for today?,JOKE
+How’s the weather now?,WEATHER
+What time have you got?,TIME
+Can you tell me what time it is?,TIME
+Pan pizza is my cup of tea.,PIZZA
+I like fruit on my pizza.,PIZZA
+Have you got the time?,TIME
+What time is it?,TIME
+Is it raining now?,WEATHER
+"Tell me a joke, please.",JOKE
+Would you mind telling a joke?,JOKE
+Merry Christmas!,GREET
+Which kind do you want?,PIZZA
+How is your study?,GREET
+How have you been?,GREET
+What time is it?,TIME
+"What is the correct time, please?",TIME
+How about the weather now?,WEATHER
+What size would you like?,PIZZA
+Why not tell a joke?,JOKE
+What time is it?,TIME
+Can you give us a joke to entertain us?,JOKE
+How about telling a joke?,JOKE
+Will you please tell a joke now?,JOKE
+A small pizza is enough.,PIZZA
+Can you tell me a joke?,JOKE
+How do you feel today?,GREET
+"I would like thin crust, please.",PIZZA
+Could you tell me the time?,TIME
+Is it snowing now?,WEATHER

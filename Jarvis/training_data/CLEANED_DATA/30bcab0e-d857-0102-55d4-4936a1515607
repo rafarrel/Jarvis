@@ -1,0 +1,37 @@
+good morning,GREET
+"order a pizza for me, jarvis",PIZZA
+what time is it?,TIME
+good evening,GREET
+can you tell me the weather here,WEATHER
+is it sunny,WEATHER
+good afternoon,GREET
+what's the temperature,WEATHER
+hi jarvis,GREET
+can i have the time?,TIME
+do you have any jokes?,JOKE
+what is the weather?,WEATHER
+can you tell me the time,TIME
+greetings,GREET
+please give me the time,TIME
+what is the time?,TIME
+"tell me the time, please",TIME
+do you know any jokes?,JOKE
+is it raining out?,WEATHER
+tell me something funny,JOKE
+"i will take a pizza, please",PIZZA
+can you tell me a joke?,JOKE
+hey,GREET
+can i get a bbq chicken pizza?,PIZZA
+hello,GREET
+"jarvis, what time is it now",TIME
+hello my best chatbot friend,GREET
+how are you?,GREET
+how does it look outside?,WEATHER
+what is the weather like?,WEATHER
+"jarvis, order me a pizza please",PIZZA
+do you understand human humor?,JOKE
+"order me a pizza, please",PIZZA
+"can you tell me the time, please",TIME
+i want to laugh,JOKE
+what is the time right now,TIME
+get a cheese pizza for me,PIZZA

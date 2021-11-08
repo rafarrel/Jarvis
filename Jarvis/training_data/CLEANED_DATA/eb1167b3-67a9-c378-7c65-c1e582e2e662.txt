@@ -1,0 +1,40 @@
+start your watch!,TIME
+hey man!,GREET
+when?,TIME
+how is it going?,GREET
+I need a new funny joke,JOKE
+"Jarvis, pull up the weather report",WEATHER
+at what time exactly?,TIME
+In the past or future?,TIME
+its good to see you again,GREET
+why did the chicken cross the road?,JOKE
+the pizza cost me $19.95,PIZZA
+whats the temperature,WEATHER
+What do you call a penguin that fell down the stairs?,JOKE
+i need to be put in a better mood,JOKE
+Whats cracking?,GREET
+what is the chance it will rain today?,WEATHER
+get me pizza,PIZZA
+It was so hot out at the beach today!,WEATHER
+Long time no see,GREET
+my alarm is set for 7:49 a.m.,TIME
+at what hour,TIME
+"I was born 1995, in September",TIME
+how close is that hurricane?,WEATHER
+what time is it,TIME
+Do i need to wear a raincoat or is it sunny outside?,WEATHER
+is the pizza ready yet?,PIZZA
+tell me a good joke,JOKE
+pull up that pizza recipe,PIZZA
+what going on!,GREET
+can I get a slice of that?,PIZZA
+I need to work on my comedic presence,JOKE
+what toppings do you like?,PIZZA
+what's up?,GREET
+is it a nice day or a bad day outside?,WEATHER
+can you tell me the time right now?,TIME
+whats new?,GREET
+Good morning!,GREET
+can you make me laugh,JOKE
+why was six afraid of seven?,JOKE
+whats the wind chill today?,WEATHER
