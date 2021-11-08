@@ -1,0 +1,40 @@
+Is it raining now?,WEATHER
+Hi,GREET
+Good morning!,GREET
+One pizza to go,PIZZA
+What's the weather like out there?,WEATHER
+Do you have the time?,TIME
+I want a pizza with extra cheese!,PIZZA
+Could you tell me the weather today?,WEATHER
+Do you know the time?,TIME
+Could you tell me some jokes?,JOKE
+How’s the weather today?,WEATHER
+Good evening!,GREET
+Anyone here want pizza?,PIZZA
+How's your day?,GREET
+A pizza for here,PIZZA
+"Could I have a cheese pizza, please?",PIZZA
+A joke please,JOKE
+Show me a joke!,JOKE
+I really need a joke,JOKE
+Can you tell me the time right now?,TIME
+What jokes do you have?,JOKE
+One large pepperoni pizza please,PIZZA
+I would like a pizza with ham and pineapple,PIZZA
+Hello Jarvis,GREET
+What's the temperature?,WEATHER
+Get some pizza for me,PIZZA
+Is it cold today?,WEATHER
+Good afternoon!,GREET
+How are you doing today?,GREET
+How's everything?,GREET
+Could you give me the time?,TIME
+Could I bother you for the time?,TIME
+Could you tell me what time it is?,TIME
+Do you know any joke?,JOKE
+Pizza time!,PIZZA
+Is it sunny outside?,WEATHER
+How's it going?,GREET
+What’s the weather forecast today?,WEATHER
+Nice to see you,GREET
+Do you know what time it is?,TIME

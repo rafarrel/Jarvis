@@ -1,0 +1,34 @@
+The joke is funny.,JOKE
+How is it going?,GREET
+Hello.,GREET
+Pepperoni pizza is very salty.,PIZZA
+what time is it now?,TIME
+eating the pizza,PIZZA
+time is money.,TIME
+How's the weather in Boston?,WEATHER
+Was that a joke?,JOKE
+Long time no see.,GREET
+"Great weather, isn't it?",WEATHER
+domino's pizza is delicious.,PIZZA
+tell a joke.,JOKE
+"If you can’t convince them, confuse them.",JOKE
+It's been a long time,TIME
+what's up?,GREET
+Take your time.,TIME
+How’s everything?,GREET
+The weather has improved.,WEATHER
+It is cold today.,WEATHER
+weahter is good!,WEATHER
+Why don't we order pizza?,PIZZA
+I could go for a nice hot pizza right now.,PIZZA
+Do not argue with an idiot. He will drag you down to his level and beat you with experience.,JOKE
+Tom ate the whole pizza by himself.,PIZZA
+Let's greet our guests.,GREET
+What's your favorite pizza topping?,PIZZA
+I like BBQ chicken pizza.,PIZZA
+how are you?,GREET
+It is raining outside.,WEATHER
+Have a good time.,TIME
+You had plenty of time.,TIME
+I need more time,TIME
+I'm used to this cold weather.,WEATHER

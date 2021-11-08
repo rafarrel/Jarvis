@@ -1,0 +1,42 @@
+{"TXT": "pizza has pepperoni!", "ACTION": "PIZZA"}
+{"TXT": "What is there to eat?", "ACTION": "PIZZA"}
+{"TXT": "Hello!", "ACTION": "GREET"}
+{"TXT": "is there snow on the ground?", "ACTION": "WEATHER"}
+{"TXT": "You make me laugh", "ACTION": "JOKE"}
+{"TXT": "it is good to finally meet you!", "ACTION": "GREET"}
+{"TXT": "It is good to see you!", "ACTION": "GREET"}
+{"TXT": "what time is it?", "ACTION": "TIME"}
+{"TXT": "What is the time of day?", "ACTION": "TIME"}
+{"TXT": "It seems really gray out", "ACTION": "WEATHER"}
+{"TXT": "what is the time?", "ACTION": "TIME"}
+{"TXT": "haha! laughing at jokes is fun!", "ACTION": "JOKE"}
+{"TXT": "is it cold outside?", "ACTION": "WEATHER"}
+{"TXT": "how are you?", "ACTION": "GREET"}
+{"TXT": "how have you been doing?", "ACTION": "GREET"}
+{"TXT": "is it clear out?", "ACTION": "WEATHER"}
+{"TXT": "is the sky cloudy?", "ACTION": "WEATHER"}
+{"TXT": "when is the food arriving?", "ACTION": "PIZZA"}
+{"TXT": "knock knock!", "ACTION": "JOKE"}
+{"TXT": "do I need a jacket?", "ACTION": "WEATHER"}
+{"TXT": "can you order some food?", "ACTION": "PIZZA"}
+{"TXT": "some jokes are funny!", "ACTION": "JOKE"}
+{"TXT": "where are we eating?", "ACTION": "PIZZA"}
+{"TXT": "I hope the pizza has extra cheese!", "ACTION": "PIZZA"}
+{"TXT": "what clothes should I wear?", "ACTION": "WEATHER"}
+{"TXT": "Hi Jarvis!", "ACTION": "GREET"}
+{"TXT": "is it hot out?", "ACTION": "WEATHER"}
+{"TXT": "is it raining?", "ACTION": "WEATHER"}
+{"TXT": "It is so nice and bright outside", "ACTION": "WEATHER"}
+{"TXT": "Goodbye! it has been good to meet you!", "ACTION": "GREET"}
+{"TXT": "i am really hungry", "ACTION": "PIZZA"}
+{"TXT": "A man walked into a bar, ouch", "ACTION": "JOKE"}
+{"TXT": "How are you doing?", "ACTION": "GREET"}
+{"TXT": "I laugh when when you tell jokes!", "ACTION": "JOKE"}
+{"TXT": "when is the meeting?", "ACTION": "TIME"}
+{"TXT": "what kind of food do you want to eat?", "ACTION": "PIZZA"}
+{"TXT": "What have you been up to?", "ACTION": "GREET"}
+{"TXT": "is it the afternoon already?", "ACTION": "TIME"}
+{"TXT": "It feels really late in the day", "ACTION": "TIME"}
+{"TXT": "what time of day is it?", "ACTION": "TIME"}
+{"TXT": "should we have chicago or new york style pizza?", "ACTION": "PIZZA"}
+{"TXT": "Ha! that is really funny", "ACTION": "JOKE"}

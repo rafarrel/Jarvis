@@ -1,0 +1,36 @@
+i want pizza,PIZZA
+tell me a joke,JOKE
+hello,GREET
+is it cold out?,WEATHER
+get a pizza for me,PIZZA
+hi jarvis,GREET
+hey there,GREET
+i could use a laugh,JOKE
+good afternoon,GREET
+good morning,GREET
+order a pizza for me,PIZZA
+tell me what time it is,TIME
+is it nice out?,WEATHER
+what is the weather,WEATHER
+good evening,GREET
+hello jarvis,GREET
+make me laugh,JOKE
+i want a pizza with cheese and pepperoni,PIZZA
+could you tell me the time right now?,TIME
+what hour is it?,TIME
+what are the weather predictions,WEATHER
+do you know any jokes?,JOKE
+what is the time?,TIME
+tell me something witty,JOKE
+i would like to hear a joke,JOKE
+is it raining or sunny?,WEATHER
+i would like to know the time.,TIME
+i'd like a pizza!,PIZZA
+what is the weather prediction,WEATHER
+what's the forecast,WEATHER
+what's the time?,TIME
+howdy,GREET
+what part of the day is it?,TIME
+how are you?,GREET
+what's the temperature outside?,WEATHER
+i'm hungry for a pizza,PIZZA

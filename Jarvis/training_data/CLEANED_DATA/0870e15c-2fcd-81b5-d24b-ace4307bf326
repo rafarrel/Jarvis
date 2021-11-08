@@ -1,0 +1,42 @@
+Is it cold outside?,WEATHER
+Yo,GREET
+Get a pizza with pepperoni and sausage,PIZZA
+What’s the weather like today?,WEATHER
+let’s hear a joke,JOKE
+Hi,GREET
+What’s the temperature?,WEATHER
+Good morning,GREET
+Let’s order some pizza,PIZZA
+"Jarvis, get ten pizzas",PIZZA
+I’m hungry for pizza,PIZZA
+How’s it going,GREET
+Get a pizza here by 8.,PIZZA
+What’s going on?,GREET
+order 20 pizzas for scraps,PIZZA
+what up,GREET
+What’s up,GREET
+Hello,GREET
+Hey.,GREET
+When is it?,TIME
+let’s hear a good one.,JOKE
+tell us a zinger,JOKE
+Get some pizza here,PIZZA
+Any idea what time it is?,TIME
+Is it cloudy?,WEATHER
+Order some pizza,PIZZA
+Tell me a joke.,JOKE
+Could you order some pizza?,PIZZA
+Could you tell me the time?,TIME
+How’s your day going?,GREET
+What time is it?,TIME
+Do you know any good jokes?,JOKE
+Can you tell me the time,TIME
+What time do you have?,TIME
+Will it snow tonight?,WEATHER
+Do you have the time?,TIME
+Tell me something funny,JOKE
+Please order a pizza.,PIZZA
+Can you get a pizza delivered,PIZZA
+Is it hot outside today?,WEATHER
+Do I need an umbrella?,WEATHER
+Tell us a knock-knock joke.,JOKE

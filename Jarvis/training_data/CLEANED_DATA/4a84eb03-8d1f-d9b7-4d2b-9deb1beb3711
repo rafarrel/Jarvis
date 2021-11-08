@@ -1,0 +1,38 @@
+get pizza,PIZZA
+"Nice to meet you, I'm    what is your name?",GREET
+order me a pizza,PIZZA
+what is your purpose?,GREET
+what's the temperature?,WEATHER
+I want pizza,PIZZA
+will it be cold today?,WEATHER
+what does the clock say?,TIME
+weather,WEATHER
+what's it look like outside?,WEATHER
+any precipitation this morning?,WEATHER
+what time is it?,TIME
+time?,TIME
+is it raining?,WEATHER
+"Hello, Jarvis",GREET
+be hilarious,JOKE
+humor me,JOKE
+what time it be?,TIME
+I am hungry,PIZZA
+Hi,GREET
+say something funny,JOKE
+let's see your wit,JOKE
+What's up?,GREET
+is it cloudy?,WEATHER
+pizza,PIZZA
+tell me a joke please,JOKE
+what hour is it?,TIME
+I would really like something to eat,PIZZA
+I want lunch,PIZZA
+weather?,WEATHER
+I'm sad,JOKE
+How are you?,GREET
+cheer me up,JOKE
+Good to see you!,GREET
+what time?,TIME
+It is a fine day. How are you getting on?,GREET
+who are you?,GREET
+what time do you have?,TIME

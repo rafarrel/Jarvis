@@ -1,0 +1,40 @@
+I need the time,TIME
+"forecast please, jarvis",WEATHER
+I'd like a pizza for take-out,PIZZA
+what's the forecast?,WEATHER
+How warm will it be?,WEATHER
+What's the weather today?,WEATHER
+"Jarvis, what's the time?",TIME
+Tell me a joke,JOKE
+What's it like outside?,WEATHER
+What's the temperature?,WEATHER
+I need a laugh,JOKE
+can you tell me the time?,TIME
+"Jarvis, order me a pizza",PIZZA
+weather please,WEATHER
+How late is it?,TIME
+"Jarvis, do you know the time?",TIME
+I'm going to need takeout,PIZZA
+Good morning,GREET
+Good to see you jarvis,GREET
+I'd like to order a pizza,PIZZA
+Well hello jarvis,GREET
+time please,TIME
+good afternoon,GREET
+"Hi, jarvis",GREET
+"Make me laugh, jarvis",JOKE
+Hey jarvis,GREET
+cheer me up jarvis,JOKE
+What time is it?,TIME
+"Jarvis, know any good jokes?",JOKE
+"Tell a joke, jarvis",JOKE
+How early is it?,TIME
+"The usual for dinner, jarvis",PIZZA
+"I'm hungry, order some food",PIZZA
+I want take-out tonight,PIZZA
+Is it raining?,WEATHER
+"jarvis, place an order for pizza",PIZZA
+Is it going to rain today?,WEATHER
+I could use a laugh,JOKE
+Hello,GREET
+Jarvis,GREET

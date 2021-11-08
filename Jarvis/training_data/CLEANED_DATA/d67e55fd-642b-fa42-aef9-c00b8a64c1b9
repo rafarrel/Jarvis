@@ -1,0 +1,43 @@
+Will I need a jacket today?,WEATHER
+What time is it?,TIME
+How cold will it be today?,WEATHER
+Is it nice outside?,WEATHER
+Will it rain today?,WEATHER
+What is the weather right now?,WEATHER
+What is the time?,TIME
+Are you there?,GREET
+Hi,GREET
+What's up?,GREET
+Are you online?,GREET
+Greetings!,GREET
+I am starving!,PIZZA
+I'm bored,JOKE
+Will I need an umbrella today?,WEATHER
+Tell me something funny!,JOKE
+Where are you?,GREET
+Make me laugh!,JOKE
+Please order some food.,PIZZA
+How early is it?,TIME
+How cold is it outside?,WEATHER
+I am feeling hungry,PIZZA
+I would like a slice of pizza,PIZZA
+Can you order some lunch?,PIZZA
+I am afraid I will be late,TIME
+Hi Jarvis!,GREET
+Have you heard any good jokes lately?,JOKE
+Entertain me,JOKE
+Do you know any jokes?,JOKE
+it is lunch time!,PIZZA
+What time do you have?,TIME
+Hello,GREET
+Time?,TIME
+What hour is it?,TIME
+Will it be sunny?,WEATHER
+Knock Knock!,JOKE
+Food?,PIZZA
+Could you cheer me up?,JOKE
+Please get some pizza,PIZZA
+Tell a joke!,JOKE
+What is the weather like today?,WEATHER
+How much will it snow today?,WEATHER
+How are you?,GREET
