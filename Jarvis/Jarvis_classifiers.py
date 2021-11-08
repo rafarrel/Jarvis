@@ -1,9 +1,6 @@
-
 # PROJECT 02 - PICKLING JARVIS
 # TEAM RED PIRANHA
 # COMPETITION 1
-
-
 
 ##############################
 #          IMPORTS           #
@@ -54,13 +51,24 @@ def performance_metrics(clf, X_test, y_test):
     plt.show()
 
 def pickled_piranha(clf, classifier_directory, filename):
-    destination = os.path.join(
-        classifier_directory, filename
-    )
-    print("\nSaving classifier...")
-    with open(destination, 'wb') as file:
-        pickle.dump(clf, file)
-    print(f"Classifier saved to {destination}\n")
+    #destination = os.path.join(
+    #    classifier_directory, filename
+    #)
+    #print("\nSaving classifier...")
+    #with open(destination, 'wb') as file:
+    #    pickle.dump(clf, file)
+    #print(f"Classifier saved to {destination}\n")
+    path = os.path.join(classifier_directory, filename)
+    path = os.path.join(path, '.pkl')
+    #classifier_directory + filename + '.pkl'
+    with open(path, 'wb') as pickle_jar:
+        pickle.dump(clf, pickle_jar)
+        
+        
+def open_pickle_jar(classifier_directory, filename):
+    path = os.path.join(classifier_directory, filename)
+    path = os.path.join(path, '.pkl')
+    return pickle.load(open(path, 'rb'))
     
 
 ##############################
@@ -77,7 +85,7 @@ one_line_list = []
 
 # Loads contents of data files into a master dictionary with key:value pairs ACTION:TXT 
 
-training_files = os.listdir(os.path.join(os.getcwd(),'data/_CLEANED_DATA'))
+training_files = os.listdir(os.path.join(os.getcwd(), 'training_data'))
 
 for file in training_files:
     filepath = os.path.join('data/_CLEANED_DATA', file)
@@ -196,8 +204,6 @@ print('***********************************************************************')
 
 
 ############################## PICKLING JARVIS ##################################
-
-
-
-
-
+pickled_piranha(nb, 'Classifiers', 'nb')
+nb_brain = open_pickle_jar('Classifiers', 'nb')
+print(nb_brain.predict(['Hello funny roboooot!']))
