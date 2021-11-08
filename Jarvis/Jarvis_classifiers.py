@@ -51,25 +51,19 @@ def performance_metrics(clf, X_test, y_test):
     disp.plot()
     plt.show()
 
-def pickled_piranha(clf, classifier_directory, filename):
-    #destination = os.path.join(
-    #    classifier_directory, filename
-    #)
-    #print("\nSaving classifier...")
-    #with open(destination, 'wb') as file:
-    #    pickle.dump(clf, file)
-    #print(f"Classifier saved to {destination}\n")
-    path = os.path.join(classifier_directory, filename)
-    path = os.path.join(path, '.pkl')
-    #classifier_directory + filename + '.pkl'
+def pickled_piranha(clf, filename):
+    #destination = os.path.join(classifier_directory, filename)
+    print("\nSaving classifier...")
+    with open(filename, 'wb') as file:
+        pickle.dump(clf, file)
+    print(f"Classifier saved to {os.getcwd()}\n")
+    path = filename + '.pkl'
     with open(path, 'wb') as pickle_jar:
         pickle.dump(clf, pickle_jar)
         
         
-def open_pickle_jar(classifier_directory, filename):
-    path = os.path.join(classifier_directory, filename)
-    path = os.path.join(path, '.pkl')
-    return pickle.load(open(path, 'rb'))
+def open_pickle_jar(filename):
+    return pickle.load(open(filename, 'rb'))
     
 
 ##############################
@@ -89,7 +83,7 @@ one_line_list = []
 training_files = os.listdir(os.path.join(os.getcwd(), 'training_data'))
 
 for file in training_files:
-    filepath = os.path.join('data/_CLEANED_DATA', file)
+    filepath = os.path.join('training_data', file)
     with open(filepath, 'r') as f:
         if 'DS_Store' not in filepath:
             for line in f:
@@ -205,9 +199,14 @@ print('***********************************************************************')
 
 
 ############################## PICKLING JARVIS ##################################
-pickled_piranha(nb, 'Classifiers', 'nb')
-nb_brain = open_pickle_jar('Classifiers', 'nb')
-print(nb_brain.predict(['Hello funny roboooot!']))
+pickled_piranha(nb, 'nb')
+nb_brain = open_pickle_jar('nb.pkl')
+
+np_test = ['Hello funny roboooot!']
+npX = vectorizer.transform(np_test)
+npX_array = npX.toarray()
+
+print(nb_brain.predict(np_test))
 
 # UNCOMMENT THIS WHEN READY TO USE!!!
 """
