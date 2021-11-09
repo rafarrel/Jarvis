@@ -53,23 +53,45 @@ def performance_metrics(clf, X_test, y_test):
     disp.plot()
     plt.show()
 
+<<<<<<< HEAD
+def pickled_piranha(clf, directory, filename):
+=======
 def pickled_piranha(clf, filename):
     #destination = os.path.join(classifier_directory, filename)
+>>>>>>> master
     vec_clf = Pipeline([('vec', CountVectorizer()),
                         ('tfidf', TfidfTransformer()),
                         ('class', clf)])
     vec_clf.fit(X_train, Y_train)
     print("\nSaving classifier...")
+<<<<<<< HEAD
+    try:
+        with open(os.path.join(os.getcwd(), directory, filename), 'wb') as file:
+            pickle.dump(vec_clf, file)
+            print(f"Classifier saved to {os.getcwd()}\n")
+    except:
+        os.mkdir(directory)
+        with open(os.path.join(os.getcwd(), directory, filename), 'wb') as file:
+            pickle.dump(vec_clf, file)
+            print(f"Classifier saved to {os.getcwd()}\n")
+    path = os.path.join(os.getcwd(), directory, filename) + '.pkl'
+=======
     with open(filename, 'wb') as file:
         pickle.dump(vec_clf, file)
     print(f"Classifier saved to {os.getcwd()}\n")
     path = filename + '.pkl'
+>>>>>>> master
     with open(path, 'wb') as pickle_jar:
         pickle.dump(vec_clf, pickle_jar)
         
         
+<<<<<<< HEAD
+def open_pickle_jar(directory, filename):   
+    return pickle.load(open(os.path.join(directory, filename), 'rb'))
+=======
 def open_pickle_jar(filename):   
     return pickle.load(open(filename, 'rb'))
+>>>>>>> master
     
 
 
@@ -206,6 +228,40 @@ print('***********************************************************************')
 
 
 ############################## PICKLING JARVIS ##################################
+<<<<<<< HEAD
+pickled_piranha(nb, 'Classifiers', 'nb')
+nb_brain = open_pickle_jar('Classifiers', 'nb.pkl')
+print(nb_brain.predict(['Hello funny roboooot!']))
+
+pickled_piranha(rfc, 'Classifiers', 'rfc')
+rfc_brain = open_pickle_jar('Classifiers', 'rfc.pkl')
+print(rfc_brain.predict(['Hello funny roboooot!']))
+
+pickled_piranha(mlp, 'Classifiers', 'mlp')
+mlp_brain = open_pickle_jar('Classifiers', 'mlp.pkl')
+print(mlp_brain.predict(['Hello funny roboooot!']))
+
+pickled_piranha(dtc, 'Classifiers', 'dtc')
+dtc_brain = open_pickle_jar('Classifiers', 'dtc.pkl')
+print(dtc_brain.predict(['Hello funny roboooot!']))
+
+pickled_piranha(svc, 'Classifiers', 'svc')
+svc_brain = open_pickle_jar('Classifiers', 'svc.pkl')
+print(svc_brain.predict(['Hello funny roboooot!']))
+
+
+################################ GRID SEARCH ####################################
+# directory = 'Classifiers'
+# classifiers = [['nb', 'nb.pkl'],['rfc', 'rfc.pkl'],['mlp', 'mlp.pkl'],['dtc', 'dtc.pkl'],['svc', 'svc.pkl']]
+
+# for classifier, filename in classifiers:
+#     model = open_pickle_jar(directory, filename)
+#     clf = RandomizedSearchCV(model, model.get_params, random_state=0)
+#     search = clf.fit(X_train)
+#     print(classifier, 'best params:')
+#     print('------------------------')
+#     print(search.best_params_)
+=======
 pickled_piranha(nb, 'nb')
 nb_brain = open_pickle_jar('nb.pkl')
 print(nb_brain.predict(['Hello funny roboooot!']))
@@ -241,3 +297,4 @@ for classifier in classifiers:
     print('------------------------')
     print(search.best_params_)
 """
+>>>>>>> master
