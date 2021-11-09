@@ -214,33 +214,37 @@ print('***********************************************************************')
 ############################## PICKLING JARVIS ##################################
 pickled_piranha(nb, 'Classifiers', 'nb')
 nb_brain = open_pickle_jar('Classifiers', 'nb.pkl')
-print(nb_brain.predict(['Hello funny roboooot!']))
+print('Classifier Predictions Yay!!!!!!')
+print('--------------------------------')
+print('nb:', nb_brain.predict(['Hello funny roboooot!']))
 
 pickled_piranha(rfc, 'Classifiers', 'rfc')
 rfc_brain = open_pickle_jar('Classifiers', 'rfc.pkl')
-print(rfc_brain.predict(['Hello funny roboooot!']))
+print('rfc:', rfc_brain.predict(['Hello funny roboooot!']))
 
 pickled_piranha(mlp, 'Classifiers', 'mlp')
 mlp_brain = open_pickle_jar('Classifiers', 'mlp.pkl')
-print(mlp_brain.predict(['Hello funny roboooot!']))
+print('mlp:', mlp_brain.predict(['Hello funny roboooot!']))
 
 pickled_piranha(dtc, 'Classifiers', 'dtc')
 dtc_brain = open_pickle_jar('Classifiers', 'dtc.pkl')
-print(dtc_brain.predict(['Hello funny roboooot!']))
+print('dtc:', dtc_brain.predict(['Hello funny roboooot!']))
 
 pickled_piranha(svc, 'Classifiers', 'svc')
 svc_brain = open_pickle_jar('Classifiers', 'svc.pkl')
-print(svc_brain.predict(['Hello funny roboooot!']))
-
+print('svc:', svc_brain.predict(['Hello funny roboooot!']))
 
 ################################ GRID SEARCH ####################################
-# directory = 'Classifiers'
-# classifiers = [['nb', 'nb.pkl'],['rfc', 'rfc.pkl'],['mlp', 'mlp.pkl'],['dtc', 'dtc.pkl'],['svc', 'svc.pkl']]
+directory = 'Classifiers'
 
-# for classifier, filename in classifiers:
-#     model = open_pickle_jar(directory, filename)
-#     clf = RandomizedSearchCV(model, model.get_params, random_state=0)
-#     search = clf.fit(X_train)
-#     print(classifier, 'best params:')
-#     print('------------------------')
-#     print(search.best_params_)
+# Add desired classifier tag and file to load from to run a parameter
+# grid search. 
+classifiers = [mlp]
+
+for classifier in classifiers:
+    clf = RandomizedSearchCV(classifier, {'solver': ['lbfgs', 'adam']}, random_state=0)
+    search = clf.fit(trainX, Y_train)
+    print()
+    print(classifier, 'best params:')
+    print('------------------------')
+    print(search.best_params_)
