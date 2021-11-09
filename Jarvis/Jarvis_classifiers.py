@@ -202,12 +202,12 @@ print('***********************************************************************')
 
 
 
-# """ K NEAREST NEIGHBORS CLASSIFIER """
-# print('************ K Nearest Neighbor Classifier Results *********************')
-# kn = KNeighborsClassifier()
-# kn.fit(trainX_array, Y_train)
-# performance_metrics(kn, testX_array, Y_test)
-# print('***********************************************************************')
+############################ KNN TREE CLASSIFIER ################################
+print('************ K Nearest Neighbor Classifier Results *********************')
+kn = KNeighborsClassifier()
+kn.fit(trainX_array, Y_train)
+performance_metrics(kn, testX_array, Y_test)
+print('***********************************************************************')
 
 
 
