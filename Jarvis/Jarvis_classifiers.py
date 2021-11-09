@@ -16,6 +16,7 @@ from sklearn import metrics
 from sklearn import ensemble
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -226,6 +227,9 @@ svc_brain = open_pickle_jar('svc.pkl')
 print(svc_brain.predict(['Hello funny roboooot!']))
 
 ################################ GRID SEARCH ####################################
+# UNCOMMENT THIS WHEN READY TO USE!!!
+"""
+classifier_directory = 'Classifiers'
 filename = 'nb.pkl'
 classifiers = ['nb']
 
@@ -236,3 +240,4 @@ for classifier in classifiers:
     print(classifier, 'best params:')
     print('------------------------')
     print(search.best_params_)
+"""
