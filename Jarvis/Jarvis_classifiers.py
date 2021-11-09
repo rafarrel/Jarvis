@@ -11,6 +11,7 @@ import re
 import json
 from string import punctuation
 import pandas as pd
+import numpy as  np
 from matplotlib import pyplot as plt
 from sklearn import metrics
 from sklearn import ensemble
@@ -53,46 +54,29 @@ def performance_metrics(clf, X_test, y_test):
     disp.plot()
     plt.show()
 
-<<<<<<< HEAD
+
 def pickled_piranha(clf, directory, filename):
-=======
-def pickled_piranha(clf, filename):
-    #destination = os.path.join(classifier_directory, filename)
->>>>>>> master
     vec_clf = Pipeline([('vec', CountVectorizer()),
                         ('tfidf', TfidfTransformer()),
                         ('class', clf)])
     vec_clf.fit(X_train, Y_train)
     print("\nSaving classifier...")
-<<<<<<< HEAD
     try:
         with open(os.path.join(os.getcwd(), directory, filename), 'wb') as file:
             pickle.dump(vec_clf, file)
-            print(f"Classifier saved to {os.getcwd()}\n")
     except:
         os.mkdir(directory)
         with open(os.path.join(os.getcwd(), directory, filename), 'wb') as file:
             pickle.dump(vec_clf, file)
-            print(f"Classifier saved to {os.getcwd()}\n")
+            
     path = os.path.join(os.getcwd(), directory, filename) + '.pkl'
-=======
-    with open(filename, 'wb') as file:
-        pickle.dump(vec_clf, file)
-    print(f"Classifier saved to {os.getcwd()}\n")
-    path = filename + '.pkl'
->>>>>>> master
     with open(path, 'wb') as pickle_jar:
         pickle.dump(vec_clf, pickle_jar)
         
         
-<<<<<<< HEAD
 def open_pickle_jar(directory, filename):   
     return pickle.load(open(os.path.join(directory, filename), 'rb'))
-=======
-def open_pickle_jar(filename):   
-    return pickle.load(open(filename, 'rb'))
->>>>>>> master
-    
+
 
 
 ##############################
@@ -217,84 +201,67 @@ performance_metrics(svc, testX_array, Y_test)
 print('***********************************************************************')
 
 
+##################### K NEAREST NEIGHBOR CLASSIFIER #############################
 
-# """ K NEAREST NEIGHBORS CLASSIFIER """
-# print('************ K Nearest Neighbor Classifier Results *********************')
-# kn = KNeighborsClassifier()
-# kn.fit(trainX_array, Y_train)
-# performance_metrics(kn, testX_array, Y_test)
-# print('***********************************************************************')
+""" K NEAREST NEIGHBORS CLASSIFIER """
+print('************ K Nearest Neighbor Classifier Results *********************')
+kn = KNeighborsClassifier()
+kn.fit(trainX_array, Y_train)
+performance_metrics(kn, testX_array, Y_test)
+print('***********************************************************************')
+
+
+
+
+################################ GRID SEARCH ####################################
+
+#UNCOMMENT ONLY WHEN NEEDED
+nb_params = {'alpha': list(np.arange(0,1,.0001)), 'fit_prior':[True, False]}
+mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'], 
+              'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
+              'shuffle': [True, False]}
+
+nb_clf = RandomizedSearchCV(nb, nb_params, random_state=0)
+search = nb_clf.fit(trainX, Y_train)
+print()
+print('nb', 'best params:')
+print('------------------')
+print(search.best_params_)
+
+mlp_clf = RandomizedSearchCV(mlp, mlp_params, random_state=None, n_jobs = -1)
+search = mlp_clf.fit(trainX, Y_train)
+print()
+print('mlp', 'best params:')
+print('------------------')
+print(search.best_params_)
+
+
+
+############### TUNED MULTINOMIAL NAIVE BAYES CLASSIFIER #########################
+
+print('********** Tuned Mulitnomial Naive Bayes Classifier Results ************')
+nb_tuned = MultinomialNB(fit_prior = True, alpha = 0.1366)
+nb_tuned.fit(trainX_array, Y_train)
+performance_metrics(nb_tuned, testX_array, Y_test)
+print('***********************************************************************')
+
+
+################# TUNED MULTI-LAYER PERCEPTRON CLASSIFIER ########################
+
+print('********** Tuned Multi-Layer Perceptron Classifier Results *************')
+mlp_tuned = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
+                          shuffle = False, learning_rate = 'adaptive', activation = 'relu')
+mlp_tuned.fit(trainX_array, Y_train)
+performance_metrics(mlp_tuned, testX_array, Y_test)
+print('***********************************************************************')
 
 
 
 ############################## PICKLING JARVIS ##################################
-<<<<<<< HEAD
-pickled_piranha(nb, 'Classifiers', 'nb')
+pickled_piranha(nb_tuned, 'Classifiers', 'nb')
 nb_brain = open_pickle_jar('Classifiers', 'nb.pkl')
-print(nb_brain.predict(['Hello funny roboooot!']))
+print('nb:', nb_brain.predict(['Hello funny roboooot!']))
 
-pickled_piranha(rfc, 'Classifiers', 'rfc')
-rfc_brain = open_pickle_jar('Classifiers', 'rfc.pkl')
-print(rfc_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(mlp, 'Classifiers', 'mlp')
+pickled_piranha(mlp_tuned, 'Classifiers', 'mlp')
 mlp_brain = open_pickle_jar('Classifiers', 'mlp.pkl')
-print(mlp_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(dtc, 'Classifiers', 'dtc')
-dtc_brain = open_pickle_jar('Classifiers', 'dtc.pkl')
-print(dtc_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(svc, 'Classifiers', 'svc')
-svc_brain = open_pickle_jar('Classifiers', 'svc.pkl')
-print(svc_brain.predict(['Hello funny roboooot!']))
-
-
-################################ GRID SEARCH ####################################
-# directory = 'Classifiers'
-# classifiers = [['nb', 'nb.pkl'],['rfc', 'rfc.pkl'],['mlp', 'mlp.pkl'],['dtc', 'dtc.pkl'],['svc', 'svc.pkl']]
-
-# for classifier, filename in classifiers:
-#     model = open_pickle_jar(directory, filename)
-#     clf = RandomizedSearchCV(model, model.get_params, random_state=0)
-#     search = clf.fit(X_train)
-#     print(classifier, 'best params:')
-#     print('------------------------')
-#     print(search.best_params_)
-=======
-pickled_piranha(nb, 'nb')
-nb_brain = open_pickle_jar('nb.pkl')
-print(nb_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(rfc, 'rfc')
-rfc_brain = open_pickle_jar('rfc.pkl')
-print(rfc_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(mlp, 'mlp')
-mlp_brain = open_pickle_jar('mlp.pkl')
-print(mlp_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(dtc, 'dtc')
-dtc_brain = open_pickle_jar('dtc.pkl')
-print(dtc_brain.predict(['Hello funny roboooot!']))
-
-pickled_piranha(svc, 'svc')
-svc_brain = open_pickle_jar('svc.pkl')
-print(svc_brain.predict(['Hello funny roboooot!']))
-
-################################ GRID SEARCH ####################################
-# UNCOMMENT THIS WHEN READY TO USE!!!
-"""
-classifier_directory = 'Classifiers'
-filename = 'nb.pkl'
-classifiers = ['nb']
-
-for classifier in classifiers:
-    model = open_pickle_jar(filename)
-    clf = RandomizedSearchCV(model, model.get_params, random_state=0)
-    search = clf.fit()
-    print(classifier, 'best params:')
-    print('------------------------')
-    print(search.best_params_)
-"""
->>>>>>> master
+print('mlp:', mlp_brain.predict(['Hello funny roboooot!']))
