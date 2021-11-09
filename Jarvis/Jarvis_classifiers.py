@@ -239,10 +239,10 @@ directory = 'Classifiers'
 
 # Add desired classifier tag and file to load from to run a parameter
 # grid search. 
-classifiers = [mlp]
+classifiers = [nb, mlp]
 
 for classifier in classifiers:
-    clf = RandomizedSearchCV(classifier, {'solver': ['lbfgs', 'adam']}, random_state=0)
+    clf = RandomizedSearchCV(classifier, classifier.get_params(), random_state=0)
     search = clf.fit(trainX, Y_train)
     print()
     print(classifier, 'best params:')
