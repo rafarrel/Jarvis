@@ -224,3 +224,15 @@ print(dtc_brain.predict(['Hello funny roboooot!']))
 pickled_piranha(svc, 'svc')
 svc_brain = open_pickle_jar('svc.pkl')
 print(svc_brain.predict(['Hello funny roboooot!']))
+
+################################ GRID SEARCH ####################################
+filename = 'nb.pkl'
+classifiers = ['nb']
+
+for classifier in classifiers:
+    model = open_pickle_jar(filename)
+    clf = RandomizedSearchCV(model, model.get_params, random_state=0)
+    search = clf.fit()
+    print(classifier, 'best params:')
+    print('------------------------')
+    print(search.best_params_)
