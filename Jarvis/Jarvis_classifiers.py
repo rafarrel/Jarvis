@@ -215,25 +215,25 @@ print('***********************************************************************')
 
 ################################ GRID SEARCH ####################################
 
-#UNCOMMENT ONLY WHEN NEEDED
-nb_params = {'alpha': list(np.arange(0,1,.0001)), 'fit_prior':[True, False]}
-mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'], 
-              'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
-              'shuffle': [True, False]}
+# UNCOMMENT ONLY WHEN NEEDED TO SAVE TIME WHEN RUNNING
+# nb_params = {'alpha': list(np.arange(0,1,.0001)), 'fit_prior':[True, False]}
+# mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'], 
+#               'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
+#               'shuffle': [True, False]}
 
-nb_clf = RandomizedSearchCV(nb, nb_params, random_state=0)
-search = nb_clf.fit(trainX, Y_train)
-print()
-print('nb', 'best params:')
-print('------------------')
-print(search.best_params_)
+# nb_clf = RandomizedSearchCV(nb, nb_params, random_state=0)
+# search = nb_clf.fit(trainX, Y_train)
+# print()
+# print('nb', 'best params:')
+# print('------------------')
+# print(search.best_params_)
 
-mlp_clf = RandomizedSearchCV(mlp, mlp_params, random_state=None, n_jobs = -1)
-search = mlp_clf.fit(trainX, Y_train)
-print()
-print('mlp', 'best params:')
-print('------------------')
-print(search.best_params_)
+# mlp_clf = RandomizedSearchCV(mlp, mlp_params, random_state=None, n_jobs = -1)
+# search = mlp_clf.fit(trainX, Y_train)
+# print()
+# print('mlp', 'best params:')
+# print('------------------')
+# print(search.best_params_)
 
 
 
