@@ -4,8 +4,8 @@ The most epic chatbot for Slack ever written (actually just a project for CS 287
 ### Our Team
 | Name          | Role                     |
 |---------------|------------------------- |
-| Alex Farrell  | Yes                      |
-| Erica Quallen | The Supplier             |
-| Kelly Turner  | The Jarvis Whisperer     |
+| Alex Farrell  | The Machine Principal    |
+| Erica Quallen | The Intern               |
+| Kelly Turner  | The Research Specialist  |
 | Ted Hadley    | The Database Wizard      |
-| Yoshi Bird    | The Law                  |
+| Yoshi Bird    | The Machine Teacher      |
