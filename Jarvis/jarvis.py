@@ -8,7 +8,9 @@
 
     ------------------------------------------------------------------
     Release notes for v.1.0:
-        - IN PROGRESS
+        - Jarvis can receive and send messages from/to Slack
+        - Jarvis can enter different modes such as training and idle
+        - Jarvis can store processed messages in a database
 
     ------------------------------------------------------------------
     This project is released as open-source under the permissive MIT 
