@@ -40,10 +40,12 @@ def performance_metrics(clf, X_test, y_test):
     print(cm)
     print("\nClassification Report:")
     print(metrics.classification_report(y_test, predictions))
+    class_report = metrics.classification_report(y_test, predictions)
     disp = metrics.ConfusionMatrixDisplay(cm)
     disp.plot()
     plt.show()
 
+    return class_report
 
 def pickled_piranha(clf, directory, filename):
     vec_clf = Pipeline([('vec', CountVectorizer()),

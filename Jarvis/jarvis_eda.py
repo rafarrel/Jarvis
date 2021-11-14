@@ -8,7 +8,7 @@
 
 import os
 import re
-import json
+import csv
 from string import punctuation
 import numpy as  np
 import pandas as pd
@@ -46,6 +46,46 @@ def load_data(directory):
                         pass
     return data
 
+
+def load_csv(directory, file):
+    data = {}
+
+    filepath = os.path.join(os.getcwd(), directory, file)
+    with open(filepath, 'r') as f:
+        csvReader = csv.reader(f)
+        for row in csvReader:
+            if 'TXT' not in row:
+                data[row[0]] = row[1]
+            else:
+                pass
+    
+    return data
+            
+
+def run_mlp(train_X, test_X, train_Y, test_Y):
+    mlp = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
+                          shuffle = False, learning_rate = 'adaptive', activation = 'relu')
+    mlp.fit(train_X, train_Y)
+    pm = performance_metrics(mlp, test_X, test_Y)
+
+    return pm
+    
+def vectorize_data(X, Y):
+    vectorizer = CountVectorizer()
+    jarvis_vectorizer = vectorizer.fit_transform(X)
+    jarvis_array = jarvis_vectorizer.toarray()
+    jarvis_words = vectorizer.get_feature_names()
+    
+    # Split data into training and testing subsets
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
+    
+    # Fitting Vectorizer to training and testing data, then sending to an array 
+    trainX_vec = vectorizer.fit_transform(X_train)
+    trainX_array = trainX_vec.toarray()
+    testX_vec = vectorizer.transform(X_test)
+    testX_array = testX_vec.toarray()
+    
+    return trainX_array, testX_array, Y_train, Y_test
     
 ##############################
 #         MAIN CODE          #
@@ -54,7 +94,9 @@ def load_data(directory):
 #load dictionaries of original (provided) and cleaned external training data
 original_data = load_data('original_data')
 cleaned_data = load_data('training_data')
-pr01_data = load_data('PR01_data')
+pr01_data = load_csv('PR01_data', 'pr01_data.csv')
+combined_data = {**cleaned_data, **pr01_data}
+
 
 #calculate counts of each ACTION
 original_counts = Counter(original_data.values())
@@ -62,39 +104,22 @@ cleaned_counts = Counter(cleaned_data.values())
 
 #get lists of keys and values for original data
 origX, origY = map(list, zip(*original_data.items()))
+pr01X, pr01Y = map(list, zip(*pr01_data.items()))
+combinedX, combinedY = map(list, zip(*combined_data.items()))
 
 
-#vectorize original data
-vectorizer = CountVectorizer()
-jarvis_vectorizer = vectorizer.fit_transform(origX)
-jarvis_array = jarvis_vectorizer.toarray()
-jarvis_words = vectorizer.get_feature_names()
-
-# Split data into training and testing subsets
-origX_train, origX_test, origY_train, origY_test = train_test_split(origX, origY)
-
-# Fitting Vectorizer to training and testing data, then sending to an array 
-trainX_orig = vectorizer.fit_transform(origX_train)
-origtrainX_array = trainX_orig.toarray()
-testX_orig = vectorizer.transform(origX_test)
-origtestX_array = testX_orig.toarray()
+#vectorize data
+origtrainX, origtestX, origYtrain, origYtest = vectorize_data(origX, origY)
+pr01trainX, pr01testX, pr01Ytrain, pr01Ytest = vectorize_data(pr01X, pr01Y)
+combinedtrainX, combinedtestX, combinedYtrain, combinedYtest = vectorize_data(combinedX, combinedY)
 
 
-#MLP for original data
-print('********** Original Multi-Layer Perceptron Classifier Results *************')
-mlp_orig = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
-                          shuffle = False, learning_rate = 'adaptive', activation = 'relu')
-mlp_orig.fit(origtrainX_array, origY_train)
-performance_metrics(mlp_orig, origtestX_array, origY_test)
-print('***********************************************************************')
+#run MLP
+run_mlp(origtrainX, origtestX, origYtrain, origYtest)
+run_mlp(trainX_array, testX_array, Y_train, Y_test)
+run_mlp(pr01trainX, pr01testX, pr01Ytrain, pr01Ytest)
+run_mlp(combinedtrainX, combinedtestX, combinedYtrain, combinedYtest)
 
-#MLP for cleaned data
-print('********** Cleaned Multi-Layer Perceptron Classifier Results *************')
-mlp_clean = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
-                          shuffle = False, learning_rate = 'adaptive', activation = 'relu')
-mlp_clean.fit(trainX_array, Y_train)
-performance_metrics(mlp_clean, testX_array, Y_test)
-print('***********************************************************************')
 
 
 
