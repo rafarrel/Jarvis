@@ -1,0 +1,37 @@
+time please,GREET
+Hi!,WEATHER
+It's a beautiful day for a walk,GREET
+a small 6'' vegetarian pizza please,GREET
+a large 14'' beef green pepper please,TIME
+what's it like outside,GREET
+order a pizza for me,JOKE
+what's the forecast today?,PIZZA
+Is it hot today?,GREET
+tell me a joke,JOKE
+what's your favorite joke?,PIZZA
+what joke do you know?,TIME
+greetings!,WEATHER
+joke time!,TIME
+I would like a chicken BBQ pizza,JOKE
+joke me,JOKE
+How's the weather today,PIZZA
+show me the time,GREET
+what's the time now,JOKE
+Hey!,PIZZA
+Hello!,TIME
+Is it cold outside?,WEATHER
+"a joke, please",TIME
+Feeling good today?,WEATHER
+Is it 9 AM now?,GREET
+it's rainy,TIME
+good to see you jarvis,PIZZA
+what time is it?,PIZZA
+good day,WEATHER
+How are you today?,JOKE
+Do you have a watch?,PIZZA
+tell me the time,GREET
+I want a pizza,WEATHER
+current time,WEATHER
+a pizza please,TIME
+order me a pizza with random flavor,TIME
+give me a pizza,PIZZA

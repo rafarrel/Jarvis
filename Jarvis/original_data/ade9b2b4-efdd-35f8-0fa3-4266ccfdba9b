@@ -1,0 +1,50 @@
+What’s the low temperature today?,WEATHER
+Order a large pepperoni.,PIZZA
+"Im hungry, get me a pie.",PIZZA
+Hey man.,GREET
+Is it going to rain today?,WEATHER
+Good afternoon.,GREET
+Tell me a joke.,JOKE
+I want to hear a joke.,JOKE
+What year is it?,TIME
+Do you have the time?,TIME
+Do computers understand dad jokes?,JOKE
+Good day to you.,GREET
+I want to hear something funny.,JOKE
+What is the date and time?,TIME
+Teach me a new joke.,JOKE
+Time?,TIME
+Is the weather nice today?,WEATHER
+What’s the weather like outside?,WEATHER
+Get me a large pepperoni pie!,PIZZA
+Hey,GREET
+Good evening.,GREET
+Place and order for some pizza in 30 minutes.,PIZZA
+Hola Jarvis.,GREET
+Order me pizza for lunch.,PIZZA
+What time is it?,TIME
+Hey Jarvis,GREET
+Should I get my snow tires put on this weekend?,WEATHER
+How are you?,GREET
+Tell me something funny,JOKE
+How’s the weather this weekend?,WEATHER
+Im going to get a slice of cheese.,PIZZA
+When will the rain stop?,WEATHER
+Whats the military time right now?,TIME
+Tell me a funny joke.,JOKE
+Hey how are you today?,GREET
+Howdy,GREET
+Hey whats up?,GREET
+Good morning.,GREET
+Tell me the time.,TIME
+Get me a pizza.,PIZZA
+What’s the high temperature today?,WEATHER
+Tell me when its afternoon.,TIME
+It’s time for lunch order me a pie.,PIZZA
+Is it before noon?,TIME
+What’s the temperature going to be at noon?,WEATHER
+Is it going to be cold and raining all day?,WEATHER
+"Man I need some cheesy, greasy pizza.",PIZZA
+Hi there,GREET
+Hello.,GREET
+How’s it going?,GREET

@@ -1,0 +1,38 @@
+{"TXT": "I want to laugh!", "ACTION": "JOKE"}
+{"TXT": "how cold is it?", "ACTION": "WEATHER"}
+{"TXT": "Yo Jarvis!", "ACTION": "GREET"}
+{"TXT": "Pizza please!", "ACTION": "PIZZA"}
+{"TXT": "hola", "ACTION": "GREET"}
+{"TXT": "Give me the time", "ACTION": "TIME"}
+{"TXT": "Give me a joke", "ACTION": "JOKE"}
+{"TXT": "Hello Jarvis!", "ACTION": "GREET"}
+{"TXT": "hey jarv", "ACTION": "GREET"}
+{"TXT": "tell me the time", "ACTION": "TIME"}
+{"TXT": "What is the temperature?", "ACTION": "WEATHER"}
+{"TXT": "Hello!", "ACTION": "GREET"}
+{"TXT": "Can you tell me what time it is?", "ACTION": "TIME"}
+{"TXT": "Please order me a pizza!", "ACTION": "PIZZA"}
+{"TXT": "Show me the TIME", "ACTION": "TIME"}
+{"TXT": "sup", "ACTION": "GREET"}
+{"TXT": "Say something funny!", "ACTION": "JOKE"}
+{"TXT": "How are you?", "ACTION": "GREET"}
+{"TXT": "Order a pizza", "ACTION": "PIZZA"}
+{"TXT": "Time please!", "ACTION": "TIME"}
+{"TXT": "Hello Jarvis!", "ACTION": "GREET"}
+{"TXT": "Jarvis what joke's can you tell me?", "ACTION": "JOKE"}
+{"TXT": "Can you tell me a Joke?", "ACTION": "JOKE"}
+{"TXT": "Is it raining today?", "ACTION": "WEATHER"}
+{"TXT": "What's the weather?", "ACTION": "WEATHER"}
+{"TXT": "Make me laugh", "ACTION": "JOKE"}
+{"TXT": "time please", "ACTION": "TIME"}
+{"TXT": "Can you deliver me a pizza?", "ACTION": "PIZZA"}
+{"TXT": "I want the Time", "ACTION": "TIME"}
+{"TXT": "what's up", "ACTION": "GREET"}
+{"TXT": "Can you send me a joke?", "ACTION": "JOKE"}
+{"TXT": "What is the weather like today?", "ACTION": "WEATHER"}
+{"TXT": "Is it hot out today?", "ACTION": "WEATHER"}
+{"TXT": "What time is it?", "ACTION": "TIME"}
+{"TXT": "I want a Pizza!", "ACTION": "PIZZA"}
+{"TXT": "What time is it?", "ACTION": "TIME"}
+{"TXT": "Do you have any jokes?", "ACTION": "JOKE"}
+{"TXT": "Can you have a pizza delivered to me?", "ACTION": "PIZZA"}

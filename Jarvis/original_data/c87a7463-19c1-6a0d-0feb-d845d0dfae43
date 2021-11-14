@@ -1,0 +1,37 @@
+do you want a pizza,PIZZA
+what is the time of day?,TIME
+order a pizza,PIZZA
+I want to order a pizza,PIZZA
+what's up fam,GREET
+what time is it?,TIME
+is it snowing?,WEATHER
+hola,GREET
+is it hot outside?,WEATHER
+what's the minute?,TIME
+what's the time of day?,TIME
+I want pepperoni pizza,PIZZA
+I want cheese pizza,PIZZA
+how do you do,GREET
+I want comedy,JOKE
+what is the hour?,TIME
+is it cold out?,WEATHER
+have you got the time?,TIME
+tell me something funny,JOKE
+how's it going?,GREET
+what toppings do you like?,PIZZA
+I don't want any toppings,PIZZA
+what's the weather?,WEATHER
+hello,GREET
+got any good jokes?,JOKE
+what's up?,GREET
+Tell me the time,TIME
+tell me a joke,JOKE
+tell me about the weather,WEATHER
+time?,TIME
+are you good at comedy,JOKE
+what is it like outside?,WEATHER
+is it raining?,WEATHER
+hi there,GREET
+let's order a pizza,PIZZA
+hi,GREET
+What's the hour?,TIME

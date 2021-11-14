@@ -1,0 +1,36 @@
+is it raining?,WEATHER
+what is the weather,WEATHER
+please get me a slice of pizza,PIZZA
+does anyone know the weather?,WEATHER
+i'd like to order some pizza,PIZZA
+i'm really hungry,PIZZA
+whats it like outside today,WEATHER
+anyone want to order food,PIZZA
+can you tell me the time,TIME
+make me laugh,JOKE
+someone get me pizza,PIZZA
+hi,GREET
+hey,GREET
+whats it like outside,WEATHER
+tell me the weather,WEATHER
+i want pizza,PIZZA
+whats the time,TIME
+what is the time?,TIME
+time,TIME
+its been a while,GREET
+say something funny,JOKE
+how about a joke,JOKE
+anyone got the time?,TIME
+tell me a joke,JOKE
+good to see you,GREET
+say a joke,JOKE
+anyone got an idea for a joke?,JOKE
+anyone got a joke they want to tell?,JOKE
+how is the weather today?,WEATHER
+want to order pizza?,PIZZA
+i want to laugh,JOKE
+whats up,GREET
+when is it?,TIME
+im starving,PIZZA
+what time is it right now,TIME
+whats new?,GREET
