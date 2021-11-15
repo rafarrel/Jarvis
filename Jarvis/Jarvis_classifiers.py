@@ -61,6 +61,7 @@ def pickled_piranha(clf, directory, filename):
                         ('class', clf)])
     vec_clf.fit(X_train, Y_train)
     print("\nSaving classifier...")
+
     try:
         with open(os.path.join(os.getcwd(), directory, filename), 'wb') as file:
             pickle.dump(vec_clf, file)
@@ -77,8 +78,7 @@ def pickled_piranha(clf, directory, filename):
 def open_pickle_jar(directory, filename):   
     return pickle.load(open(os.path.join(directory, filename), 'rb'))
 
-
-
+    
 ##############################
 #    OBJECT INSTANTIATION    #
 ##############################
@@ -203,14 +203,11 @@ print('***********************************************************************')
 
 ##################### K NEAREST NEIGHBOR CLASSIFIER #############################
 
-""" K NEAREST NEIGHBORS CLASSIFIER """
 print('************ K Nearest Neighbor Classifier Results *********************')
 kn = KNeighborsClassifier()
 kn.fit(trainX_array, Y_train)
 performance_metrics(kn, testX_array, Y_test)
 print('***********************************************************************')
-
-
 
 
 ################################ GRID SEARCH ####################################
@@ -236,7 +233,6 @@ print('***********************************************************************')
 # print(search.best_params_)
 
 
-
 ############### TUNED MULTINOMIAL NAIVE BAYES CLASSIFIER #########################
 
 print('********** Tuned Mulitnomial Naive Bayes Classifier Results ************')
@@ -254,7 +250,6 @@ mlp_tuned = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
 mlp_tuned.fit(trainX_array, Y_train)
 performance_metrics(mlp_tuned, testX_array, Y_test)
 print('***********************************************************************')
-
 
 
 ############################## PICKLING JARVIS ##################################

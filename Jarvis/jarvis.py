@@ -1,24 +1,27 @@
 """
     Jarvis - A data-collecting chatbot for Slack
     Current Release: 1.0
-
     Jarvis is a chatbot designed for seamless integration with Slack 
     workspaces. It will collect data from users and train itself 
     to interact within the workspace.
-
     ------------------------------------------------------------------
     Release notes for v.1.0:
-        - IN PROGRESS
-
+        - Jarvis can receive and send messages from/to Slack
+        - Jarvis can enter different modes such as training and idle
+        - Jarvis can store processed messages in a database
     ------------------------------------------------------------------
     This project is released as open-source under the permissive MIT 
     license with the approval of its sponsor, Bagrow Industries.
 """
 # Database management
 import sqlite3
+import pandas as pd
+
+# Jarvis brain
+import pickle
 
 # Slack interaction
-import json
+import json 
 import requests
 import string
 import websocket
@@ -44,6 +47,7 @@ class Jarvis:
         self.IDLE   = 0  # Jarvis remains idle
         self.ACTION = 1  # Jarvis waits to receive the action name
         self.TRAIN  = 2  # Jarvis waits to receive training text
+        self.TEST   = 3  # Jarvis predicts action from message text
         
         # Jarvis authorization headers
         self.WORKSPACE_AUTH = WORKSPACE_AUTH
@@ -55,6 +59,9 @@ class Jarvis:
         
         # Jarvis database
         self.database = Database()
+        
+        # Jarvis brain
+        self.BRAIN = pickle.load(open("Classifiers/jarvis_REDPIRANHA.pkl", 'rb'))
         
         # Jarvis settings
         self.current_action = ''            # Starting action for Jarvis
@@ -76,6 +83,7 @@ class Jarvis:
 
     # ---------------------------------------------------------------------- #
     # Jarvis States
+    
     def start_action(self):
         # Start action mode
         self.current_state = self.ACTION
@@ -87,6 +95,10 @@ class Jarvis:
     def start_idle(self):
         # Start idle mode.
         self.current_state = self.IDLE
+    
+    def start_testing(self):
+        # Start testing mode
+        self.current_state = self.TEST
         
     # ---------------------------------------------------------------------- #
     # Message Processing     
@@ -112,7 +124,7 @@ class Jarvis:
             # Make sure message isn't from Jarvis.
             if 'bot_profile' not in message['payload']['event']:
                 self.display_message(msg_text)
-                self.insert(msg_text, channel)
+                self.interact(msg_text, channel)
                 
     def remove_jarvis_tag(self, message):
         # Remove Jarvis user ID from message
@@ -160,10 +172,20 @@ class Jarvis:
         if 'training time' in message.lower():
             self.start_action()
             self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
+        elif 'testing time' in message.lower():
+            self.start_testing()
+            self.post_message("I'm training my brain with the data you've already given me...", channel)
+            self.post_message("OK, I'm ready for testing. Write me something and I'll try to figure it out.", channel)
         elif 'done' in message.lower():
-            self.start_idle()
             self.current_action = ''
-            self.post_message("OK, I'm finished training.", channel)
+            if self.current_state == self.TRAIN:
+                self.start_idle()
+                self.post_message("OK, I'm finished training.", channel)
+            elif self.current_state == self.TEST:
+                self.start_idle()
+                self.post_message("OK, I'm finished testing.", channel)
+            else:
+                self.start_idle()
         elif self.current_state == self.ACTION:
             self.start_training()
             self.current_action = message.upper()
@@ -171,6 +193,10 @@ class Jarvis:
         elif self.current_state == self.TRAIN:
             self.database.store_training_data(message.lower(), self.current_action)
             self.post_message("OK, I've got it! What else?", channel)
+        elif self.current_state == self.TEST:
+            self.post_message("OK, I think the action you mean is `{}`...".format(self.BRAIN.predict([message.lower()])[0].upper()), channel)
+            self.post_message("Write me something else and I'll try to figure it out.", channel)
+            
        
     # ---------------------------------------------------------------------- #
     # Websocket Events
@@ -236,6 +262,14 @@ class Database:
     def clear_table(self):
         self.curr.execute("DELETE FROM training_data")
         self.curr.commit()
+        
+    def add_batch_data(self, df):
+        # This will add large amounts of data to the training data at once.
+        # Data must be a pandas dataframe.
+        df.to_sql(name='training_data',con=self.conn,if_exists='append',index=False)
+        self.conn.commit()
+        print("{} rows inserted into training data".format(df.size/2))
+    
     
     def print_training_data(self):
         # This will print the message text and action (training data)
