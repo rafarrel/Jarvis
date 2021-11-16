@@ -85,6 +85,7 @@ def vectorize_data(X, Y):
 
 
 def performance_metrics(clf, X_test, y_test):
+    """Generates performance metrics output and confusion matrix plot for the given classifier"""
     print('\nPERFORMANCE METRICS: ', type(clf))
     print("Generating performance data...")
     predictions = clf.predict(X_test)
@@ -99,6 +100,7 @@ def performance_metrics(clf, X_test, y_test):
 
 
 def pickled_piranha(clf, directory, filename):
+    """Created .pkl from specified classifier in the given location with given name"""
     vec_clf = Pipeline([('vec', CountVectorizer()),
                         ('tfidf', TfidfTransformer()),
                         ('class', clf)])
@@ -118,7 +120,8 @@ def pickled_piranha(clf, directory, filename):
         pickle.dump(vec_clf, pickle_jar)
         
         
-def open_pickle_jar(directory, filename):   
+def open_pickle_jar(directory, filename):
+    """loads .pkl file"""
     return pickle.load(open(os.path.join(directory, filename), 'rb'))
 
     
