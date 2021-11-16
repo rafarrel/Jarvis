@@ -1,34 +1,43 @@
-The joke is funny.,JOKE
-How is it going?,GREET
-Hello.,GREET
-Pepperoni pizza is very salty.,PIZZA
-what time is it now?,TIME
-eating the pizza,PIZZA
-time is money.,TIME
-How's the weather in Boston?,WEATHER
-Was that a joke?,JOKE
-Long time no see.,GREET
-"Great weather, isn't it?",WEATHER
-domino's pizza is delicious.,PIZZA
-tell a joke.,JOKE
-"If you can’t convince them, confuse them.",JOKE
-It's been a long time,TIME
-what's up?,GREET
-Take your time.,TIME
-How’s everything?,GREET
-The weather has improved.,WEATHER
-It is cold today.,WEATHER
-weahter is good!,WEATHER
-Why don't we order pizza?,PIZZA
-I could go for a nice hot pizza right now.,PIZZA
-Do not argue with an idiot. He will drag you down to his level and beat you with experience.,JOKE
-Tom ate the whole pizza by himself.,PIZZA
-Let's greet our guests.,GREET
-What's your favorite pizza topping?,PIZZA
-I like BBQ chicken pizza.,PIZZA
-how are you?,GREET
-It is raining outside.,WEATHER
-Have a good time.,TIME
-You had plenty of time.,TIME
-I need more time,TIME
-I'm used to this cold weather.,WEATHER
+{"TXT": "Can you cheer me up?", "ACTION": "JOKE"}
+{"TXT": "What did the fish say when it ran into a concrete wall?  Dam!", "ACTION": "JOKE"}
+{"TXT": "Puns are my favorite kind of jokes!", "ACTION": "JOKE"}
+{"TXT": "I'm feeling sad.", "ACTION": "JOKE"}
+{"TXT": "Heard any good jokes lately?", "ACTION": "JOKE"}
+{"TXT": "Is it going to be sunny tomorrow?", "ACTION": "WEATHER"}
+{"TXT": "Is it going to be cloudy tomorrow?", "ACTION": "WEATHER"}
+{"TXT": "You're looking good today.", "ACTION": "GREET"}
+{"TXT": "Did you hear the one about the priest and the rabbi?", "ACTION": "JOKE"}
+{"TXT": "What day of the week is it?", "ACTION": "TIME"}
+{"TXT": "Is it after noon yet?", "ACTION": "TIME"}
+{"TXT": "Can you please order me a pizza?", "ACTION": "PIZZA"}
+{"TXT": "Welcome to the channel", "ACTION": "GREET"}
+{"TXT": "Positive Pie has the best pizza - can you order me a bbq chicken and a pepperoni slice?", "ACTION": "PIZZA"}
+{"TXT": "Are the roads going to be icy on the way home?", "ACTION": "WEATHER"}
+{"TXT": "What's the best place to get a pizza in Montpelier?", "ACTION": "PIZZA"}
+{"TXT": "What should I eat for lunch?", "ACTION": "PIZZA"}
+{"TXT": "Tell us a knock-knock joke.", "ACTION": "JOKE"}
+{"TXT": "Lets start by introducing ourselves", "ACTION": "GREET"}
+{"TXT": "Sorry, I can't talk now - I'm too busy", "ACTION": "GREET"}
+{"TXT": "Are you funny?", "ACTION": "JOKE"}
+{"TXT": "What's a funny story?", "ACTION": "JOKE"}
+{"TXT": "What is the date today?", "ACTION": "TIME"}
+{"TXT": "What's the weather forecast going to be tomorrow?", "ACTION": "WEATHER"}
+{"TXT": "I'd like a pizza with ham and pineapple please.", "ACTION": "PIZZA"}
+{"TXT": "Is it going to turn to freezing rain later?", "ACTION": "WEATHER"}
+{"TXT": "What is the current hour and minute?", "ACTION": "TIME"}
+{"TXT": "Hello, and a good morning to you too!", "ACTION": "GREET"}
+{"TXT": "Is it going to snow tonight?", "ACTION": "WEATHER"}
+{"TXT": "Please place an order for six pepperoni pizzas.", "ACTION": "PIZZA"}
+{"TXT": "When is it?", "ACTION": "TIME"}
+{"TXT": "Is it going to be windy today?", "ACTION": "WEATHER"}
+{"TXT": "Hi everyone.", "ACTION": "GREET"}
+{"TXT": "I need a good laugh right now.", "ACTION": "JOKE"}
+{"TXT": "What is the current time?", "ACTION": "TIME"}
+{"TXT": "Tell  me the time.", "ACTION": "TIME"}
+{"TXT": "Welcome to the meeting.  Everyone say hi.", "ACTION": "GREET"}
+{"TXT": "Alright, who wants to start the introductions?", "ACTION": "GREET"}
+{"TXT": "What time is it right now?", "ACTION": "TIME"}
+{"TXT": "Who is hungry?", "ACTION": "PIZZA"}
+{"TXT": "Is it going to be cold today?", "ACTION": "WEATHER"}
+{"TXT": "I'm hungry.", "ACTION": "PIZZA"}
+{"TXT": "Is it almost time to go home?", "ACTION": "TIME"}
