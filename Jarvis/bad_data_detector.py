@@ -4,6 +4,7 @@
 """
 import json
 import nltk
+import sys
 
 from string        import punctuation
 from nltk.corpus   import stopwords
@@ -19,14 +20,13 @@ def clean_data(data):
     stop_words = stopwords.words('english')
     
     # Remove stop words
-    text_tokenize = word_tokenize(data['TXT'].lower())
-    removed_stop  = [token for token in text_tokenize if not token in stop_words]
-    removed_stop  = " ".join(removed_stop)
+    tokenized_text = word_tokenize(data['TXT'].lower().replace("'", "").replace("â€™", ""))
+    tokenized_text = " ".join(tokenized_text)
     
     # Remove punctuation
-    removed_punc = [char for char in removed_stop if char not in exclude]
-    data['TXT']  = "".join(removed_punc).rstrip(' ')
-    
+    removed_punc = [char for char in tokenized_text if char not in exclude]
+    data['TXT']  = "".join(removed_punc).strip(' ')
+ 
     
 def load_data(filename):
     """Load data into a list of [txt, action] pairs for processing."""
@@ -59,13 +59,21 @@ if __name__ == '__main__':
     nltk.download('stopwords', quiet=True)
     
     # Specify name of file to analyze for bad data here
-    filename = 'OriginalTrainingData\\original_data2.txt'
+    filename = 'OriginalTrainingData\\original_data21.txt'
     
     # ----------------------------- #
     # Perform data analysis         #
     # ----------------------------- #
     loaded_data = load_data(filename)
-    print(len(loaded_data))
+    for line in loaded_data:
+        print(line)
     
-    # TEST ONE: MISSING LABEL OR INPUT
+    #for i, txt_action_pair in enumerate(loaded_data):
+        #txt, action = txt_action_pair
+        
+        # Test missing action or label
+        #if txt == '' or action == '':
+        #    print('bad')
+        #    sys.exit()
+            
     
