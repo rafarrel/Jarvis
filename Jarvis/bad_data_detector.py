@@ -32,7 +32,6 @@ def clean_data(data):
     
 def load_data(filename):
     """Load data into a pandas dataframe."""
-    # TODO RETURN DATAFRAME INSTEAD OF LIST
     data = []
     
     with open(filename, 'r') as file:
@@ -40,10 +39,11 @@ def load_data(filename):
             try:
                 line_dict = json.loads(line)
             except:
-                # Separate only at commas that are followed by all caps 
-                # text without a space (Action label is the all the caps thing)
-                txt_action_values = re.split(r',([A-Z]+)', line)[:-1]
-                line_dict = {'TXT':txt_action_values[0], 'ACTION':txt_action_values[1]}
+                # Only split on last comma, signifying the separator between
+                # text and action label.
+                txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
+                line_dict   = {'TXT'   :txt,
+                               'ACTION':action}
             finally:
                 clean_data(line_dict) 
                 data.append([line_dict['TXT'], line_dict['ACTION']]) 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     #nltk.download('stopwords')
     
     # THIS IS FOR TESTING
-    test_data = load_data('original_data1.txt')
+    test_data = load_data('OriginalTrainingData\\original_data4.txt')
     for line in test_data:
         print(line)
     
