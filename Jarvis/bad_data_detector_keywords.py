@@ -33,7 +33,6 @@ def clean_data(data):
     
 def load_data(filename):
     """Load data into a pandas dataframe."""
-    # TODO RETURN DATAFRAME INSTEAD OF LIST
     data = []
     
     with open(filename, 'r') as file:
