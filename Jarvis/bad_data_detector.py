@@ -59,9 +59,13 @@ if __name__ == '__main__':
     nltk.download('stopwords', quiet=True)
     
     # Specify name of file to analyze for bad data here
-    filename = 'OriginalTrainingData\\original_data4.txt'
+    filename = 'OriginalTrainingData\\original_data2.txt'
     
-    # THIS IS FOR TESTING
-    test_data = load_data(filename)
-    for line in test_data:
-        print(line)
+    # ----------------------------- #
+    # Perform data analysis         #
+    # ----------------------------- #
+    loaded_data = load_data(filename)
+    print(len(loaded_data))
+    
+    # TEST ONE: MISSING LABEL OR INPUT
+    
