@@ -7,11 +7,11 @@
 ##############################
 
 import os
-import csv
 import json
-import pandas as pd
 from matplotlib import pyplot as plt
 from collections import Counter
+from sklearn import metrics
+import statistics as stats
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
@@ -27,21 +27,30 @@ def load_data(directory):
     files = os.listdir(os.path.join(os.getcwd(), directory))
     
     for filename in files:
-        filepath = os.path.join(os.getcwd(), directory, filename)
-        with open(filepath, 'r') as file:
-            for line in file:
-                line_dict={}
-                try:
-                    line_dict.update(json.loads(line))
-                except:
-                    # Only split on last comma, signifying the separator between
-                    # text and action label.
-                    txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
-                    
-                    line_dict['TXT'   ] = txt
-                    line_dict['ACTION'] = action
-                finally:
-                    data.append([line_dict['TXT'], line_dict['ACTION']]) 
+       filepath = os.path.join(os.getcwd(), directory, filename)
+       with open(filepath, 'r') as file:
+           for line in file:
+               line_dict={}
+               try:
+                   line_dict.update(json.loads(line))
+                   if line_dict['ACTION'] == 'joke': #check for typo
+                       line_dict['ACTION'] = 'JOKE'
+                   if line_dict['ACTION'] == ' PIZZA': #check for typo
+                       line_dict['ACTION'] = 'PIZZA'
+               except:
+                   # Only split on last comma, signifying the separator between
+                   # text and action label.
+                   txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
+                   
+                   if action == 'joke': #check for typo
+                       action = 'JOKE'
+                   if action == ' PIZZA': #check for typo
+                      action = 'PIZZA' 
+                       
+                   line_dict['TXT'   ] = txt
+                   line_dict['ACTION'] = action
+               finally:
+                   data.append([line_dict['TXT'], line_dict['ACTION']]) 
     return data
             
 
@@ -50,9 +59,11 @@ def run_mlp(train_X, test_X, train_Y, test_Y):
     mlp = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
                           shuffle = False, learning_rate = 'adaptive', activation = 'relu')
     mlp.fit(train_X, train_Y)
-    pm = performance_metrics(mlp, test_X, test_Y)
+    performance_metrics(mlp, test_X, test_Y)
+    predictions = mlp.predict(test_X)
+    mcr = metrics.classification_report(test_Y, predictions)
 
-    return pm
+    return mcr
     
 def vectorize_data(X, Y):
     """Create training and testing vectors of X and return X vextors and Y lists"""
@@ -77,13 +88,15 @@ def vectorize_data(X, Y):
 ##############################
 
 #load dataframes using load_data for original, cleaned, and PR01 custom data
-
-
 original_data = load_data('OriginalTrainingData')
 cleaned_data = load_data('CleanedTrainingData')
 pr01_data = load_data('CustomTrainingDataPR01')
-combined_data = []
-combined_data.extend(cleaned_data).extend(pr01_data)
+
+#create list of combined clean and custom data
+combined_data = [[]]
+combined_data.extend(cleaned_data)
+combined_data.extend(pr01_data)
+combined_data= combined_data[1:]
 
 
 #get lists of keys and values for original data
@@ -95,8 +108,7 @@ combinedX, combinedY = map(list, zip(*combined_data))
 #calculate counts of each ACTION
 original_counts = Counter(origY)
 cleaned_counts = Counter(cleanY)
-combined_counts = Counter(combinedY)  
-
+combined_counts = Counter(combinedY)
 
 #vectorize data
 origtrainX, origtestX, origYtrain, origYtest = vectorize_data(origX, origY)
@@ -104,15 +116,36 @@ pr01trainX, pr01testX, pr01Ytrain, pr01Ytest = vectorize_data(pr01X, pr01Y)
 combinedtrainX, combinedtestX, combinedYtrain, combinedYtest = vectorize_data(combinedX, combinedY)
 
 
-#run MLP to get range, mean, variance, standard deviation
+#run MLP 10 times for each dataset to get range, mean, variance, standard deviation
 
-for i in range(0,10):
-    locals()['orig \0'.format(i)] = run_mlp(origtrainX, origtestX, origYtrain, origYtest)
-run_mlp(trainX_array, testX_array, Y_train, Y_test)
-run_mlp(pr01trainX, pr01testX, pr01Ytrain, pr01Ytest)
-run_mlp(combinedtrainX, combinedtestX, combinedYtrain, combinedYtest)
+clean_perf = []
+pr01_perf = []
+combined_perf = []
+for i in range(0,15):
+    temp1 = run_mlp(trainX_array, testX_array, Y_train, Y_test)
+    temp2 = run_mlp(pr01trainX, pr01testX, pr01Ytrain, pr01Ytest)
+    temp3 = run_mlp(combinedtrainX, combinedtestX, combinedYtrain, combinedYtest)
+    clean_perf.append(float(temp1[365:369]))
+    pr01_perf.append(float(temp2[365:369]))
+    combined_perf.append(float(temp3[365:369]))
 
+print(min(clean_perf))
+print(max(clean_perf))
+print(stats.mean(clean_perf))
+print(stats.stdev(clean_perf))
+print(stats.variance(clean_perf))
 
+print(min(pr01_perf))
+print(max(pr01_perf))
+print(stats.mean(pr01_perf))
+print(stats.stdev(pr01_perf))
+print(stats.variance(pr01_perf))
+
+print(min(combined_perf))
+print(max(combined_perf))
+print(stats.mean(combined_perf))
+print(stats.stdev(combined_perf))
+print(stats.variance(combined_perf))
 
 ##############################
 #      VISUALIZATIONS        #
