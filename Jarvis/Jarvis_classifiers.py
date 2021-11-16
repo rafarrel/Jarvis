@@ -7,7 +7,6 @@
 ##############################
 
 import os
-import re
 import json
 from string import punctuation
 import pandas as pd
@@ -31,17 +30,62 @@ import pickle
 #         FUNCTIONS          #
 ##############################
 
-def dict_to_df(dict, action, df):
-    exclude = set(punctuation) # Keep a set of "bad" characters.
-    for i in dict:
-        list_letters_noPunct = [ char for char in i if char not in exclude ]  
-        text_noPunct = "".join(list_letters_noPunct)
-        i=text_noPunct.lower() 
-        del list_letters_noPunct[-1]
-        df.loc[len(df)] = [i, action]
-    return df
+
+def load_data(directory):
+    """Load data into a list of nested lists with text, action pairs."""
+    data = []
+    files = os.listdir(os.path.join(os.getcwd(), directory))
+    
+    for filename in files:
+        filepath = os.path.join(os.getcwd(), directory, filename)
+        with open(filepath, 'r') as file:
+            for line in file:
+                line_dict={}
+                try:
+                    line_dict.update(json.loads(line))
+                    if line_dict['ACTION'] == 'joke': #check for typo
+                        line_dict['ACTION'] = 'JOKE'
+                    if line_dict['ACTION'] == ' PIZZA': #check for typo
+                        line_dict['ACTION'] = 'PIZZA'
+                except:
+                    # Only split on last comma, signifying the separator between
+                    # text and action label.
+                    txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
+                    
+                    if action == 'joke': #check for typo
+                        action = 'JOKE'
+                    if action == ' PIZZA': #check for typo
+                       action = 'PIZZA' 
+                        
+                    line_dict['TXT'   ] = txt
+                    line_dict['ACTION'] = action
+                finally:
+                    data.append([line_dict['TXT'], line_dict['ACTION']]) 
+    return data
+            
+
+def vectorize_data(X, Y):
+    """Create training and testing vectors of X and return X vextors and Y lists"""
+    vectorizer = CountVectorizer() # Instanatiates a CountVectorizer() object to run frequencies for every unique word in X
+    jarvis_vectorizer = vectorizer.fit_transform(X)
+    jarvis_array = jarvis_vectorizer.toarray()
+    jarvis_words = vectorizer.get_feature_names()
+    
+    # Split data into training and testing subsets
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y) # Split data into training and testing subsets
+    
+    # Fitting Vectorizer to training and testing data, then sending to an array 
+    trainX_vec = vectorizer.fit_transform(X_train)
+    trainX_array = trainX_vec.toarray()
+    testX_vec = vectorizer.transform(X_test)
+    testX_array = testX_vec.toarray()
+    
+    return X_train, X_test, trainX_array, testX_array, Y_train, Y_test
+
+
 
 def performance_metrics(clf, X_test, y_test):
+    """Generates performance metrics output and confusion matrix plot for the given classifier"""
     print('\nPERFORMANCE METRICS: ', type(clf))
     print("Generating performance data...")
     predictions = clf.predict(X_test)
@@ -56,6 +100,7 @@ def performance_metrics(clf, X_test, y_test):
 
 
 def pickled_piranha(clf, directory, filename):
+    """Created .pkl from specified classifier in the given location with given name"""
     vec_clf = Pipeline([('vec', CountVectorizer()),
                         ('tfidf', TfidfTransformer()),
                         ('class', clf)])
@@ -75,84 +120,24 @@ def pickled_piranha(clf, directory, filename):
         pickle.dump(vec_clf, pickle_jar)
         
         
-def open_pickle_jar(directory, filename):   
+def open_pickle_jar(directory, filename):
+    """loads .pkl file"""
     return pickle.load(open(os.path.join(directory, filename), 'rb'))
 
     
-##############################
-#    OBJECT INSTANTIATION    #
-##############################
-
-master_dict = {'PIZZA': [], 'JOKE': [], 'WEATHER': [], 'TIME': [], 'GREET': []}
-dict_list = []
-one_line_list = []
 
 ##############################
 #         MAIN CODE          #
 ##############################
 
-# Loads contents of data files into a master dictionary with key:value pairs ACTION:TXT 
+# Load data into list
+cleaned_data = load_data('CleanedTrainingData')
 
-training_files = os.listdir(os.path.join(os.getcwd(), 'training_data'))
+#Separate into lists of X (text) and Y (actions)
+X, Y = map(list, zip(*cleaned_data))
 
-for file in training_files:
-    filepath = os.path.join('training_data', file)
-    with open(filepath, 'r') as f:
-        if 'DS_Store' not in filepath:
-            for line in f:
-                filetest = f.readline()
-                try:
-                    if filetest[0] == "{":
-                        sub_dict = json.loads(line)
-                        temp = master_dict[sub_dict['ACTION']]
-                        temp.append(sub_dict['TXT'].lower())
-                        master_dict[sub_dict['ACTION']] = temp
-                    else:
-                        one_line_list.append(re.split(r',([A-Z]+)', filetest))
-                        temp = master_dict[one_line_list[-1][1]]
-                        temp.append(one_line_list[-1][0])
-                        master_dict[one_line_list[-1][1]] = temp
-                except:
-                    pass
-
-# Creates an empty dataframe with two columns labeled TXT, ACTION
-
-df = pd.DataFrame(columns = ['TXT', 'ACTION'])
-
-
-
-# Populates the dataframe with 1,868 TXT entries and ACTION labels
-
-pizza_list = dict_to_df(master_dict['PIZZA'], 'PIZZA', df)
-joke_list = dict_to_df(master_dict['JOKE'], 'JOKE', df)
-weather_list = dict_to_df(master_dict['WEATHER'], 'WEATHER', df)
-greet_list = dict_to_df(master_dict['GREET'], 'GREET', df)
-time_list = dict_to_df(master_dict['TIME'], 'TIME', df)
-
-# Separates the dataframe into input and target column vectors for the classifiers to use
-
-X = df['TXT']
-Y = df['ACTION']
-
-# Instanatiates a CountVectorizer() object to run frequencies for every unique word in X and put
-# those frequencies into one 1868 x 952 word frequency matrix where each line is associated with one
-# TXT and can map to the corresponding entry in Y, which is the label
-
-vectorizer = CountVectorizer()
-jarvis_vectorizer = vectorizer.fit_transform(X)
-jarvis_array = jarvis_vectorizer.toarray()
-jarvis_words = vectorizer.get_feature_names()
-
-# Split data into training and testing subsets
-
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
-
-# Fitting Vectorizer to training and testing data, then sending to an array 
-
-trainX = vectorizer.fit_transform(X_train)
-trainX_array = trainX.toarray()
-testX = vectorizer.transform(X_test)
-testX_array = testX.toarray()
+#Vectorize Data
+X_train, X_test, trainX_array, testX_array, Y_train, Y_test = vectorize_data(X, Y)
 
 
 
@@ -212,51 +197,34 @@ print('***********************************************************************')
 
 ################################ GRID SEARCH ####################################
 
-# UNCOMMENT ONLY WHEN NEEDED TO SAVE TIME WHEN RUNNING
-# nb_params = {'alpha': list(np.arange(0,1,.0001)), 'fit_prior':[True, False]}
-# mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'], 
+#UNCOMMENT ONLY WHEN NEEDED TO SAVE TIME WHEN RUNNING
+# mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'],
 #               'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
 #               'shuffle': [True, False]}
 
-# nb_clf = RandomizedSearchCV(nb, nb_params, random_state=0)
-# search = nb_clf.fit(trainX, Y_train)
-# print()
-# print('nb', 'best params:')
-# print('------------------')
-# print(search.best_params_)
+
 
 # mlp_clf = RandomizedSearchCV(mlp, mlp_params, random_state=None, n_jobs = -1)
-# search = mlp_clf.fit(trainX, Y_train)
+# search = mlp_clf.fit(trainX_array, Y_train)
 # print()
 # print('mlp', 'best params:')
 # print('------------------')
 # print(search.best_params_)
 
 
-############### TUNED MULTINOMIAL NAIVE BAYES CLASSIFIER #########################
-
-print('********** Tuned Mulitnomial Naive Bayes Classifier Results ************')
-nb_tuned = MultinomialNB(fit_prior = True, alpha = 0.1366)
-nb_tuned.fit(trainX_array, Y_train)
-performance_metrics(nb_tuned, testX_array, Y_test)
-print('***********************************************************************')
-
 
 ################# TUNED MULTI-LAYER PERCEPTRON CLASSIFIER ########################
 
 print('********** Tuned Multi-Layer Perceptron Classifier Results *************')
 mlp_tuned = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
-                          shuffle = False, learning_rate = 'adaptive', activation = 'relu')
+                          shuffle = True, learning_rate = 'adaptive', activation = 'relu')
 mlp_tuned.fit(trainX_array, Y_train)
 performance_metrics(mlp_tuned, testX_array, Y_test)
 print('***********************************************************************')
 
 
 ############################## PICKLING JARVIS ##################################
-pickled_piranha(nb_tuned, 'Classifiers', 'nb')
-nb_brain = open_pickle_jar('Classifiers', 'nb.pkl')
-print('nb:', nb_brain.predict(['Hello funny roboooot!']))
 
 pickled_piranha(mlp_tuned, 'Classifiers', 'mlp')
-mlp_brain = open_pickle_jar('Classifiers', 'mlp.pkl')
+mlp_brain = open_pickle_jar('Classifiers', 'jarvis_REDPIRANHA.pkl')
 print('mlp:', mlp_brain.predict(['Hello funny roboooot!']))
