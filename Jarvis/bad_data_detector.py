@@ -58,22 +58,75 @@ if __name__ == '__main__':
     nltk.download('punkt'    , quiet=True)
     nltk.download('stopwords', quiet=True)
     
-    # Specify name of file to analyze for bad data here
-    filename = 'OriginalTrainingData\\original_data21.txt'
+    ############### INSERT FILENAME HERE ################
+    filename = 'OriginalTrainingData\\original_data34.txt'
     
-    # ----------------------------- #
-    # Perform data analysis         #
-    # ----------------------------- #
-    loaded_data = load_data(filename)
-    for line in loaded_data:
-        print(line)
     
-    #for i, txt_action_pair in enumerate(loaded_data):
-        #txt, action = txt_action_pair
+    ############### PERFORM DATA ANALYSIS ###############
+    data = load_data(filename)
+    
+    # Get file length
+    file_length = len(data)
+    
+    # Converts data to a list of lists where outer list is the actions
+    # and the inner list is all text for those actions
+    dat = []
+    actions = ['PIZZA', 'JOKE', 'WEATHER', 'GREET', 'TIME']
+    for action in actions:
+        txt_dat = []
+        for datapt in data:
+            if datapt[1] == action:
+                txt_dat.append(datapt[0])
+        dat.append(txt_dat)
+    
+    # Load the keywords from text files for each action
+    keywords = {'PIZZA':[], 
+                'JOKE':[],
+                'WEATHER':[],
+                'GREET':[],
+                'TIME':[]}
+   
+    # Loop through to load the keywords
+    for action in actions:
+        keys_cleaned = []
+        with open('keyword_data/keys_{}.txt'.format(action.lower()),'r') as file:
+            keys = file.readlines()
+        for key in keys:
+            key = key.replace('\n', '')
+            keys_cleaned.append(key)
+        keywords[action] = keys_cleaned
+    
+    # Determine number of suspicious data points
+    sus = 0 # indicates number of suspicious data points in file
+    sus_txt = [] # lists the text of the suspicious data points, for testing
+    for i in range(5):
+        # Construct keywords string for other actions
+        keys_other = []
+        for j in range(5):
+            if i != j:
+                keys_other = keys_other + keywords[actions[j]]
+        # Construct keywords string for current action
+        keys = keywords[actions[i]]
         
-        # Test missing action or label
-        #if txt == '' or action == '':
-        #    print('bad')
-        #    sys.exit()
+        # Check if txt has no keywords for current action but has keywords for other actions
+        # If so, txt labelled as sus
+        txt = dat[i]
+        for string in txt:
+            # Conditions for 'bad' data
+            cond1 = any([word in string for word in keys_other])
+            cond2 = not any([word in string for word in keys])
+            cond3 = string != ''
+            if cond1 and cond2 and cond3:
+                sus_txt.append([string, actions[i], cond1, cond2]) # for testing
+                sus += 1
+                
+    # Determine if file is good or bad depending on sus/file_length ratio
+    # Ratios greater than 0.05 will be considered bad.
+    # If bad, at least 5% of data is potentionally wrong and should be
+    # reviewed.
+    if sus / file_length < 0.05:
+        print("good")
+    else:
+        print("bad")
             
     
