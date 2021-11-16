@@ -7,10 +7,8 @@
 ##############################
 
 import os
-import re
 import csv
-from string import punctuation
-import numpy as  np
+import json
 import pandas as pd
 from matplotlib import pyplot as plt
 from collections import Counter
@@ -24,45 +22,31 @@ from Jarvis_classifiers import performance_metrics, trainX_array, testX_array, Y
 ##############################
 
 def load_data(directory):
-    "Loads contents of data files from the given directory into a  dictionary with key:value pairs ACTION:TXT"
-    data = {}
-    #one_line_list = []
-    
+    """Load data into a list of nested lists with text, action pairs."""
+    data = []
     files = os.listdir(os.path.join(os.getcwd(), directory))
     
-    for file in files:
-        filepath = os.path.join(directory, file)
-        with open(filepath, 'r') as f:
-            if 'DS_Store' not in filepath:
-                for line in f:
-                    filetest = f.readline()
-                    try:
-                        if filetest[0] == "{":
-                            data['TXT'] = filetest['ACTION']
-                        else:
-                            temp = re.split(r',([A-Z]+)', filetest)
-                            data[temp[0]] = temp[1]
-                    except:
-                        pass
-    return data
-
-
-def load_csv(directory, file):
-    data = {}
-
-    filepath = os.path.join(os.getcwd(), directory, file)
-    with open(filepath, 'r') as f:
-        csvReader = csv.reader(f)
-        for row in csvReader:
-            if 'TXT' not in row:
-                data[row[0]] = row[1]
-            else:
-                pass
-    
+    for filename in files:
+        filepath = os.path.join(os.getcwd(), directory, filename)
+        with open(filepath, 'r') as file:
+            for line in file:
+                line_dict={}
+                try:
+                    line_dict = json.loads(line)
+                except:
+                    # Only split on last comma, signifying the separator between
+                    # text and action label.
+                    txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
+                    
+                    line_dict['TXT'   ] = txt
+                    line_dict['ACTION'] = action
+                finally:
+                    data.append([line_dict['TXT'], line_dict['ACTION']]) 
     return data
             
 
 def run_mlp(train_X, test_X, train_Y, test_Y):
+    """Runs Multi-Level Perceptron Classifier on the specified training and testing data"""
     mlp = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
                           shuffle = False, learning_rate = 'adaptive', activation = 'relu')
     mlp.fit(train_X, train_Y)
@@ -91,10 +75,12 @@ def vectorize_data(X, Y):
 #         MAIN CODE          #
 ##############################
 
-#load dictionaries of original (provided) and cleaned external training data
-original_data = load_data('original_data')
-cleaned_data = load_data('training_data')
-pr01_data = load_csv('PR01_data', 'pr01_data.csv')
+#load dataframes using load_data for original, cleaned, and PR01 custom data
+
+
+original_data = load_data('OriginalTrainingData')
+cleaned_data = load_data('CleanedTrainingData')
+pr01_data = load_data('CustomTrainingDataPR01')
 combined_data = {**cleaned_data, **pr01_data}
 
 
