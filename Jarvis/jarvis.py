@@ -4,15 +4,13 @@
     Jarvis is a chatbot designed for seamless integration with Slack 
     workspaces. It will collect data from users and train itself 
     to interact within the workspace.
+    
     ------------------------------------------------------------------
     Release notes for v.1.0:
         - Jarvis can receive and send messages from/to Slack
         - Jarvis can enter different modes such as training and idle
         - Jarvis can store processed messages in a database
-<<<<<<< HEAD
-=======
-
->>>>>>> e3547480c21fe0a30135d0ae82a83138286d25ff
+        
     ------------------------------------------------------------------
     This project is released as open-source under the permissive MIT 
     license with the approval of its sponsor, Bagrow Industries.
