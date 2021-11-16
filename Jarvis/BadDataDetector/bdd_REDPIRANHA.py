@@ -124,7 +124,7 @@ if __name__ == '__main__':
     # Ratios greater than 0.05 will be considered bad.
     # If bad, at least 5% of data is potentionally wrong and should be
     # reviewed.
-    if sus / file_length < 0.05:
+    if sus / file_length < 0.075:
         print("good")
     else:
         print("bad")
