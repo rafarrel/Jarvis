@@ -13,7 +13,6 @@ import os
 import re
 import json
 from string import punctuation
-import pandas as pd
 from collections import Counter
 import nltk
 from nltk.corpus import stopwords
@@ -68,8 +67,8 @@ def load_data(directory_name):
                     clean_data(line_dict) 
                     data.append([line_dict['TXT'], line_dict['ACTION']])
     
-    # return a pandas data frame
-    return pd.DataFrame(data, columns = ['TXT', 'ACTION'])
+    # return a list of lists
+    return data
 
 ##############################
 #         MAIN CODE          #
@@ -79,23 +78,20 @@ if __name__ == '__main__':
     # UNCOMMENT THESE IF NEED TO DOWNLOAD
     #nltk.download('punkt')
     #nltk.download('stopwords')
+
+    # Load all data
+    data = load_data('OriginalTrainingData')
     
-    # THIS IS FOR TESTING
-    df = load_data('CleanedTrainingData')
-    
-    # Separate data by labels into list of lists
+    # Converts data to a list of lists where outer list is the actions
+    # and the inner list is all words for those actions
     dat = []
-    for action in ['PIZZA', 'JOKE', 'WEATHER', 'GREET', 'TIME']:
-        # Filter data frame for a specific action
-        filtered_df = df[df['ACTION'] == action]
-        # Convert data frame column into a list
-        flatten_col = []
-        for x in filtered_df['TXT'].tolist():
-            # Split each text by its words
-            x = x.split(' ')
-            for y in x:
-                flatten_col.append(y)
-        dat.append(flatten_col)
+    actions = ['PIZZA', 'JOKE', 'WEATHER', 'GREET', 'TIME']
+    for action in actions:
+        txt_dat = []
+        for datapt in data:
+            if datapt[1] == action:
+                txt_dat = txt_dat + datapt[0].split(' ')
+        dat.append(txt_dat)
         
     # Initialize counter objects for each action
     counters = [Counter(),Counter(),Counter(),Counter(),Counter()]
@@ -120,9 +116,8 @@ if __name__ == '__main__':
                 keys[i].append(word)
     
     # Saves each keyword into a separate .txt file for later use
-    actions = ['pizza', 'joke', 'weather', 'greet', 'time']
     for i in range(5):
-        with open('keyword_data/keys_{}.txt'.format(actions[i]), 'w') as file:
+        with open('keyword_data_test/keys_{}.txt'.format(actions[i].lower()), 'w') as file:
             for word in keys[i]:
                 # Use try to skip over words with non-compatable characters
                 try:
