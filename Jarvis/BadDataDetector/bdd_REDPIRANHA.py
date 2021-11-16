@@ -59,7 +59,7 @@ if __name__ == '__main__':
     nltk.download('stopwords', quiet=True)
     
     ############### INSERT FILENAME HERE ################
-    filename = 'OriginalTrainingData\\original_data34.txt'
+    filename = '..\\OriginalTrainingData\\original_data43.txt'
     
     
     ############### PERFORM DATA ANALYSIS ###############
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     # Loop through to load the keywords
     for action in actions:
         keys_cleaned = []
-        with open('keyword_data/keys_{}.txt'.format(action.lower()),'r') as file:
+        with open('KeywordData/keys_{}.txt'.format(action.lower()),'r') as file:
             keys = file.readlines()
         for key in keys:
             key = key.replace('\n', '')

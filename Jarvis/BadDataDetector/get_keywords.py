@@ -38,7 +38,8 @@ def clean_data(data):
     
     
 def load_data(directory_name):
-    """Load data into a pandas dataframe."""
+    """Load data into a list of [txt, action] pairs from all files for 
+    processing of keywords."""
     # Initialize
     data = []
     
@@ -119,7 +120,7 @@ if __name__ == '__main__':
     
     # Saves each keyword into a separate .txt file for later use
     for i in range(5):
-        with open('keyword_data/keys_{}.txt'.format(actions[i].lower()), 'w') as file:
+        with open('KeywordData/keys_{}.txt'.format(actions[i].lower()), 'w') as file:
             for word in keys[i]:
                 # Use try to skip over words with non-compatable characters
                 try:
