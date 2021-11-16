@@ -32,7 +32,7 @@ def load_data(directory):
             for line in file:
                 line_dict={}
                 try:
-                    line_dict = json.loads(line)
+                    line_dict.update(json.loads(line))
                 except:
                     # Only split on last comma, signifying the separator between
                     # text and action label.
@@ -55,6 +55,7 @@ def run_mlp(train_X, test_X, train_Y, test_Y):
     return pm
     
 def vectorize_data(X, Y):
+    """Create training and testing vectors of X and return X vextors and Y lists"""
     vectorizer = CountVectorizer()
     jarvis_vectorizer = vectorizer.fit_transform(X)
     jarvis_array = jarvis_vectorizer.toarray()
@@ -81,17 +82,20 @@ def vectorize_data(X, Y):
 original_data = load_data('OriginalTrainingData')
 cleaned_data = load_data('CleanedTrainingData')
 pr01_data = load_data('CustomTrainingDataPR01')
-combined_data = {**cleaned_data, **pr01_data}
+combined_data = []
+combined_data.extend(cleaned_data).extend(pr01_data)
 
-
-#calculate counts of each ACTION
-original_counts = Counter(original_data.values())
-cleaned_counts = Counter(cleaned_data.values())  
 
 #get lists of keys and values for original data
-origX, origY = map(list, zip(*original_data.items()))
-pr01X, pr01Y = map(list, zip(*pr01_data.items()))
-combinedX, combinedY = map(list, zip(*combined_data.items()))
+origX, origY = map(list, zip(*original_data))
+cleanX, cleanY = map(list, zip(*cleaned_data))
+pr01X, pr01Y = map(list, zip(*pr01_data))
+combinedX, combinedY = map(list, zip(*combined_data))
+
+#calculate counts of each ACTION
+original_counts = Counter(origY)
+cleaned_counts = Counter(cleanY)
+combined_counts = Counter(combinedY)  
 
 
 #vectorize data
@@ -100,12 +104,13 @@ pr01trainX, pr01testX, pr01Ytrain, pr01Ytest = vectorize_data(pr01X, pr01Y)
 combinedtrainX, combinedtestX, combinedYtrain, combinedYtest = vectorize_data(combinedX, combinedY)
 
 
-#run MLP
-run_mlp(origtrainX, origtestX, origYtrain, origYtest)
+#run MLP to get range, mean, variance, standard deviation
+
+for i in range(0,10):
+    locals()['orig \0'.format(i)] = run_mlp(origtrainX, origtestX, origYtrain, origYtest)
 run_mlp(trainX_array, testX_array, Y_train, Y_test)
 run_mlp(pr01trainX, pr01testX, pr01Ytrain, pr01Ytest)
 run_mlp(combinedtrainX, combinedtestX, combinedYtrain, combinedYtest)
-
 
 
 
@@ -119,3 +124,4 @@ clean_count = plt.bar(cleaned_counts.keys(), cleaned_counts.values(), width = 0.
 plt.legend(loc = 'lower right')
 plt.ylabel('Number of Occurrences')
 plt.show()
+
