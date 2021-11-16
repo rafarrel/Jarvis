@@ -177,6 +177,9 @@ class Jarvis:
         elif 'testing time' in message.lower():
             self.start_testing()
             self.post_message("I'm training my brain with the data you've already given me...", channel)
+            ##############################################
+            # ADD THE RE-TRAIN JARVIS FUNCTIONALITY HERE #
+            ##############################################
             self.post_message("OK, I'm ready for testing. Write me something and I'll try to figure it out.", channel)
         elif 'done' in message.lower():
             self.current_action = ''
