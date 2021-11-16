@@ -1,15 +1,16 @@
 """
     Jarvis - A data-collecting chatbot for Slack
     Current Release: 1.0
-
     Jarvis is a chatbot designed for seamless integration with Slack 
     workspaces. It will collect data from users and train itself 
     to interact within the workspace.
-
+    
     ------------------------------------------------------------------
     Release notes for v.1.0:
-        - IN PROGRESS
-
+        - Jarvis can receive and send messages from/to Slack
+        - Jarvis can enter different modes such as training and idle
+        - Jarvis can store processed messages in a database
+        
     ------------------------------------------------------------------
     This project is released as open-source under the permissive MIT 
     license with the approval of its sponsor, Bagrow Industries.
@@ -84,6 +85,7 @@ class Jarvis:
 
     # ---------------------------------------------------------------------- #
     # Jarvis States
+    
     def start_action(self):
         # Start action mode
         self.current_state = self.ACTION
@@ -175,6 +177,9 @@ class Jarvis:
         elif 'testing time' in message.lower():
             self.start_testing()
             self.post_message("I'm training my brain with the data you've already given me...", channel)
+            ##############################################
+            # ADD THE RE-TRAIN JARVIS FUNCTIONALITY HERE #
+            ##############################################
             self.post_message("OK, I'm ready for testing. Write me something and I'll try to figure it out.", channel)
         elif 'done' in message.lower():
             self.current_action = ''
@@ -261,7 +266,7 @@ class Database:
     
     def clear_table(self):
         self.curr.execute("DELETE FROM training_data")
-        self.curr.commit()
+        self.conn.commit()
         
     def add_batch_data(self, df):
         # This will add large amounts of data to the training data at once.
@@ -270,6 +275,12 @@ class Database:
         self.conn.commit()
         print("{} rows inserted into training data".format(df.size/2))
     
+    def retrieve_data(self):
+        returned_data = []
+        self.curr.execute("SELECT * FROM training_data")
+        for row in self.curr.fetchall():
+            returned_data.append(row)
+        return returned_data
     
     def print_training_data(self):
         # This will print the message text and action (training data)
