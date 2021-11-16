@@ -1,11 +1,9 @@
 """
     This script detects dat bad data tho and alerts project personnel
-    so that they can manually review flagged data files.
+    so they can manually review flagged data files.
 """
 import json
 import nltk
-import re
-import pandas as pd
 
 from string        import punctuation
 from nltk.corpus   import stopwords
@@ -15,7 +13,7 @@ from nltk.tokenize import word_tokenize
 #         FUNCTIONS          #
 ##############################
 def clean_data(data):
-    """Pre-process data to remove things that don't convey mearning."""
+    """Pre-process data to remove things that don't convey meaning."""
     # Stuff to remove
     exclude    = set(punctuation)
     stop_words = stopwords.words('english')
@@ -31,7 +29,7 @@ def clean_data(data):
     
     
 def load_data(filename):
-    """Load data into a pandas dataframe."""
+    """Load data into a list of [txt, action] pairs for processing."""
     data = []
     
     with open(filename, 'r') as file:
@@ -42,12 +40,14 @@ def load_data(filename):
                 # Only split on last comma, signifying the separator between
                 # text and action label.
                 txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
-                line_dict   = {'TXT'   :txt,
-                               'ACTION':action}
+                
+                line_dict = {}
+                line_dict['TXT'   ] = txt
+                line_dict['ACTION'] = action
             finally:
                 clean_data(line_dict) 
                 data.append([line_dict['TXT'], line_dict['ACTION']]) 
-                
+    
     return data
     
 
@@ -55,12 +55,13 @@ def load_data(filename):
 #         MAIN CODE          #
 ##############################
 if __name__ == '__main__':
-    # UNCOMMENT THESE IF NEED TO DOWNLOAD
-    #nltk.download('punkt')
-    #nltk.download('stopwords')
+    nltk.download('punkt'    , quiet=True)
+    nltk.download('stopwords', quiet=True)
+    
+    # Specify name of file to analyze for bad data here
+    filename = 'OriginalTrainingData\\original_data4.txt'
     
     # THIS IS FOR TESTING
-    test_data = load_data('OriginalTrainingData\\original_data4.txt')
+    test_data = load_data(filename)
     for line in test_data:
         print(line)
-    
