@@ -1,28 +1,53 @@
-is it a good weather for picnic?,WEATHER
-do you want pizza? we can get some together,PIZZA
-check the weather for me,WEATHER
-could you tell me a joke to make me laugh?,JOKE
-what time is it now,TIME
-"jarvis, if you could tell me the time now, that would be helpful",TIME
-is the weather good outside?,WEATHER
-find the best joke and tell me,JOKE
-can you watch the clock over there and tell me what time is it now?,TIME
-tell me a joke,JOKE
-could you please tell me what time is it now?,TIME
-can you get a large size one with cheese? thanks,PIZZA
-can you buy me a pizza downstairs?,PIZZA
+id love to hear a joke,JOKE
+hows it going,GREET
+i want pizza,PIZZA
+what temperature is it,WEATHER
+is it raining,WEATHER
+whats crackin,GREET
+im hungry for pizza,PIZZA
+i want dinner,PIZZA
+hi,GREET
+pizza please,PIZZA
+can you tell me the time,TIME
+what’s the weather,WEATHER
+whats the time,TIME
+what time is it jarvis,TIME
+is it a shorts or pants day today,WEATHER
+is it night yet,TIME
+What's the hour,TIME
+its dinner time,PIZZA
+i want to hear something funny,JOKE
+whats up,GREET
+What's the hour,TIME
+is it cold out,WEATHER
 tell me something funny,JOKE
-how do you like the weather,WEATHER
-order me a veggie pizza,PIZZA
-how is the weather,WEATHER
-what will the weather be like tomorrow,WEATHER
-let's order some pizza,PIZZA
-do you know what time is it now/,TIME
-buy me a slice of pizza,PIZZA
-what is your favorite joke?,JOKE
-do you know any joke,JOKE
-"I want a pizza, can you get one for me",PIZZA
-what is the funniest joke in the world,JOKE
-what's the weather like,WEATHER
-check the time please,TIME
-"I'm bored, tell me something amusing",JOKE
+What it is the time,TIME
+i need a joke,JOKE
+is it a shorts day today,WEATHER
+What time it is?,TIME
+hear any good jokes lately,JOKE
+howdy,GREET
+tell me a joke,JOKE
+time me,TIME
+what time is it,TIME
+make me laugh,JOKE
+wassuup,GREET
+what’s the temp,WEATHER
+is it a shorts day or a pants day today,WEATHER
+GREET,GREET
+wassup,GREET
+hey,GREET
+is it nice out,WEATHER
+should i wear a jacket,WEATHER
+wazzup,GREET
+i need to eat dinner,PIZZA
+TIME,TIME
+please tell me what time it is,TIME
+what’s the weather like,WEATHER
+hello,GREET
+is it raining cats and dogs,WEATHER
+im craving pizza,PIZZA
+i need the time,TIME
+what time it is?,TIME
+what time it is,TIME
+what's the temperature,WEATHER

@@ -1,42 +1,40 @@
-Hey Jarvis,GREET
-make me laugh,JOKE
-lets get food,PIZZA
-be humorous,JOKE
-yo,GREET
-how how it is it,WEATHER
-i want food,PIZZA
-lets get delivery,PIZZA
-order me pizza please,PIZZA
-do i need a jacket,WEATHER
-make me laugh,JOKE
-im hungry,PIZZA
-feed me,PIZZA
-temperature,WEATHER
-is it cold?,WEATHER
-How late is it?,TIME
-time,TIME
-be funny,JOKE
-sup g,GREET
-how cold is it,WEATHER
-Do you have the time?,TIME
-tell me a joke,JOKE
-hey,GREET
-do you know any jokes,JOKE
-is it warm?,WEATHER
-lets laugh,JOKE
-Hello Jarvis,GREET
-whats the time,TIME
-when should we,TIME
-joke,JOKE
-pizza,PIZZA
-How early is it?,TIME
-lets get pizza,PIZZA
-hi jarvis,GREET
-lets hear a joke,JOKE
-whats the temperature,WEATHER
-i want pizza,PIZZA
-whats the temp,WEATHER
-What time is it?,TIME
-when do we have to,TIME
-whats the weather,WEATHER
-do you have a sense of humor,JOKE
+{"TXT": "can you tell me the time, please", "ACTION": "TIME"}
+{"TXT": "hit me with a funny", "ACTION": "JOKE"}
+{"TXT": "when is it?", "ACTION": "TIME"}
+{"TXT": "what time is the thing?", "ACTION": "TIME"}
+{"TXT": "what time is it?", "ACTION": "TIME"}
+{"TXT": "time please!", "ACTION": "TIME"}
+{"TXT": "what hour is it?", "ACTION": "TIME"}
+{"TXT": "are you funny?", "ACTION": "JOKE"}
+{"TXT": "tell me a joke, jarvis", "ACTION": "JOKE"}
+{"TXT": "tell me the time", "ACTION": "TIME"}
+{"TXT": "tell me what time it is", "ACTION": "TIME"}
+{"TXT": "tell me the hour", "ACTION": "TIME"}
+{"TXT": "how's it going?", "ACTION": "GREET"}
+{"TXT": "make me laugh", "ACTION": "JOKE"}
+{"TXT": "hello, jarvis", "ACTION": "GREET"}
+{"TXT": "hey! howdy!", "ACTION": "GREET"}
+{"TXT": "jarvis, what is the hour?", "ACTION": "TIME"}
+{"TXT": "what is the weather?", "ACTION": "WEATHER"}
+{"TXT": "got any jokes?", "ACTION": "JOKE"}
+{"TXT": "what's the time?", "ACTION": "TIME"}
+{"TXT": "please order some za", "ACTION": "PIZZA"}
+{"TXT": "knock, knock...", "ACTION": "JOKE"}
+{"TXT": "what's your best joke?", "ACTION": "JOKE"}
+{"TXT": "hi", "ACTION": "GREET"}
+{"TXT": "what is the temperature?", "ACTION": "WEATHER"}
+{"TXT": "take a pizza order", "ACTION": "PIZZA"}
+{"TXT": "how is the weather today?", "ACTION": "WEATHER"}
+{"TXT": "what's up?", "ACTION": "GREET"}
+{"TXT": "report today's forecast", "ACTION": "WEATHER"}
+{"TXT": "what's that pizza place?", "ACTION": "PIZZA"}
+{"TXT": "looks like rain", "ACTION": "WEATHER"}
+{"TXT": "what's going on, jarvis?", "ACTION": "GREET"}
+{"TXT": "greetings", "ACTION": "GREET"}
+{"TXT": "jarvis, know any funny jokes?", "ACTION": "JOKE"}
+{"TXT": "tell me the weather", "ACTION": "WEATHER"}
+{"TXT": "pizza pie with everything on it", "ACTION": "PIZZA"}
+{"TXT": "is it nice out today?", "ACTION": "WEATHER"}
+{"TXT": "can you order a pizza?", "ACTION": "PIZZA"}
+{"TXT": "pizza please!", "ACTION": "PIZZA"}
+{"TXT": "what's it like outside?", "ACTION": "WEATHER"}

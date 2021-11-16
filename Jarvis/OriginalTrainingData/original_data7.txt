@@ -1,39 +1,53 @@
-funny,JOKE
-laugh,JOKE
-vegetarian pizza,PIZZA
-hello,GREET
-it is cold outside,WEATHER
-is it 12 noon or midnight?,TIME
-rain,WEATHER
-pun,JOKE
-the date is,TIME
-oregano on the crust,PIZZA
-hawaiian pizza with pineapple,PIZZA
-hey,GREET
-hot,WEATHER
-pepporoni pizza,PIZZA
-yesterday afternoon,TIME
-what time is it?,TIME
-i would like some pizza,PIZZA
-joke,JOKE
-there is a storm,WEATHER
+is it 7 o'clock,TIME
+order pizza for lunch,PIZZA
+will i be cold in shorts,WEATHER
+how are you today,GREET
+what time is it,TIME
+tell me something funny,JOKE
+tell me a joke,JOKE
+tell me how late it is,TIME
+make me laugh,JOKE
+how's the weather,WEATHER
+what's your favorite joke,JOKE
+order a large cheese,PIZZA
+is it cloudy,WEATHER
+get a large pepperoni,PIZZA
+tell me the time in london,TIME
+is it time to go,TIME
+what time is it right now,TIME
+hey jarvis,GREET
 knock knock,JOKE
-warm,WEATHER
-howdy,GREET
-morning,TIME
-pepperoni,PIZZA
-last night,TIME
-snow,WEATHER
-the month is november,TIME
-cheese toppings,PIZZA
-dear friend,GREET
-tomato sauce,PIZZA
-the year is 2017,TIME
-tomorrow at 6 o'clock,TIME
-what is the difference between,JOKE
-sunny,WEATHER
-humor,JOKE
-hi,GREET
-welcome,GREET
-haha,JOKE
-a man walks into a bar,JOKE
+good evening,GREET
+good morning,GREET
+is it raining,WEATHER
+say something funny,JOKE
+tell me what the clock says,TIME
+good afternoon,GREET
+order from dominos,PIZZA
+hi how are you,GREET
+what time is it in new york,TIME
+order a medium cheese pizza with mushrooms from the pizza place,PIZZA
+order a pizza,PIZZA
+call the pizza place,PIZZA
+tell me a joke about pizza,JOKE
+do you think i need a jacket,WEATHER
+is it seven o'clock,TIME
+good morning jarvis,GREET
+how hot will it get today,WEATHER
+what's the temperature,WEATHER
+hi jarvis,GREET
+hello,GREET
+what is the current time,TIME
+yo what's up,GREET
+tell me how early it is,TIME
+do i need my umbrella,WEATHER
+testing time,WEATHER
+get a pizza,PIZZA
+do you know any jokes,JOKE
+order a pizza for me,PIZZA
+how have you been,GREET
+how have you been,GREET
+how cold will it get today,WEATHER
+is it time to go,TIME
+get pizza for dinner,PIZZA
+order five pizzas,PIZZA

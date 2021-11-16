@@ -1,39 +1,34 @@
-funny,JOKE
-laugh,JOKE
-vegetarian pizza,PIZZA
-hello,GREET
-it is cold outside,WEATHER
-is it 12 noon or midnight?,TIME
-rain,WEATHER
-pun,JOKE
-the date is,TIME
-oregano on the crust,PIZZA
-hawaiian pizza with pineapple,PIZZA
-hey,GREET
-hot,WEATHER
-pepporoni pizza,PIZZA
-yesterday afternoon,TIME
-what time is it?,TIME
-i would like some pizza,PIZZA
-joke,JOKE
-there is a storm,WEATHER
-knock knock,JOKE
-warm,WEATHER
-howdy,GREET
-morning,TIME
-pepperoni,PIZZA
-last night,TIME
-snow,WEATHER
-the month is november,TIME
-cheese toppings,PIZZA
-dear friend,GREET
-tomato sauce,PIZZA
-the year is 2017,TIME
-tomorrow at 6 o'clock,TIME
-what is the difference between,JOKE
-sunny,WEATHER
-humor,JOKE
-hi,GREET
-welcome,GREET
-haha,JOKE
-a man walks into a bar,JOKE
+we spent a lot of time together,TIME
+will it rain,WEATHER
+when did you last hear a good joke,JOKE
+We have had rainy weather all week,WEATHER
+how is the weather,WEATHER
+what is the weather today,WEATHER
+he has not had a slice,PIZZA
+get me some pizza,PIZZA
+can we meet at one,TIME
+can you tell me the time right now,TIME
+what is your favorite funny story,JOKE
+I only eat New York style pizza,PIZZA
+when did you last see her,TIME
+Tell me a joke,JOKE
+He cant stop joking,JOKE
+They just ate pizza,PIZZA
+Lets hear a funny joke,JOKE
+is it raining,WEATHER
+comedians tell jokes,JOKE
+I want pizza,PIZZA
+what is it like outside,WEATHER
+we should order pizza,PIZZA
+I need a slice of pizza,PIZZA
+Its pouring out,WEATHER
+the weather is cold,WEATHER
+pass me a slice of pizza please,PIZZA
+when is class,TIME
+when does the film show,TIME
+Deep dish pizza is bad,PIZZA
+when will it be time to eat,TIME
+When will the train arrive,TIME
+I would like to hear a joke,JOKE
+is it snowing,WEATHER
+can we get a small pizza pie,PIZZA

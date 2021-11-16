@@ -1,60 +1,50 @@
-{"TXT": "how are you today", "ACTION": "GREET"}
-{"TXT": "wazzup", "ACTION": "GREET"}
-{"TXT": "How are you doing today?", "ACTION": "GREET"}
-{"TXT": "I\u2019m ready for less rain and more snow", "ACTION": "WEATHER"}
-{"TXT": "When will you go?", "ACTION": "TIME"}
-{"TXT": "Or a corny joke", "ACTION": "JOKE"}
-{"TXT": "it\u2019s so stormy out", "ACTION": "WEATHER"}
-{"TXT": "When does it end", "ACTION": "TIME"}
-{"TXT": "hi there", "ACTION": "GREET"}
-{"TXT": "what time are you going?", "ACTION": "TIME"}
-{"TXT": "where have you been", "ACTION": "GREET"}
-{"TXT": "What time is it?", "ACTION": "TIME"}
-{"TXT": "what\u2019s up", "ACTION": "GREET"}
-{"TXT": "Hello Jarvis", "ACTION": "GREET"}
-{"TXT": "It\u2019s a beautiful day out today", "ACTION": "WEATHER"}
-{"TXT": "hi-ya", "ACTION": "GREET"}
-{"TXT": "Bonjour!", "ACTION": "GREET"}
-{"TXT": "do you think that storm will hit us", "ACTION": "WEATHER"}
-{"TXT": "do you like tomato sauce or garlic olive oil sauce on your pizza", "ACTION": "PIZZA"}
-{"TXT": "The show starts at 5 PM", "ACTION": "TIME"}
-{"TXT": "Do you know what time it is?", "ACTION": "TIME"}
-{"TXT": "I don\u2019t know a lot of good jokes", "ACTION": "JOKE"}
-{"TXT": "knock knock", "ACTION": "JOKE"}
-{"TXT": "rabbit farts", "ACTION": "JOKE"}
-{"TXT": "it\u2019s so windy out today", "ACTION": "WEATHER"}
-{"TXT": "do you think it will rain again todau", "ACTION": "WEATHER"}
-{"TXT": "sometimes pizza is also called pie or flatbread", "ACTION": "PIZZA"}
-{"TXT": "I hope more hurricanes don\u2019t hit", "ACTION": "WEATHER"}
-{"TXT": "People seem to like pepperoni pizza a lot and sausage", "ACTION": "PIZZA"}
-{"TXT": "I think it\u2019s 9:52 AM", "ACTION": "TIME"}
-{"TXT": "Do you like a lot of toppings", "ACTION": "PIZZA"}
-{"TXT": "Do you know any funny jokes?", "ACTION": "JOKE"}
-{"TXT": "It\u2019s supposed to snow later this week", "ACTION": "WEATHER"}
-{"TXT": "what kind of pizza should we get", "ACTION": "PIZZA"}
-{"TXT": "It\u2019s pretty cloudy out, but it\u2019s not supposed to rain", "ACTION": "WEATHER"}
-{"TXT": "hey", "ACTION": "GREET"}
-{"TXT": "When does it start", "ACTION": "TIME"}
-{"TXT": "What\u2019s invisible and smells like carrots?", "ACTION": "JOKE"}
-{"TXT": "hahaha", "ACTION": "JOKE"}
-{"TXT": "tell me something hilarious", "ACTION": "JOKE"}
-{"TXT": "but I have to eat the gluten free crust option", "ACTION": "PIZZA"}
-{"TXT": "It snowed this past weekend up on the mountains", "ACTION": "WEATHER"}
-{"TXT": "helloooo", "ACTION": "GREET"}
-{"TXT": "How long until you get here", "ACTION": "TIME"}
-{"TXT": "I love cheese pizza", "ACTION": "PIZZA"}
-{"TXT": "How many pizzas should we order", "ACTION": "PIZZA"}
-{"TXT": "why hello there", "ACTION": "GREET"}
-{"TXT": "greetings", "ACTION": "GREET"}
-{"TXT": "what\u2019s the weather going to be tomorrow", "ACTION": "WEATHER"}
-{"TXT": "It\u2019s so cold outside", "ACTION": "WEATHER"}
-{"TXT": "Do you like pizza?", "ACTION": "PIZZA"}
-{"TXT": "howdy", "ACTION": "GREET"}
-{"TXT": "i LOVE pizza", "ACTION": "PIZZA"}
-{"TXT": "what time do you have to go to class?", "ACTION": "TIME"}
-{"TXT": "who\u2019s there", "ACTION": "JOKE"}
-{"TXT": "lol", "ACTION": "JOKE"}
-{"TXT": "When are you going", "ACTION": "TIME"}
-{"TXT": "welcome", "ACTION": "GREET"}
-{"TXT": "we have a good restaurant in town called American Flatbread that has awesome wood-fired pizza", "ACTION": "PIZZA"}
-{"TXT": "it\u2019s nice to see you again", "ACTION": "GREET"}
+What’s the low temperature today?,WEATHER
+Order a large pepperoni.,PIZZA
+"Im hungry, get me a pie.",PIZZA
+Hey man.,GREET
+Is it going to rain today?,WEATHER
+Good afternoon.,GREET
+Tell me a joke.,JOKE
+I want to hear a joke.,JOKE
+What year is it?,TIME
+Do you have the time?,TIME
+Do computers understand dad jokes?,JOKE
+Good day to you.,GREET
+I want to hear something funny.,JOKE
+What is the date and time?,TIME
+Teach me a new joke.,JOKE
+Time?,TIME
+Is the weather nice today?,WEATHER
+What’s the weather like outside?,WEATHER
+Get me a large pepperoni pie!,PIZZA
+Hey,GREET
+Good evening.,GREET
+Place and order for some pizza in 30 minutes.,PIZZA
+Hola Jarvis.,GREET
+Order me pizza for lunch.,PIZZA
+What time is it?,TIME
+Hey Jarvis,GREET
+Should I get my snow tires put on this weekend?,WEATHER
+How are you?,GREET
+Tell me something funny,JOKE
+How’s the weather this weekend?,WEATHER
+Im going to get a slice of cheese.,PIZZA
+When will the rain stop?,WEATHER
+Whats the military time right now?,TIME
+Tell me a funny joke.,JOKE
+Hey how are you today?,GREET
+Howdy,GREET
+Hey whats up?,GREET
+Good morning.,GREET
+Tell me the time.,TIME
+Get me a pizza.,PIZZA
+What’s the high temperature today?,WEATHER
+Tell me when its afternoon.,TIME
+It’s time for lunch order me a pie.,PIZZA
+Is it before noon?,TIME
+What’s the temperature going to be at noon?,WEATHER
+Is it going to be cold and raining all day?,WEATHER
+"Man I need some cheesy, greasy pizza.",PIZZA
+Hi there,GREET
+Hello.,GREET
+How’s it going?,GREET

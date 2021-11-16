@@ -1,40 +1,39 @@
-I need the time,TIME
-"forecast please, jarvis",GREET
-I'd like a pizza for take-out,JOKE
-what's the forecast?,GREET
-How warm will it be?,JOKE
-What's the weather today?,JOKE
-"Jarvis, what's the time?",WEATHER
-Tell me a joke,WEATHER
-What's it like outside?,WEATHER
-What's the temperature?,TIME
-I need a laugh,JOKE
-can you tell me the time?,GREET
-"Jarvis, order me a pizza",JOKE
-weather please,WEATHER
-How late is it?,PIZZA
-"Jarvis, do you know the time?",TIME
-I'm going to need takeout,GREET
-Good morning,TIME
-Good to see you jarvis,TIME
-I'd like to order a pizza,TIME
-Well hello jarvis,PIZZA
-time please,WEATHER
-good afternoon,TIME
-"Hi, jarvis",TIME
-"Make me laugh, jarvis",GREET
-Hey jarvis,GREET
-cheer me up jarvis,PIZZA
-What time is it?,PIZZA
-"Jarvis, know any good jokes?",PIZZA
-"Tell a joke, jarvis",WEATHER
-How early is it?,JOKE
-"The usual for dinner, jarvis",PIZZA
-"I'm hungry, order some food",GREET
-I want take-out tonight,WEATHER
+Good day,GREET
+Please purchase a pepperoni pizza for me,PIZZA
+"Jarvis, order a margarita pizza",PIZZA
+I'm feeling hungry for pizza.,PIZZA
+Good morning,GREET
 Is it raining?,WEATHER
-"jarvis, place an order for pizza",PIZZA
-Is it going to rain today?,PIZZA
-I could use a laugh,WEATHER
-Hello,JOKE
-Jarvis,GREET
+Is the sun shining?,WEATHER
+Nice to see you,GREET
+Call for pizza please,PIZZA
+Cheer me up,JOKE
+Hey there,GREET
+Tell me a joke,JOKE
+What time is it?,TIME
+How are things?,GREET
+Hi,GREET
+Let me know the time,TIME
+Could you tell me the time?,TIME
+What is the current time?,TIME
+Say something funny,JOKE
+Can you please order pizza?,PIZZA
+"Jarvis, look up the time",TIME
+Do you know any good jokes?,JOKE
+Let's order pizza,PIZZA
+Tell me the weather,WEATHER
+I'd like to have some pizza.,PIZZA
+What kind of weather is it?,WEATHER
+How warm is it?,WEATHER
+What is the temperature?,WEATHER
+Good afternoon,GREET
+Is it cold currently?,WEATHER
+What's the time?,TIME
+Hello,GREET
+Is it hot outside?,WEATHER
+Get me some pizza.,PIZZA
+Have you heard anything funny lately?,JOKE
+Tell me the time,TIME
+Good evening,GREET
+What's up?,GREET
+I need a laugh,JOKE

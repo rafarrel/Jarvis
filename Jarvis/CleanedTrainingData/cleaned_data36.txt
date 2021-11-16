@@ -1,41 +1,37 @@
-Do I need a coat?,WEATHER
-I'm hungry.,PIZZA
-Good afternoon to you!,GREET
-Where is a fancy pizza place?,PIZZA
-Is winter cold this year?,WEATHER
-Why do bicycles fall over?,JOKE
-What time does the store close?,TIME
-Knock knock,JOKE
-"Get a pizza delivered, extra cheese.",PIZZA
-It's a pleasure to meet you!,GREET
-I want to eat a pizza.,PIZZA
-Tell me something funny.,JOKE
-Top of the morning to you Jarvis.,GREET
-Do I need a rain coat?,WEATHER
-I haven't seen you in forever Jarvis!,GREET
-Is the weather bad today?,WEATHER
-I want some food.,PIZZA
-Is it snowing?,WEATHER
-What time does the store open?,TIME
-What time should we meet?,TIME
-What time does the movie start?,TIME
-What goes up and down but does not move?,JOKE
-Good morning.,GREET
-Is it raining?,WEATHER
-Are the roads icy today?,WEATHER
-What did the dad say during comedy night?,JOKE
-What time will you be ready?,TIME
-Where is the nearest pizza place?,PIZZA
-Make me laugh.,JOKE
-When does the show end?,TIME
-I want some food delivered.,PIZZA
-Find me a vegan pizza place.,PIZZA
-What temperature is it?,WEATHER
-When should we meet?,TIME
-What part of the car is the laziest?,JOKE
-What do you get if you cross a Christmas tree we an iPad?,JOKE
-When is it supposed to get warmer?,WEATHER
-What do elves learn in school?,JOKE
-I want pizza.,PIZZA
-Hi Jarvis.,GREET
-It's nice to meet you!,GREET
+{"TXT": "how long before i should go to bed if i want to be remotely healthy", "ACTION": "TIME"}
+{"TXT": "could you tell me a joke", "ACTION": "JOKE"}
+{"TXT": "you up?", "ACTION": "GREET"}
+{"TXT": "how long has it been since i last slept", "ACTION": "TIME"}
+{"TXT": "i'm totally out of jokes", "ACTION": "JOKE"}
+{"TXT": "do you know the time", "ACTION": "TIME"}
+{"TXT": "can you tell me a joke", "ACTION": "JOKE"}
+{"TXT": "i'd like to laugh right now", "ACTION": "JOKE"}
+{"TXT": "will it snow today?", "ACTION": "WEATHER"}
+{"TXT": "sup", "ACTION": "GREET"}
+{"TXT": "what time is it?", "ACTION": "TIME"}
+{"TXT": "how long has it been since i woke up", "ACTION": "TIME"}
+{"TXT": "good day", "ACTION": "GREET"}
+{"TXT": "i'd like to order a pizza", "ACTION": "PIZZA"}
+{"TXT": "how about some circular pies", "ACTION": "PIZZA"}
+{"TXT": "how am i doing on time", "ACTION": "TIME"}
+{"TXT": "how hot is it", "ACTION": "WEATHER"}
+{"TXT": "am i late", "ACTION": "TIME"}
+{"TXT": "do you even have a sense of humor", "ACTION": "JOKE"}
+{"TXT": "good morning", "ACTION": "GREET"}
+{"TXT": "how cold is it", "ACTION": "WEATHER"}
+{"TXT": "hey how you doing", "ACTION": "GREET"}
+{"TXT": "can i get a pizza", "ACTION": "PIZZA"}
+{"TXT": "hey", "ACTION": "GREET"}
+{"TXT": "hi jarvis", "ACTION": "GREET"}
+{"TXT": "should i get to class soon", "ACTION": "TIME"}
+{"TXT": "good evening", "ACTION": "GREET"}
+{"TXT": "could I bother you for the time", "ACTION": "TIME"}
+{"TXT": "i need some circular pies", "ACTION": "PIZZA"}
+{"TXT": "i need some cheesiness in my life", "ACTION": "PIZZA"}
+{"TXT": "quick i need a joke", "ACTION": "JOKE"}
+{"TXT": "good afternoon", "ACTION": "GREET"}
+{"TXT": "let's put in an order for some pizza", "ACTION": "PIZZA"}
+{"TXT": "i need a new joke", "ACTION": "JOKE"}
+{"TXT": "what's the weather like", "ACTION": "WEATHER"}
+{"TXT": "is it windy", "ACTION": "WEATHER"}
+{"TXT": "i need to hear something funny", "ACTION": "JOKE"}

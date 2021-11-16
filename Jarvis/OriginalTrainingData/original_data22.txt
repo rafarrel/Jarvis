@@ -1,53 +1,37 @@
-is it 7 o'clock,TIME
-order pizza for lunch,PIZZA
-will i be cold in shorts,WEATHER
-how are you today,GREET
-what time is it,TIME
-tell me something funny,JOKE
-tell me a joke,JOKE
-tell me how late it is,TIME
-make me laugh,JOKE
-how's the weather,WEATHER
-what's your favorite joke,JOKE
-order a large cheese,PIZZA
-is it cloudy,WEATHER
-get a large pepperoni,PIZZA
-tell me the time in london,TIME
-is it time to go,TIME
-what time is it right now,TIME
-hey jarvis,GREET
-knock knock,JOKE
-good evening,GREET
-good morning,GREET
-is it raining,WEATHER
-say something funny,JOKE
-tell me what the clock says,TIME
-good afternoon,GREET
-order from dominos,PIZZA
-hi how are you,GREET
-what time is it in new york,TIME
-order a medium cheese pizza with mushrooms from the pizza place,PIZZA
-order a pizza,PIZZA
-call the pizza place,PIZZA
-tell me a joke about pizza,JOKE
-do you think i need a jacket,WEATHER
-is it seven o'clock,TIME
-good morning jarvis,GREET
-how hot will it get today,WEATHER
-what's the temperature,WEATHER
-hi jarvis,GREET
-hello,GREET
-what is the current time,TIME
-yo what's up,GREET
-tell me how early it is,TIME
-do i need my umbrella,WEATHER
-testing time,WEATHER
-get a pizza,PIZZA
-do you know any jokes,JOKE
-order a pizza for me,PIZZA
-how have you been,GREET
-how have you been,GREET
-how cold will it get today,WEATHER
-is it time to go,TIME
-get pizza for dinner,PIZZA
-order five pizzas,PIZZA
+Why did the picture go to jail? Because it was framed,JOKE
+What gets wetter the more it dries? A towel,WEATHER
+How much snow is there outside?,WEATHER
+What's the difference between a guitar and a fish?,GREET
+howdy,GREET
+is it raining?,WEATHER
+What kind of toppings do you want?,JOKE
+how's it going?,PIZZA
+Is it hot out?,PIZZA
+What's your favorite kind of pizza?,GREET
+how hot is it out there?,JOKE
+Do you want olives?,JOKE
+What do lawyers wear to court? Lawsuits,TIME
+hey,WEATHER
+What did the bacon say to the tomato? Lettuce get together,TIME
+What is the best pizza topping?,TIME
+Do you want to go get pepperoni pizza right now?,WEATHER
+hello!,JOKE
+hi,GREET
+what's up?,WEATHER
+What does a nosy pepper do? Gets jalapeno business!,WEATHER
+hey there,JOKE
+Can I have a large pizza?,GREET
+What do you call an alligator in a vest?,TIME
+Do you have the time?,PIZZA
+I want some pizza.,GREET
+what's new?,WEATHER
+Can you see the clock?,PIZZA
+What does the clock say?,GREET
+how cloudy is it?,GREET
+will it be nice out tomorrow?,PIZZA
+Can I see your watch?,PIZZA
+what's the temperature?,WEATHER
+how cold is it?,TIME
+what's the weather today?,JOKE
+Do you have a watch on you?,PIZZA
+Can you tell me the time?,TIME

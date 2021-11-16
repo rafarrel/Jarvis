@@ -1,37 +1,39 @@
-{"TXT": "one pie please", "ACTION": "PIZZA"}
-{"TXT": "can I have one pepperoni and one Hawaiian?", "ACTION": "PIZZA"}
-{"TXT": "hello jarvis.", "ACTION": "GREET"}
-{"TXT": "hi", "ACTION": "GREET"}
-{"TXT": "what is the temperature jarvis?", "ACTION": "WEATHER"}
-{"TXT": "when is it", "ACTION": "TIME"}
-{"TXT": "when is it today", "ACTION": "TIME"}
-{"TXT": "lets hear a wise crack jarvis!", "ACTION": "JOKE"}
-{"TXT": "is it cold out?", "ACTION": "WEATHER"}
-{"TXT": "i'd enjoy a quip from you jarvis", "ACTION": "JOKE"}
-{"TXT": "hey how are you?", "ACTION": "GREET"}
-{"TXT": "hey how the heck is it going?", "ACTION": "GREET"}
-{"TXT": "a large veggie and uh maybe a slice or two of meat lovers jarvis", "ACTION": "PIZZA"}
-{"TXT": "can I order a pizza please?", "ACTION": "PIZZA"}
-{"TXT": "hit me up with some pizzapie jarvy", "ACTION": "PIZZA"}
-{"TXT": "hey jarvis hit me up with a cheese pizza", "ACTION": "PIZZA"}
-{"TXT": "hey", "ACTION": "GREET"}
-{"TXT": "can you tell me a good joke?", "ACTION": "JOKE"}
-{"TXT": "when is it right now", "ACTION": "TIME"}
-{"TXT": "whats good", "ACTION": "GREET"}
-{"TXT": "is it sunny?", "ACTION": "WEATHER"}
-{"TXT": "hows the weather?", "ACTION": "WEATHER"}
-{"TXT": "give me the time please", "ACTION": "TIME"}
-{"TXT": "hows the weather today?", "ACTION": "WEATHER"}
-{"TXT": "do I need a sweater?", "ACTION": "WEATHER"}
-{"TXT": "id like a pizza please", "ACTION": "PIZZA"}
-{"TXT": "is it too early for me to sleep?", "ACTION": "TIME"}
-{"TXT": "what its like out today?", "ACTION": "WEATHER"}
-{"TXT": "what time is it jarvis?", "ACTION": "TIME"}
-{"TXT": "alright jarvis make me laugh", "ACTION": "JOKE"}
-{"TXT": "whats up my main man?", "ACTION": "GREET"}
-{"TXT": "can I have a pie?", "ACTION": "PIZZA"}
-{"TXT": "can I order some za for take out?", "ACTION": "PIZZA"}
-{"TXT": "Jarvis, please tell me a joke.", "ACTION": "JOKE"}
-{"TXT": "do you know any jokes?", "ACTION": "JOKE"}
-{"TXT": "what is the hour?", "ACTION": "TIME"}
-{"TXT": "which time is it right now?", "ACTION": "TIME"}
+funny,JOKE
+laugh,JOKE
+vegetarian pizza,PIZZA
+hello,GREET
+it is cold outside,WEATHER
+is it 12 noon or midnight?,TIME
+rain,WEATHER
+pun,JOKE
+the date is,TIME
+oregano on the crust,PIZZA
+hawaiian pizza with pineapple,PIZZA
+hey,GREET
+hot,WEATHER
+pepporoni pizza,PIZZA
+yesterday afternoon,TIME
+what time is it?,TIME
+i would like some pizza,PIZZA
+joke,JOKE
+there is a storm,WEATHER
+knock knock,JOKE
+warm,WEATHER
+howdy,GREET
+morning,TIME
+pepperoni,PIZZA
+last night,TIME
+snow,WEATHER
+the month is november,TIME
+cheese toppings,PIZZA
+dear friend,GREET
+tomato sauce,PIZZA
+the year is 2017,TIME
+tomorrow at 6 o'clock,TIME
+what is the difference between,JOKE
+sunny,WEATHER
+humor,JOKE
+hi,GREET
+welcome,GREET
+haha,JOKE
+a man walks into a bar,JOKE

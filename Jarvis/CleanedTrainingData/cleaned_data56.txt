@@ -1,40 +1,38 @@
-{"TXT": "forcast for today", "ACTION": "WEATHER"}
-{"TXT": "tell me a joke jarvis", "ACTION": "JOKE"}
-{"TXT": "order pizza", "ACTION": "PIZZA"}
-{"TXT": "how are you jarvis", "ACTION": "GREET"}
-{"TXT": "i want pizza", "ACTION": "PIZZA"}
-{"TXT": "id like to know the weather jarvis", "ACTION": "WEATHER"}
-{"TXT": "whats the weather like jarvis", "ACTION": "WEATHER"}
-{"TXT": "weather", "ACTION": "WEATHER"}
-{"TXT": "jarvis time", "ACTION": "TIME"}
-{"TXT": "forcast", "ACTION": "WEATHER"}
-{"TXT": "pizza", "ACTION": "PIZZA"}
-{"TXT": "whats up", "ACTION": "GREET"}
-{"TXT": "could you tell me the time", "ACTION": "TIME"}
-{"TXT": "please get me a pizza", "ACTION": "PIZZA"}
-{"TXT": "hey jarvis", "ACTION": "GREET"}
-{"TXT": "when", "ACTION": "TIME"}
-{"TXT": "what time is it jarvis", "ACTION": "TIME"}
-{"TXT": "funny", "ACTION": "JOKE"}
-{"TXT": "tell me the weather", "ACTION": "WEATHER"}
-{"TXT": "order me a pizza", "ACTION": "PIZZA"}
-{"TXT": "please time me", "ACTION": "TIME"}
-{"TXT": "what time is it", "ACTION": "TIME"}
-{"TXT": "time", "ACTION": "TIME"}
-{"TXT": "wether", "ACTION": "WEATHER"}
-{"TXT": "joke", "ACTION": "JOKE"}
-{"TXT": "get a pizza", "ACTION": "PIZZA"}
-{"TXT": "tell me the time", "ACTION": "TIME"}
-{"TXT": "say something funny", "ACTION": "JOKE"}
-{"TXT": "hi", "ACTION": "GREET"}
-{"TXT": "how is your day going jarvis?", "ACTION": "GREET"}
-{"TXT": "whats the temperature", "ACTION": "WEATHER"}
-{"TXT": "tell me a joke jarvis", "ACTION": "JOKE"}
-{"TXT": "whats the weather like jarvis", "ACTION": "WEATHER"}
-{"TXT": "hello jarvis", "ACTION": "GREET"}
-{"TXT": "whats funny", "ACTION": "JOKE"}
-{"TXT": "tell me dat time", "ACTION": "TIME"}
-{"TXT": "heyo", "ACTION": "GREET"}
-{"TXT": "please pizza me", "ACTION": "PIZZA"}
-{"TXT": "place an order", "ACTION": "PIZZA"}
-{"TXT": "joke with me", "ACTION": "JOKE"}
+When is my alarm set for?,TIME
+I will have a slice of barbecue veggie pizza.,PIZZA
+Why did the chicken cross the road?,JOKE
+I think your joke was offensive,JOKE
+That's what she said,JOKE
+It is snowing today.,WEATHER
+Can I have a 12 inch pizza?,PIZZA
+What time are we leaving?,TIME
+When does this class start?,TIME
+"Hi, what's your name?",GREET
+"Jarvis, tell me a joke.",JOKE
+Do you like cheese pizza?,PIZZA
+"Hey, what's up?",GREET
+How are you?,GREET
+What is your favorite joke?,JOKE
+How's the weather today?,WEATHER
+Order me a pizza from Leonardo's.,PIZZA
+What time is it?,TIME
+What time does the clock say?,TIME
+Hi!,GREET
+How long has it been?,GREET
+Is it raining outside?,WEATHER
+What time do you eat lunch?,TIME
+Hey,GREET
+What is your favorite kind of pizza?,PIZZA
+How's your day been?,GREET
+Do you prefer Domino's pizza or Leonardo's?,PIZZA
+I like to ski when the weather is cold.,WEATHER
+Dave Chappelle tells funny jokes.,JOKE
+When is your bed time?,TIME
+I know a funny joke.,JOKE
+Do you know any good jokes?,JOKE
+Hello,GREET
+Some strange weather were having today.,WEATHER
+Nice weather we're having today.,WEATHER
+I like the warm weather.,WEATHER
+The weather is not nice today.,WEATHER
+There are 24 hours in a day.,TIME

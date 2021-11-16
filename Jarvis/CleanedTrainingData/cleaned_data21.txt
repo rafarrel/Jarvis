@@ -1,40 +1,41 @@
-Two slices please,PIZZA
-Cheese slice!,PIZZA
-What time is it?,TIME
-What’s so funny?,JOKE
-Get me pizza,PIZZA
-How warm is it?,WEATHER
-Hey there,GREET
-I want a slice,PIZZA
-Give me pizza,PIZZA
-Whats the weather?,WEATHER
-Joke please,JOKE
-Order a pizza,PIZZA
-What’s the time?,TIME
-How is it out?,WEATHER
+Do I need a coat?,WEATHER
+I'm hungry.,PIZZA
+Good afternoon to you!,GREET
+Where is a fancy pizza place?,PIZZA
+Is winter cold this year?,WEATHER
+Why do bicycles fall over?,JOKE
+What time does the store close?,TIME
+Knock knock,JOKE
+"Get a pizza delivered, extra cheese.",PIZZA
+It's a pleasure to meet you!,GREET
+I want to eat a pizza.,PIZZA
+Tell me something funny.,JOKE
+Top of the morning to you Jarvis.,GREET
+Do I need a rain coat?,WEATHER
+I haven't seen you in forever Jarvis!,GREET
+Is the weather bad today?,WEATHER
+I want some food.,PIZZA
 Is it snowing?,WEATHER
-I need a laugh,JOKE
-Hey,GREET
-Got the time?,TIME
-Can you give me a joke,JOKE
-What’s your clock say?,TIME
-Greetings,GREET
-Get me a pepperoni pie,PIZZA
-Whats the temperature?,WEATHER
-I want pizza,PIZZA
-Whats up,GREET
-Time?,TIME
-Pizza without pineapple!,PIZZA
-Tell me a joke,JOKE
-Is it sunny or rainy?,WEATHER
-What’s the current time?,TIME
-Make me laugh,JOKE
-Let’s get pizza,PIZZA
-What’s funny?,JOKE
-Hello,GREET
-Tell me something funny,JOKE
-Sup,GREET
-Is it nice out?,WEATHER
-Yo,GREET
-Tell me the current time,TIME
-How cold is it?,WEATHER
+What time does the store open?,TIME
+What time should we meet?,TIME
+What time does the movie start?,TIME
+What goes up and down but does not move?,JOKE
+Good morning.,GREET
+Is it raining?,WEATHER
+Are the roads icy today?,WEATHER
+What did the dad say during comedy night?,JOKE
+What time will you be ready?,TIME
+Where is the nearest pizza place?,PIZZA
+Make me laugh.,JOKE
+When does the show end?,TIME
+I want some food delivered.,PIZZA
+Find me a vegan pizza place.,PIZZA
+What temperature is it?,WEATHER
+When should we meet?,TIME
+What part of the car is the laziest?,JOKE
+What do you get if you cross a Christmas tree we an iPad?,JOKE
+When is it supposed to get warmer?,WEATHER
+What do elves learn in school?,JOKE
+I want pizza.,PIZZA
+Hi Jarvis.,GREET
+It's nice to meet you!,GREET

@@ -1,43 +1,40 @@
-{"TXT": "pizza is my favorite food", "ACTION": "PIZZA"}
-{"TXT": "Pizza made me fat and greasy", "ACTION": "PIZZA"}
-{"TXT": "I want something can make me laugh", "ACTION": "JOKE"}
-{"TXT": "show me your humor", "ACTION": "JOKE"}
-{"TXT": "Could you tell me the time?", "ACTION": "TIME"}
-{"TXT": "I am sad, tell me a Joke", "ACTION": "JOKE"}
-{"TXT": "Pizza is not really healthy.", "ACTION": "PIZZA"}
-{"TXT": "I care about current weather", "ACTION": "WEATHER"}
-{"TXT": "hello", "ACTION": "GREET"}
-{"TXT": "pizza for my breakfast is a good option", "ACTION": "PIZZA"}
-{"TXT": "What is the time on your watch?", "ACTION": "TIME"}
-{"TXT": "Is it raining today?", "ACTION": "WEATHER"}
-{"TXT": "show me the weather", "ACTION": "WEATHER"}
-{"TXT": "Is it hot today?", "ACTION": "WEATHER"}
-{"TXT": "Can you tell me the weather?", "ACTION": "WEATHER"}
-{"TXT": "what\u2019s up", "ACTION": "GREET"}
-{"TXT": "say a joke to prove you are not a boring guy", "ACTION": "JOKE"}
-{"TXT": "it is very late, pizza is our only option", "ACTION": "PIZZA"}
-{"TXT": "good morning honey", "ACTION": "GREET"}
-{"TXT": "I am bored, I want a Joke", "ACTION": "JOKE"}
-{"TXT": "I need to know the time!", "ACTION": "TIME"}
-{"TXT": "I am hungry and I want to eat pizza", "ACTION": "PIZZA"}
-{"TXT": "how are you", "ACTION": "GREET"}
-{"TXT": "I cannot live without know the weather", "ACTION": "WEATHER"}
-{"TXT": "tell me the current time", "ACTION": "TIME"}
-{"TXT": "what does the clock say?", "ACTION": "TIME"}
-{"TXT": "any good jokes for me?", "ACTION": "JOKE"}
-{"TXT": "what time is it?", "ACTION": "TIME"}
-{"TXT": "hi", "ACTION": "GREET"}
-{"TXT": "hi man!", "ACTION": "GREET"}
-{"TXT": "you looks great today", "ACTION": "GREET"}
-{"TXT": "yoo", "ACTION": "GREET"}
-{"TXT": "long time no see, how\u2019s your life?", "ACTION": "GREET"}
-{"TXT": "nice to see you here", "ACTION": "GREET"}
-{"TXT": "Is it cold today?", "ACTION": "WEATHER"}
-{"TXT": "order a pizza for me now", "ACTION": "PIZZA"}
-{"TXT": "tell me a funny story", "ACTION": "JOKE"}
-{"TXT": "Is it snowing today?", "ACTION": "WEATHER"}
-{"TXT": "Cheer me up!", "ACTION": "JOKE"}
-{"TXT": "I want pizza for my dinner", "ACTION": "PIZZA"}
-{"TXT": "I want to eat Dominos!", "ACTION": "PIZZA"}
-{"TXT": "I forgot my watch, I don\u2019t know the time.", "ACTION": "TIME"}
-{"TXT": "Time please!", "ACTION": "TIME"}
+start your watch!,TIME
+hey man!,GREET
+when?,TIME
+how is it going?,GREET
+I need a new funny joke,JOKE
+"Jarvis, pull up the weather report",WEATHER
+at what time exactly?,TIME
+In the past or future?,TIME
+its good to see you again,GREET
+why did the chicken cross the road?,JOKE
+the pizza cost me $19.95,PIZZA
+whats the temperature,WEATHER
+What do you call a penguin that fell down the stairs?,JOKE
+i need to be put in a better mood,JOKE
+Whats cracking?,GREET
+what is the chance it will rain today?,WEATHER
+get me pizza,PIZZA
+It was so hot out at the beach today!,WEATHER
+Long time no see,GREET
+my alarm is set for 7:49 a.m.,TIME
+at what hour,TIME
+"I was born 1995, in September",TIME
+how close is that hurricane?,WEATHER
+what time is it,TIME
+Do i need to wear a raincoat or is it sunny outside?,WEATHER
+is the pizza ready yet?,PIZZA
+tell me a good joke,JOKE
+pull up that pizza recipe,PIZZA
+what going on!,GREET
+can I get a slice of that?,PIZZA
+I need to work on my comedic presence,JOKE
+what toppings do you like?,PIZZA
+what's up?,GREET
+is it a nice day or a bad day outside?,WEATHER
+can you tell me the time right now?,TIME
+whats new?,GREET
+Good morning!,GREET
+can you make me laugh,JOKE
+why was six afraid of seven?,JOKE
+whats the wind chill today?,WEATHER

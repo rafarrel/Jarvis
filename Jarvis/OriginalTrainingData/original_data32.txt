@@ -1,44 +1,43 @@
-"You have to make sure the punchline is good, that’ll make them laugh.",JOKE
-Hey do you have the time?,TIME
-The wind blew a tree over,WEATHER
-The temperature will be warm tomorrow,WEATHER
-How long will it take for my pizza to get here?,PIZZA
-"Someone asked me if I would like a frozen banana. I said no, but maybe later, so yes!",JOKE
-"Hello, I’m Bennett.",GREET
-When are the clouds going to break up?,WEATHER
-"You should leave early, the roads will be really bad due to the storm",WEATHER
-Aloha!,GREET
-Are you free?,TIME
-When are you available?,TIME
-We could switch out the tomato sauce for an alfredo base,PIZZA
-What’s up?,GREET
-It was snowing so bad I could hardly see,WEATHER
-I am running late.,TIME
-"What is black, white and red all over?",JOKE
-Why did Dracula join the red cross?,JOKE
-I would like a large pepperoni pizza.,PIZZA
-Looks like we got here early,TIME
-"The roads iced up last night, I slipped twice walking down my driveway.",WEATHER
-Ciao Bella!,GREET
-Pleased to meet you.,GREET
-"About five years ago, I spent three hours working on a project",TIME
-How have you been?,GREET
-I’m not joking around here.,JOKE
-"When the clock strikes three, I will go",TIME
-"If the set up is good enough, almost any line will make people laugh.",JOKE
-What time should we get there?,TIME
-The time flew by yesterday.,TIME
-Why did the chicken cross the road?,JOKE
-I want something to dip my crust in,PIZZA
-Hi friend.,GREET
-How much does extra cheese cost?,PIZZA
-"Could I get it extra crispy, with pepperoncini?",PIZZA
-Salutations!,GREET
-"Today or tomorrow, any time will work for me",TIME
-Hey,GREET
-Welcome back.,GREET
-"Hey, that’s a great joke!",JOKE
-What time is it?,TIME
-"Have you heard the one about the bar tender, the mechanic, and the spawn of satan?",JOKE
-It was such a perfect day to play outside,WEATHER
-Are you free?,TIME
+When are you free today?,TIME
+Do I need a coat?,WEATHER
+I'm hungry.,PIZZA
+Good afternoon to you!,GREET
+Where is a fancy pizza place?,PIZZA
+Is winter cold this year?,WEATHER
+Why do bicycles fall over?,JOKE
+What time does the store close?,TIME
+Knock knock,JOKE
+"Get a pizza delivered, extra cheese.",PIZZA
+It's a pleasure to meet you!,GREET
+I want to eat a pizza.,PIZZA
+Tell me something funny.,JOKE
+Top of the morning to you Jarvis.,GREET
+Do I need a rain coat?,WEATHER
+I haven't seen you in forever Jarvis!,GREET
+Are you free tonight?,TIME
+Is the weather bad today?,WEATHER
+I want some food.,PIZZA
+Is it snowing?,WEATHER
+What time does the store open?,TIME
+What time should we meet?,TIME
+What time does the movie start?,TIME
+What goes up and down but does not move?,JOKE
+Good morning.,GREET
+Is it raining?,WEATHER
+Are the roads icy today?,WEATHER
+What did the dad say during comedy night?,JOKE
+What time will you be ready?,TIME
+Where is the nearest pizza place?,PIZZA
+Make me laugh.,JOKE
+When does the show end?,TIME
+I want some food delivered.,PIZZA
+Find me a vegan pizza place.,PIZZA
+What temperature is it?,WEATHER
+When should we meet?,TIME
+What part of the car is the laziest?,JOKE
+What do you get if you cross a Christmas tree we an iPad?,JOKE
+When is it supposed to get warmer?,WEATHER
+What do elves learn in school?,JOKE
+I want pizza.,PIZZA
+Hi Jarvis.,GREET
+It's nice to meet you!,GREET

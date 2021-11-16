@@ -1,37 +1,95 @@
-What is the time in Seattle?,JOKE
-what is a funny joke,JOKE
-Why are jokes funny,JOKE
-How cold is it today?,WEATHER
-What is the weather for the next week?,WEATHER
-How much time is in a day?,WEATHER
-Hey JARVIS,GREET
-What should I have for lunch?,PIZZA
-Pepperoni is your favorite,PIZZA
-YO JARVIS whats up,GREET
-Is it snowing?,WEATHER
-what is the funniest thing or joke,JOKE
-Is it going to be hot or cold?,WEATHER
-How's it going JARVIS?,WEATHER
-What time should I head to school?,TIME
-How much time is left?,TIME
-do funny joke make people laugh,JOKE
-How much time left in the hour?,TIME
-How much time left in the day?,TIME
-What time is it?,TIME
-Is the weather really cold?,WEATHER
-What is the best weather?,WEATHER
-What is your favorite pizza?,PIZZA
-How is your day going JARVIS?,GREET
-pizza topping's make it better,PIZZA
-What is up!,GREET
-what is funny JARVIS,JOKE
-Hi Jarvis,GREET
-What is the hour?,TIME
-What is the weather outside?,WEATHER
-Pizza is what you should eat,PIZZA
-How much time is in a day?,TIME
-What's Up JARVIS,GREET
-should you have pizza for lunch or dinner?,PIZZA
-Pizza is my favorite food,PIZZA
-Hey there JARVIS,GREET
-How is the weather today?,WEATHER
+what type of pizza do you like,PIZZA
+what jokes do you know,JOKE
+what toppings do you like on your pizza,PIZZA
+whats kicking,GREET
+whats new with you,WEATHER
+is it hailing,WEATHER
+hello friend,GREET
+find me a joke,JOKE
+hows it going,GREET
+what jokes are funny,JOKE
+which country tells the most jokes,JOKE
+sleet,WEATHER
+garlic,PIZZA
+what time is it,TIME
+do you know the temperature in degrees fahrenheit,WEATHER
+hola,GREET
+what kind of weather is pleasant,WEATHER
+i want a large pepperoni pizza,PIZZA
+who invented the joke,JOKE
+is it hot out,WEATHER
+is it raining,WEATHER
+do eggs go on pizza,PIZZA
+what up,GREET
+tell me a joke,JOKE
+what size pizza do you want,PIZZA
+i want pepperoni pizza,PIZZA
+how are you today,GREET
+howdy,GREET
+clock,TIME
+hello jarvis,GREET
+do you have a clock,TIME
+what does the minute hand read,TIME
+pepperoni,PIZZA
+bonjour,GREET
+onions,PIZZA
+is it sunny,WEATHER
+what is the best weather to ski in,WEATHER
+snow,WEATHER
+how are you doing,GREET
+what is the temperature,WEATHER
+whats the time,TIME
+is it snowing outside,WEATHER
+what is the weather like in florida,WEATHER
+i want pizz, PIZZA
+why is pizza baked,PIZZA
+can you tell me the time right now,TIME
+rain,WEATHER
+do you know the time,TIME
+get some pizza for me,PIZZA
+is it warm out,WEATHER
+why is pizza round,PIZZA
+sleet,WEATHER
+which country makes the best pizza,PIZZA
+hi,GREET
+watch,TIME
+hows it hanging,GREET
+whats up,GREET
+is it snowing,WEATHER
+do you know the temperature in degrees celsius,WEATHER
+i want a pepperoni pizza,PIZZA
+medium,PIZZA
+hey,GREET
+pizza sauce,PIZZA
+large,PIZZA
+what is the funniest joke,joke
+small,PIZZA
+is it warm,WEATHER
+sausage,PIZZA
+who cooks pizza,PIZZA
+how do people predict the weather,WEATHER
+where can i hear funny jokes,JOKE
+what time is it in an hour,TIME
+what time does your watch say,TIME
+what is the weather like outside,WEATHER
+i want a small pepperoni pizza,PIZZA
+time,TIME
+do you know the time off the top of your head,TIME
+is it hot outside,WEATHER
+what time is it,TIME
+tell me jokes,JOKE
+hello,GREET
+is salt put on pizza,PIZZA
+is it sleeting,WEATHER
+hail,WEATHER
+why do jokes make people laugh,JOKE
+i want pizza,PIZZA
+i want a medium pepperoni pizza,PIZZA
+whats a good joke to say at someones funeral,JOKE
+pizza,PIZZA
+should i become a weather forecaster,WEATHER
+what time does the clock say,TIME
+pizza crust,PIZZA
+yo,GREET
+stuffed crust,PIZZA
+i like cheesy stuffed crust pizza,PIZZA

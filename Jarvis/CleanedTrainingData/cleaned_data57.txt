@@ -1,34 +1,37 @@
-{"TXT": "It's good to see you!", "ACTION": "GREET"}
-{"TXT": "Hey, how are you?", "ACTION": "GREET"}
-{"TXT": "Good morning.", "ACTION": "GREET"}
-{"TXT": "Tell me the time, please.", "ACTION": "TIME"}
-{"TXT": "Make a joke, please.", "ACTION": "JOKE"}
-{"TXT": "Say something to make me laugh.", "ACTION": "JOKE"}
-{"TXT": "What is the weather like outside?", "ACTION": "WEATHER"}
-{"TXT": "I need you to order a pizza.", "ACTION": "PIZZA"}
-{"TXT": "Get me a large pepperoni and wings.", "ACTION": "PIZZA"}
-{"TXT": "Go order a pizza.", "ACTION": "PIZZA"}
-{"TXT": "Please inform me of the current temperature.", "ACTION": "WEATHER"}
-{"TXT": "What is the current time?", "ACTION": "TIME"}
-{"TXT": "Tell me a joke.", "ACTION": "JOKE"}
-{"TXT": "Is it snowing now?", "ACTION": "WEATHER"}
-{"TXT": "I'd really like you to get a medium cheese pizza.", "ACTION": "PIZZA"}
-{"TXT": "Could you tell me the current weather?", "ACTION": "WEATHER"}
-{"TXT": "Call the pizzeria.", "ACTION": "PIZZA"}
-{"TXT": "Check the current weather.", "ACTION": "WEATHER"}
-{"TXT": "What hour is it now?", "ACTION": "TIME"}
-{"TXT": "Place an order for delivery.", "ACTION": "PIZZA"}
-{"TXT": "Can you go order a pizza for me?", "ACTION": "PIZZA"}
-{"TXT": "What time is it?", "ACTION": "TIME"}
-{"TXT": "Could you order some pizza?", "ACTION": "PIZZA"}
-{"TXT": "Yo, how's it going?", "ACTION": "GREET"}
-{"TXT": "Hello.", "ACTION": "GREET"}
-{"TXT": "Get me the time.", "ACTION": "TIME"}
-{"TXT": "Hey there.", "ACTION": "GREET"}
-{"TXT": "Is it raining outside?", "ACTION": "WEATHER"}
-{"TXT": "I'm bored. Got any good jokes?", "ACTION": "JOKE"}
-{"TXT": "Hi, how have you been?", "ACTION": "GREET"}
-{"TXT": "Go check the time.", "ACTION": "TIME"}
-{"TXT": "Say a funny joke!", "ACTION": "JOKE"}
-{"TXT": "When is it?", "ACTION": "TIME"}
-{"TXT": "Can you tell me a joke?", "ACTION": "JOKE"}
+time please,TIME
+Hi!,GREET
+It's a beautiful day for a walk,WEATHER
+a small 6'' vegetarian pizza please,PIZZA
+a large 14'' beef green pepper please,PIZZA
+what's it like outside,WEATHER
+order a pizza for me,PIZZA
+what's the forecast today?,WEATHER
+Is it hot today?,WEATHER
+tell me a joke,JOKE
+what's your favorite joke?,JOKE
+what joke do you know?,JOKE
+greetings!,GREET
+joke time!,JOKE
+I would like a chicken BBQ pizza,PIZZA
+joke me,JOKE
+How's the weather today,WEATHER
+show me the time,TIME
+what's the time now,TIME
+Hey!,GREET
+Hello!,GREET
+Is it cold outside?,WEATHER
+"a joke, please",JOKE
+Feeling good today?,GREET
+Is it 9 AM now?,TIME
+it's rainy,WEATHER
+good to see you jarvis,GREET
+what time is it?,TIME
+good day,GREET
+How are you today?,GREET
+Do you have a watch?,TIME
+tell me the time,TIME
+I want a pizza,PIZZA
+current time,TIME
+a pizza please,PIZZA
+order me a pizza with random flavor,PIZZA
+give me a pizza,PIZZA

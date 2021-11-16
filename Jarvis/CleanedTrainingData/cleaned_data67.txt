@@ -1,66 +1,37 @@
-Veggie pizza is more delicious,PIZZA
-How are you?,GREET
-sometimes we get 5 weeks in a month,TIME
-The wind is blowing cold and strong,WEATHER
-I'm joking.,JOKE
-Life is a comedy to him who thinks and a tragedy to him who feels.,JOKE
-"Is Jacket,mittens,cap,thermal wear,gloves and snow boots needed for the current weather?",WEATHER
-"Occasionally, I sleep late in the night",TIME
-when was the sunset yesterday evening?,TIME
-Hi!,GREET
-The last joke got the biggest laugh.,JOKE
-what is the current time?,TIME
-what have you been up to?,GREET
-when daylight saving time starts?,TIME
-Forecast of tomorrow is cloudy with a little drizzle,WEATHER
-"To stay healthy, it’s best to keep off junk food. You are what you eat.",PIZZA
-"Flatbread,Thin Crust,Sicilian Style,Chicago Deep Dish,Neapolitan Crust and NY Style Pizza are more famous pizza crust.",PIZZA
-Why should I joke about it?,JOKE
-Spectacular rainbow displays happen when half the sky is still dark with raining clouds.,WEATHER
-"Winter weather can be cool, chilly, cold, freezing, icy, frosty, very cold or bitter cold.",WEATHER
-What's the weather like?,WEATHER
-can we order food for lunch?,PIZZA
-when is the sun rise time for tomorrow morning?,TIME
-"Currently sky is overcast, gray and dark.",WEATHER
-I will call you later,TIME
-Joke is always funny.,JOKE
-"The climate of this region in summer is warm,hot and humid",WEATHER
-The temperature outside is 18 degrees below zero.,WEATHER
-How is it going?,GREET
-Have a great HAHA for xmas and new year!,JOKE
-I prefer to watch comedy movies because I prefer laughing over being scared or involved in a suspenseful action scene,JOKE
-Goodbye!,GREET
-"silly jokes, puns, and riddles for children and kids",JOKE
-Pizza!Yummy!!!,PIZZA
-Fahrenheit is used in the U.S.; Celsius is used in the other English-speaking countries.,WEATHER
-Current weather forecast is snowstorm and blizzard,WEATHER
-"All the taste, not on your waist!",PIZZA
-is it already afternoon?,TIME
-It is nice and bright outside.,WEATHER
-It is great to meet you!,GREET
-Good to see you buddy,GREET
-I love jokes.,JOKE
-Eat less during dinner when compare to breakfast.,PIZZA
-She greeted us with a smile.,GREET
-We all laughed loudly when she made a joke.,JOKE
-Have a very wonderful day!,GREET
-Have a good night!,GREET
-I like cheesy pizza very much,PIZZA
-"Four seasons are Spring,Summer,Fall and Winter.",WEATHER
-I'm running late for the meeting,TIME
-I'm really hungry.,PIZZA
-going to tell some joke,JOKE
-Hey!,GREET
-Hello!,GREET
-"Knock, knock----Who's There?----Ashe----Ashe who?",JOKE
-Why shouldn't you tell an egg a joke? Because it might crack up!,JOKE
-Macaroni and Cheese Pizza recipe is easy to make for a fun family dinner!,PIZZA
-Have a nice day!,GREET
-"Since 2000, I lived in US for 3 years",TIME
-"Fog which is also known as  haze, mist or smog occurs near dawn when the temperature of the day is normally at it's lowest.",WEATHER
-"And I don't cook,either. Not as long as they still deliver pizza.",PIZZA
-Wish you a happy birthday!,GREET
-when is my next meeting?,TIME
-Did you hear the joke about the peanut butter? I'm not telling you. You might spread it!,JOKE
-Kids were playfully joking with each other.,JOKE
-I wake up early in the morning everyday,TIME
+good morning,GREET
+"order a pizza for me, jarvis",PIZZA
+what time is it?,TIME
+good evening,GREET
+can you tell me the weather here,WEATHER
+is it sunny,WEATHER
+good afternoon,GREET
+what's the temperature,WEATHER
+hi jarvis,GREET
+can i have the time?,TIME
+do you have any jokes?,JOKE
+what is the weather?,WEATHER
+can you tell me the time,TIME
+greetings,GREET
+please give me the time,TIME
+what is the time?,TIME
+"tell me the time, please",TIME
+do you know any jokes?,JOKE
+is it raining out?,WEATHER
+tell me something funny,JOKE
+"i will take a pizza, please",PIZZA
+can you tell me a joke?,JOKE
+hey,GREET
+can i get a bbq chicken pizza?,PIZZA
+hello,GREET
+"jarvis, what time is it now",TIME
+hello my best chatbot friend,GREET
+how are you?,GREET
+how does it look outside?,WEATHER
+what is the weather like?,WEATHER
+"jarvis, order me a pizza please",PIZZA
+do you understand human humor?,JOKE
+"order me a pizza, please",PIZZA
+"can you tell me the time, please",TIME
+i want to laugh,JOKE
+what is the time right now,TIME
+get a cheese pizza for me,PIZZA

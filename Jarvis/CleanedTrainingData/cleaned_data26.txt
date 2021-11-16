@@ -1,37 +1,36 @@
-Why did the picture go to jail? Because it was framed,JOKE
-What gets wetter the more it dries? A towel,JOKE
-How much snow is there outside?,WEATHER
-What's the difference between a guitar and a fish?,JOKE
-howdy,GREET
 is it raining?,WEATHER
-What kind of toppings do you want?,PIZZA
-how's it going?,GREET
-Is it hot out?,WEATHER
-What's your favorite kind of pizza?,PIZZA
-how hot is it out there?,WEATHER
-Do you want olives?,PIZZA
-What do lawyers wear to court? Lawsuits,JOKE
-hey,GREET
-What did the bacon say to the tomato? Lettuce get together,JOKE
-What is the best pizza topping?,PIZZA
-Do you want to go get pepperoni pizza right now?,PIZZA
-hello!,GREET
+what is the weather,WEATHER
+please get me a slice of pizza,PIZZA
+does anyone know the weather?,WEATHER
+i'd like to order some pizza,PIZZA
+i'm really hungry,PIZZA
+whats it like outside today,WEATHER
+anyone want to order food,PIZZA
+can you tell me the time,TIME
+make me laugh,JOKE
+someone get me pizza,PIZZA
 hi,GREET
-what's up?,GREET
-What does a nosy pepper do? Gets jalapeno business!,JOKE
-hey there,GREET
-Can I have a large pizza?,PIZZA
-What do you call an alligator in a vest?,JOKE
-Do you have the time?,TIME
-I want some pizza.,PIZZA
-what's new?,GREET
-Can you see the clock?,TIME
-What does the clock say?,TIME
-how cloudy is it?,WEATHER
-will it be nice out tomorrow?,WEATHER
-Can I see your watch?,TIME
-what's the temperature?,WEATHER
-how cold is it?,WEATHER
-what's the weather today?,WEATHER
-Do you have a watch on you?,TIME
-Can you tell me the time?,TIME
+hey,GREET
+whats it like outside,WEATHER
+tell me the weather,WEATHER
+i want pizza,PIZZA
+whats the time,TIME
+what is the time?,TIME
+time,TIME
+its been a while,GREET
+say something funny,JOKE
+how about a joke,JOKE
+anyone got the time?,TIME
+tell me a joke,JOKE
+good to see you,GREET
+say a joke,JOKE
+anyone got an idea for a joke?,JOKE
+anyone got a joke they want to tell?,JOKE
+how is the weather today?,WEATHER
+want to order pizza?,PIZZA
+i want to laugh,JOKE
+whats up,GREET
+when is it?,TIME
+im starving,PIZZA
+what time is it right now,TIME
+whats new?,GREET

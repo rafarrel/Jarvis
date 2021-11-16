@@ -1,37 +1,40 @@
-{"TXT": "how long before i should go to bed if i want to be remotely healthy", "ACTION": "TIME"}
-{"TXT": "could you tell me a joke", "ACTION": "JOKE"}
-{"TXT": "you up?", "ACTION": "GREET"}
-{"TXT": "how long has it been since i last slept", "ACTION": "TIME"}
-{"TXT": "i'm totally out of jokes", "ACTION": "JOKE"}
-{"TXT": "do you know the time", "ACTION": "TIME"}
-{"TXT": "can you tell me a joke", "ACTION": "JOKE"}
-{"TXT": "i'd like to laugh right now", "ACTION": "JOKE"}
-{"TXT": "will it snow today?", "ACTION": "WEATHER"}
-{"TXT": "sup", "ACTION": "GREET"}
-{"TXT": "what time is it?", "ACTION": "TIME"}
-{"TXT": "how long has it been since i woke up", "ACTION": "TIME"}
-{"TXT": "good day", "ACTION": "GREET"}
-{"TXT": "i'd like to order a pizza", "ACTION": "PIZZA"}
-{"TXT": "how about some circular pies", "ACTION": "PIZZA"}
-{"TXT": "how am i doing on time", "ACTION": "TIME"}
-{"TXT": "how hot is it", "ACTION": "WEATHER"}
-{"TXT": "am i late", "ACTION": "TIME"}
-{"TXT": "do you even have a sense of humor", "ACTION": "JOKE"}
-{"TXT": "good morning", "ACTION": "GREET"}
-{"TXT": "how cold is it", "ACTION": "WEATHER"}
-{"TXT": "hey how you doing", "ACTION": "GREET"}
-{"TXT": "can i get a pizza", "ACTION": "PIZZA"}
-{"TXT": "hey", "ACTION": "GREET"}
-{"TXT": "hi jarvis", "ACTION": "GREET"}
-{"TXT": "should i get to class soon", "ACTION": "TIME"}
-{"TXT": "good evening", "ACTION": "GREET"}
-{"TXT": "could I bother you for the time", "ACTION": "TIME"}
-{"TXT": "i need some circular pies", "ACTION": "PIZZA"}
-{"TXT": "i need some cheesiness in my life", "ACTION": "PIZZA"}
-{"TXT": "quick i need a joke", "ACTION": "JOKE"}
-{"TXT": "good afternoon", "ACTION": "GREET"}
-{"TXT": "let's put in an order for some pizza", "ACTION": "PIZZA"}
-{"TXT": "i need a new joke", "ACTION": "JOKE"}
-{"TXT": "what's the weather like", "ACTION": "WEATHER"}
-{"TXT": "is it windy", "ACTION": "WEATHER"}
-{"TXT": "i need to hear something funny", "ACTION": "JOKE"}
+can you tell me the time,TIME
+jarvis tell me the time right now,TIME
+im hungry,PIZZA
+whats up,GREET
+tell me a joke,JOKE
+knock knock,JOKE
+greetings bot,GREET
+what is the time right now,TIME
+whats the weather today,WEATHER
+what time is it currently,TIME
+say something silly,JOKE
+make me giggle,JOKE
+say something goofy,JOKE
+can you get me a pizza,PIZZA
+what will the temperature be today,WEATHER
+is it going to rain today,WEATHER
+can i ask what is the time,TIME
+make me laugh,JOKE
+is it going to be sunny,WEATHER
+give me the hour and minute,TIME
+crack some jokes,JOKE
+what is the current time,TIME
+order me a pizza please,PIZZA
+tell me the current weather,WEATHER
+hi jarvis,GREET
+pizza for dinner tonight,PIZZA
+please order a cheese pizza from leonardos,PIZZA
+order a large pie,PIZZA
+buy a pizza for me,PIZZA
+nice to see you jarvis,GREET
+be comical,JOKE
+sup jarvis,GREET
+say something funny,JOKE
+whats it gonna be like out today,WEATHER
+i would like a cheese pizza,PIZZA
+hey man,GREET
+hey jarvis,GREET
+how many degrees is it,WEATHER
+what is the forecast,WEATHER
+clock,TIME

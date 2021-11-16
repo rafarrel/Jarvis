@@ -1,37 +1,46 @@
-time please,TIME
-Hi!,GREET
-It's a beautiful day for a walk,WEATHER
-a small 6'' vegetarian pizza please,PIZZA
-a large 14'' beef green pepper please,PIZZA
-what's it like outside,WEATHER
-order a pizza for me,PIZZA
-what's the forecast today?,WEATHER
-Is it hot today?,WEATHER
-tell me a joke,JOKE
-what's your favorite joke?,JOKE
-what joke do you know?,JOKE
+I want pizza please,PIZZA
+What's the weather like?,WEATHER
+What's up?,GREET
+Tell me a joke!,JOKE
+Is it warm,WEATHER
+time check,TIME
+hey,GREET
+order me some pizza,PIZZA
+Pizza please!,PIZZA
+Have any jokes?,JOKE
+let's hear a joke,JOKE
+how's it going?,GREET
+yo,GREET
+What's it like outside?,WEATHER
+Get pizza for me,PIZZA
+let's order pizza,PIZZA
+Good morning!,GREET
+Let's get pizza!,PIZZA
+tell me how late it is,TIME
+tell me how early it is,TIME
+How cold is it,WEATHER
+What time is it?,TIME
+Hi,GREET
+Can you tell me the time right now?,TIME
+order a pizza,PIZZA
+let's get takeout,PIZZA
+say something funny,JOKE
+What is the current weather,WEATHER
+what's the time?,TIME
+Can you tell me a joke?,JOKE
+Please tell me the current time,TIME
 greetings!,GREET
-joke time!,JOKE
-I would like a chicken BBQ pizza,PIZZA
-joke me,JOKE
-How's the weather today,WEATHER
-show me the time,TIME
-what's the time now,TIME
-Hey!,GREET
-Hello!,GREET
-Is it cold outside?,WEATHER
-"a joke, please",JOKE
-Feeling good today?,GREET
-Is it 9 AM now?,TIME
-it's rainy,WEATHER
-good to see you jarvis,GREET
-what time is it?,TIME
-good day,GREET
-How are you today?,GREET
-Do you have a watch?,TIME
-tell me the time,TIME
-I want a pizza,PIZZA
-current time,TIME
-a pizza please,PIZZA
-order me a pizza with random flavor,PIZZA
-give me a pizza,PIZZA
+sup?,GREET
+What is the current time?,TIME
+What's the temperature?,WEATHER
+Do you have any jokes?,JOKE
+Is it cold out,WEATHER
+hello,GREET
+How late is it?,TIME
+tel me how late it is,TIME
+Hello Jarvis,GREET
+Know any jokes?,JOKE
+What's the temperature,WEATHER
+Tell us a joke,JOKE
+tell me the current time,TIME
+What's in the forecast?,WEATHER

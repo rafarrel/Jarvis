@@ -1,34 +1,44 @@
-The joke is funny.,JOKE
-How is it going?,GREET
-Hello.,GREET
-Pepperoni pizza is very salty.,PIZZA
-what time is it now?,TIME
-eating the pizza,PIZZA
-time is money.,TIME
-How's the weather in Boston?,WEATHER
-Was that a joke?,JOKE
-Long time no see.,GREET
-"Great weather, isn't it?",WEATHER
-domino's pizza is delicious.,PIZZA
-tell a joke.,JOKE
-"If you can’t convince them, confuse them.",JOKE
-It's been a long time,TIME
-what's up?,GREET
-Take your time.,TIME
-How’s everything?,GREET
-The weather has improved.,WEATHER
-It is cold today.,WEATHER
-weahter is good!,WEATHER
-Why don't we order pizza?,PIZZA
-I could go for a nice hot pizza right now.,PIZZA
-Do not argue with an idiot. He will drag you down to his level and beat you with experience.,JOKE
-Tom ate the whole pizza by himself.,PIZZA
-Let's greet our guests.,GREET
-What's your favorite pizza topping?,PIZZA
-I like BBQ chicken pizza.,PIZZA
-how are you?,GREET
-It is raining outside.,WEATHER
-Have a good time.,TIME
-You had plenty of time.,TIME
-I need more time,TIME
-I'm used to this cold weather.,WEATHER
+{"TXT": "Ok jarvis", "ACTION": "GREET"}
+{"TXT": "When does Dunkin Donuts open?", "ACTION": "TIME"}
+{"TXT": "What will the weather be like next week?", "ACTION": "WEATHER"}
+{"TXT": "What will the low be tonight?", "ACTION": "WEATHER"}
+{"TXT": "What is the weather like today?", "ACTION": "WEATHER"}
+{"TXT": "What is the time in military time?", "ACTION": "TIME"}
+{"TXT": "Can you have a Hawaiian pizza delivered to me?", "ACTION": "PIZZA"}
+{"TXT": "Hi there", "ACTION": "GREET"}
+{"TXT": "Hey jarvis", "ACTION": "GREET"}
+{"TXT": "Hi Jarvis", "ACTION": "GREET"}
+{"TXT": "Order a pizza from Leonardo's", "ACTION": "PIZZA"}
+{"TXT": "TIME", "ACTION": "TIME"}
+{"TXT": "I'd like a riddle", "ACTION": "JOKE"}
+{"TXT": "Hola jarvis", "ACTION": "GREET"}
+{"TXT": "When does the sun set?", "ACTION": "TIME"}
+{"TXT": "Order 2 large pepperoni pizzas", "ACTION": "PIZZA"}
+{"TXT": "Display the time", "ACTION": "TIME"}
+{"TXT": "Will it snow tonight?", "ACTION": "WEATHER"}
+{"TXT": "Heyo", "ACTION": "GREET"}
+{"TXT": "I am hungry for pizza", "ACTION": "PIZZA"}
+{"TXT": "I'd like a pizza pie", "ACTION": "PIZZA"}
+{"TXT": "How are you", "ACTION": "GREET"}
+{"TXT": "Can you tell me what time it is?", "ACTION": "TIME"}
+{"TXT": "WHat's up?", "ACTION": "GREET"}
+{"TXT": "Where is the closest pizza place?", "ACTION": "PIZZA"}
+{"TXT": "What is the high for today?", "ACTION": "WEATHER"}
+{"TXT": "Good afternoon", "ACTION": "GREET"}
+{"TXT": "How hot is it outside?", "ACTION": "WEATHER"}
+{"TXT": "Tell me something funny", "ACTION": "JOKE"}
+{"TXT": "Is it going to rain today?", "ACTION": "WEATHER"}
+{"TXT": "Tell me a good joke", "ACTION": "JOKE"}
+{"TXT": "What is the temperature outside?", "ACTION": "WEATHER"}
+{"TXT": "Make me laugh Jarvis", "ACTION": "JOKE"}
+{"TXT": "What time is it in California?", "ACTION": "TIME"}
+{"TXT": "What time is it?", "ACTION": "TIME"}
+{"TXT": "How's it going?", "ACTION": "GREET"}
+{"TXT": "Jarvis, make me roll on the floor laughing", "ACTION": "JOKE"}
+{"TXT": "Can you order me a pizza?", "ACTION": "PIZZA"}
+{"TXT": "Order me a Dominoes pizza", "ACTION": "PIZZA"}
+{"TXT": "Do you have the time?", "ACTION": "TIME"}
+{"TXT": "I need a laugh", "ACTION": "JOKE"}
+{"TXT": "Is it going to be sunny tomorrow?", "ACTION": "WEATHER"}
+{"TXT": "I bet you can't make me chuckle", "ACTION": "JOKE"}
+{"TXT": "How much time until midnight?", "ACTION": "TIME"}

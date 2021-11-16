@@ -1,39 +1,39 @@
-Let me know what time it is.,TIME
-"Long time no see, Jarvis!",GREET
-What time is it right now?,TIME
-I hope it's going to be sunny tomorrow.,WEATHER
-Can you tell me the time?,TIME
-Give me a laugh!,JOKE
-Hey Jarvis!,GREET
-How’s it going?,GREET
-"Jarvis, order a pizza from Domino’s",PIZZA
-Say something punny.,JOKE
-What’s the weather outside right now?,WEATHER
-Hi Jarvis,GREET
-Is it going to be cold later?,WEATHER
-What’s the forecast?,WEATHER
-What time is it?,TIME
-Say something funny,JOKE
-Tell me what time it is.,TIME
-I’d like a small cheese with extra tomato sauce.,PIZZA
-Hello,GREET
-What’s the time?,TIME
-Tell me the time,TIME
-How are you?,GREET
-I want a pepperoni pizza,PIZZA
-Tell a funny joke,JOKE
-What’s the temperature?,WEATHER
-What’s the weather forecast for 05401?,WEATHER
-Make a pun.,JOKE
-Is it raining?,WEATHER
-"Hey jarvis, order me a cheese pizza.",PIZZA
-Hello Jarvis,GREET
-Order three extra large pizzas with no mushrooms.,PIZZA
-Can i have a margherita pizza?,PIZZA
-What’s the time right now?,TIME
-When is it supposed to snow?,WEATHER
-Tell a knock-knock joke,JOKE
-Tell me a joke,JOKE
-How much rain are we getting?,WEATHER
-Give me a hoot!,JOKE
-Hi!,GREET
+Call dominos,PIZZA
+What’s the time,TIME
+Tell me something funny ,JOKE
+that was funny,JOKE
+Is that rain,WEATHER
+How’s it going,GREET
+Are you hungry ,PIZZA
+Let’s get papa johns ,PIZZA
+Nice to meet you,GREET
+Do you have a watch ,TIME
+Is it cloudy ,WEATHER
+let’s order pizza,PIZZA
+How are you ,GREET
+Is it warm out ,WEATHER
+Is it going to snow,WEATHER
+What’s your bedtime ,TIME
+I want some pizza,PIZZA
+That was hilarious,JOKE
+Let’s make a pizza,PIZZA
+What a nice day ,WEATHER
+Let’s get dominos ,PIZZA
+Is it cold out ,WEATHER
+Is it a nice day ,WEATHER
+What’s your name,GREET
+It’s very early ,TIME
+Have we met,GREET
+It’s getting late ,TIME
+Make me laugh,JOKE
+Let me introduce myself,GREET
+What does that clock say,TIME
+It’s noon now ,TIME
+"Hi, how are you",GREET
+Pleasure to meet you,GREET
+hi ,GREET
+what time is it ,TIME
+Want to hear a joke,JOKE
+My name is Colin ,GREET
+I need a laugh,JOKE
+Want to bake a pizza,PIZZA

@@ -1,38 +1,46 @@
-find me a joke.,JOKE
-do you have the time?,TIME
-time?,TIME
-get pizza delivered.,PIZZA
-can you make me laugh?,JOKE
-do you know any good jokes?,JOKE
-should i go outside?,WEATHER
-order some pizza.,PIZZA
-"hi, jarvis.",GREET
-hello?,GREET
-how's the weather out there?,WEATHER
-i could use a good laugh.,JOKE
-is it time to go?,TIME
-order me some pizza.,PIZZA
+I want pizza please,PIZZA
+What's the weather like?,WEATHER
+What's up?,GREET
+Tell me a joke!,JOKE
+Is it warm,WEATHER
+time check,TIME
+hey,GREET
+order me some pizza,PIZZA
+Pizza please!,PIZZA
+Have any jokes?,JOKE
+let's hear a joke,JOKE
+how's it going?,GREET
+yo,GREET
+What's it like outside?,WEATHER
+Get pizza for me,PIZZA
+let's order pizza,PIZZA
+Good morning!,GREET
+Let's get pizza!,PIZZA
+tell me how late it is,TIME
+tell me how early it is,TIME
+How cold is it,WEATHER
+What time is it?,TIME
+Hi,GREET
+Can you tell me the time right now?,TIME
+order a pizza,PIZZA
+let's get takeout,PIZZA
+say something funny,JOKE
+What is the current weather,WEATHER
 what's the time?,TIME
-how's the weather?,WEATHER
-is the weather nice?,WEATHER
-hello!,GREET
-"hey, jarvis.",GREET
-what's it like outside?,WEATHER
-what's the hour?,TIME
-will the weather be bad?,WEATHER
-"how's it going, jarvis?",GREET
-what's the weather like?,WEATHER
-a pizza would be nice.,PIZZA
-how are you?,GREET
-what time is it?,TIME
-"tell me something funny, jarvis.",JOKE
-is it time to go to bed?,TIME
-should i go out today?,WEATHER
-do you know the time?,TIME
-"show me a joke, jarvis.",JOKE
-"greetings, jarvis.",GREET
-"cheese and pepperoni pizza, please!",PIZZA
-is it time for bed?,TIME
-get some pizza for me.,PIZZA
-do you know any jokes?,JOKE
-will it rain today?,WEATHER
+Can you tell me a joke?,JOKE
+Please tell me the current time,TIME
+greetings!,GREET
+sup?,GREET
+What is the current time?,TIME
+What's the temperature?,WEATHER
+Do you have any jokes?,JOKE
+Is it cold out,WEATHER
+hello,GREET
+How late is it?,TIME
+tel me how late it is,TIME
+Hello Jarvis,GREET
+Know any jokes?,JOKE
+What's the temperature,WEATHER
+Tell us a joke,JOKE
+tell me the current time,TIME
+What's in the forecast?,WEATHER

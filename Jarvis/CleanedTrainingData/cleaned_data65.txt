@@ -1,38 +1,47 @@
-find me a joke.,JOKE
-do you have the time?,TIME
+"Jarvis, order me a cheese pizza please.",PIZZA
+whats the time?,TIME
+do you have a sense of humor?,JOKE
+Do you know any jokes?,JOKE
+sup,GREET
+What's your favorite joke,JOKE
+how much is a pizza?,PIZZA
+Do you have the time?,TIME
 time?,TIME
-get pizza delivered.,PIZZA
-can you make me laugh?,JOKE
-do you know any good jokes?,JOKE
-should i go outside?,WEATHER
-order some pizza.,PIZZA
-"hi, jarvis.",GREET
-hello?,GREET
-how's the weather out there?,WEATHER
-i could use a good laugh.,JOKE
-is it time to go?,TIME
-order me some pizza.,PIZZA
-what's the time?,TIME
-how's the weather?,WEATHER
-is the weather nice?,WEATHER
-hello!,GREET
-"hey, jarvis.",GREET
-what's it like outside?,WEATHER
-what's the hour?,TIME
-will the weather be bad?,WEATHER
-"how's it going, jarvis?",GREET
-what's the weather like?,WEATHER
-a pizza would be nice.,PIZZA
+tell me the weather.,WEATHER
+"Jarvis, tell me a joke",JOKE
+hi,GREET
+What's it like outside now?,WEATHER
+How's the weather outside?,WEATHER
+weather?,WEATHER
+Whats up,GREET
+give me the time.,TIME
+tell me something funny,JOKE
+I want a pepperoni pizza.,PIZZA
+Is it cold?,WEATHER
+Hey Jarvis,GREET
+do you want to hear a joke?,JOKE
+How's it going?,GREET
+hello,GREET
+Can you order me pizza?,PIZZA
 how are you?,GREET
-what time is it?,TIME
-"tell me something funny, jarvis.",JOKE
-is it time to go to bed?,TIME
-should i go out today?,WEATHER
-do you know the time?,TIME
-"show me a joke, jarvis.",JOKE
-"greetings, jarvis.",GREET
-"cheese and pepperoni pizza, please!",PIZZA
-is it time for bed?,TIME
-get some pizza for me.,PIZZA
-do you know any jokes?,JOKE
-will it rain today?,WEATHER
+"Jarvis, whats the temperature?",WEATHER
+"Jarvis, what's it like outside?",WEATHER
+Get me a pizza now.,PIZZA
+Hola,GREET
+can i hear a joke?,JOKE
+hows it going?,GREET
+I'll have two pizzas for delivery.,PIZZA
+what time of day is it?,TIME
+do you have a good joke for me?,JOKE
+What does your clock say?,TIME
+"buy me a pizza, Jarvis.",PIZZA
+tell me something funny,JOKE
+Order me pizza.,PIZZA
+order me slices of pizza.,PIZZA
+tell me the time.,TIME
+"Jarvis, can you tell time?",TIME
+order me some slices,PIZZA
+Howdy,GREET
+whats the weather like outside?,WEATHER
+give me a weather update,WEATHER
+Whats the forecast?,WEATHER

@@ -1,36 +1,28 @@
-i want pizza,PIZZA
+is it a good weather for picnic?,WEATHER
+do you want pizza? we can get some together,PIZZA
+check the weather for me,WEATHER
+could you tell me a joke to make me laugh?,JOKE
+what time is it now,TIME
+"jarvis, if you could tell me the time now, that would be helpful",TIME
+is the weather good outside?,WEATHER
+find the best joke and tell me,JOKE
+can you watch the clock over there and tell me what time is it now?,TIME
 tell me a joke,JOKE
-hello,GREET
-is it cold out?,WEATHER
-get a pizza for me,PIZZA
-hi jarvis,GREET
-hey there,GREET
-i could use a laugh,JOKE
-good afternoon,GREET
-good morning,GREET
-order a pizza for me,PIZZA
-tell me what time it is,TIME
-is it nice out?,WEATHER
-what is the weather,WEATHER
-good evening,GREET
-hello jarvis,GREET
-make me laugh,JOKE
-i want a pizza with cheese and pepperoni,PIZZA
-could you tell me the time right now?,TIME
-what hour is it?,TIME
-what are the weather predictions,WEATHER
-do you know any jokes?,JOKE
-what is the time?,TIME
-tell me something witty,JOKE
-i would like to hear a joke,JOKE
-is it raining or sunny?,WEATHER
-i would like to know the time.,TIME
-i'd like a pizza!,PIZZA
-what is the weather prediction,WEATHER
-what's the forecast,WEATHER
-what's the time?,TIME
-howdy,GREET
-what part of the day is it?,TIME
-how are you?,GREET
-what's the temperature outside?,WEATHER
-i'm hungry for a pizza,PIZZA
+could you please tell me what time is it now?,TIME
+can you get a large size one with cheese? thanks,PIZZA
+can you buy me a pizza downstairs?,PIZZA
+tell me something funny,JOKE
+how do you like the weather,WEATHER
+order me a veggie pizza,PIZZA
+how is the weather,WEATHER
+what will the weather be like tomorrow,WEATHER
+let's order some pizza,PIZZA
+do you know what time is it now/,TIME
+buy me a slice of pizza,PIZZA
+what is your favorite joke?,JOKE
+do you know any joke,JOKE
+"I want a pizza, can you get one for me",PIZZA
+what is the funniest joke in the world,JOKE
+what's the weather like,WEATHER
+check the time please,TIME
+"I'm bored, tell me something amusing",JOKE

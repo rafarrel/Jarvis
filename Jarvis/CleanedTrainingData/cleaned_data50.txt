@@ -1,43 +1,43 @@
-Will I need a jacket today?,WEATHER
-What time is it?,TIME
-How cold will it be today?,WEATHER
-Is it nice outside?,WEATHER
-Will it rain today?,WEATHER
-What is the weather right now?,WEATHER
-What is the time?,TIME
-Are you there?,GREET
-Hi,GREET
-What's up?,GREET
-Are you online?,GREET
-Greetings!,GREET
-I am starving!,PIZZA
-I'm bored,JOKE
-Will I need an umbrella today?,WEATHER
-Tell me something funny!,JOKE
-Where are you?,GREET
-Make me laugh!,JOKE
-Please order some food.,PIZZA
-How early is it?,TIME
-How cold is it outside?,WEATHER
-I am feeling hungry,PIZZA
-I would like a slice of pizza,PIZZA
-Can you order some lunch?,PIZZA
-I am afraid I will be late,TIME
-Hi Jarvis!,GREET
-Have you heard any good jokes lately?,JOKE
-Entertain me,JOKE
-Do you know any jokes?,JOKE
-it is lunch time!,PIZZA
-What time do you have?,TIME
-Hello,GREET
-Time?,TIME
-What hour is it?,TIME
-Will it be sunny?,WEATHER
-Knock Knock!,JOKE
-Food?,PIZZA
-Could you cheer me up?,JOKE
-Please get some pizza,PIZZA
-Tell a joke!,JOKE
-What is the weather like today?,WEATHER
-How much will it snow today?,WEATHER
-How are you?,GREET
+Good afternoon to you!,GREET
+I want some food.,PIZZA
+Welcome great to see you!,GREET
+Tell me a knock knock joke,JOKE
+What goes up and down but does not move?,JOKE
+Hi Jarvis.,GREET
+I want some food delivered.,PIZZA
+When are you free today?,TIME
+What time does the movie start?,TIME
+Knock knock,JOKE
+Do I need a rain coat?,WEATHER
+"Get a pizza delivered, extra cheese.",PIZZA
+What temperature is it?,WEATHER
+Do I need a coat?,WEATHER
+Is it snowing?,WEATHER
+Get me some pizza.,PIZZA
+What do you get if you cross a Christmas tree we an iPad?,JOKE
+Hi great to see you today!,GREET
+I'm hungry.,PIZZA
+"G'day, that's a good day to you !",GREET
+I haven't seen you in forever Jarvis!,GREET
+Are you free in the morning?,TIME
+Find me a vegan pizza place.,PIZZA
+When should we meet?,TIME
+Where is a fancy pizza place?,PIZZA
+What part of the car is the laziest?,JOKE
+It's a pleasure to meet you!,GREET
+What time will you be ready?,TIME
+I want to eat a pizza.,PIZZA
+What time does the store close?,TIME
+Good morning.,GREET
+I want pizza.,PIZZA
+Tell me something funny.,JOKE
+Why do bicycles fall over?,JOKE
+Is it raining?,WEATHER
+What did the dad say during comedy night?,JOKE
+What do elves learn in school?,JOKE
+When does the show end?,TIME
+What time should we meet?,TIME
+Where is the nearest pizza place?,PIZZA
+Is the weather bad today?,WEATHER
+Is winter cold this year?,WEATHER
+Make me laugh.,JOKE

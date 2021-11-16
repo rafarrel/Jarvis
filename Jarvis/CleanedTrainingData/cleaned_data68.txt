@@ -1,44 +1,39 @@
-"You have to make sure the punchline is good, that’ll make them laugh.",JOKE
-Hey do you have the time?,TIME
-The wind blew a tree over,WEATHER
-The temperature will be warm tomorrow,WEATHER
-How long will it take for my pizza to get here?,PIZZA
-"Someone asked me if I would like a frozen banana. I said no, but maybe later, so yes!",JOKE
-"Hello, I’m Bennett.",GREET
-When are the clouds going to break up?,WEATHER
-"You should leave early, the roads will be really bad due to the storm",WEATHER
-Aloha!,GREET
-Are you free?,TIME
-When are you available?,TIME
-We could switch out the tomato sauce for an alfredo base,PIZZA
-What’s up?,GREET
-It was snowing so bad I could hardly see,WEATHER
-I am running late.,TIME
-"What is black, white and red all over?",JOKE
-Why did Dracula join the red cross?,JOKE
-I would like a large pepperoni pizza.,PIZZA
-Looks like we got here early,TIME
-"The roads iced up last night, I slipped twice walking down my driveway.",WEATHER
-Ciao Bella!,GREET
-Pleased to meet you.,GREET
-"About five years ago, I spent three hours working on a project",TIME
-How have you been?,GREET
-I’m not joking around here.,JOKE
-"When the clock strikes three, I will go",TIME
-"If the set up is good enough, almost any line will make people laugh.",JOKE
-What time should we get there?,TIME
-The time flew by yesterday.,TIME
-Why did the chicken cross the road?,JOKE
-I want something to dip my crust in,PIZZA
-Hi friend.,GREET
-How much does extra cheese cost?,PIZZA
-"Could I get it extra crispy, with pepperoncini?",PIZZA
-Salutations!,GREET
-"Today or tomorrow, any time will work for me",TIME
-Hey,GREET
-Welcome back.,GREET
-"Hey, that’s a great joke!",JOKE
+Good day,GREET
+Please purchase a pepperoni pizza for me,PIZZA
+"Jarvis, order a margarita pizza",PIZZA
+I'm feeling hungry for pizza.,PIZZA
+Good morning,GREET
+Is it raining?,WEATHER
+Is the sun shining?,WEATHER
+Nice to see you,GREET
+Call for pizza please,PIZZA
+Cheer me up,JOKE
+Hey there,GREET
+Tell me a joke,JOKE
 What time is it?,TIME
-"Have you heard the one about the bar tender, the mechanic, and the spawn of satan?",JOKE
-It was such a perfect day to play outside,WEATHER
-Are you free?,TIME
+How are things?,GREET
+Hi,GREET
+Let me know the time,TIME
+Could you tell me the time?,TIME
+What is the current time?,TIME
+Say something funny,JOKE
+Can you please order pizza?,PIZZA
+"Jarvis, look up the time",TIME
+Do you know any good jokes?,JOKE
+Let's order pizza,PIZZA
+Tell me the weather,WEATHER
+I'd like to have some pizza.,PIZZA
+What kind of weather is it?,WEATHER
+How warm is it?,WEATHER
+What is the temperature?,WEATHER
+Good afternoon,GREET
+Is it cold currently?,WEATHER
+What's the time?,TIME
+Hello,GREET
+Is it hot outside?,WEATHER
+Get me some pizza.,PIZZA
+Have you heard anything funny lately?,JOKE
+Tell me the time,TIME
+Good evening,GREET
+What's up?,GREET
+I need a laugh,JOKE

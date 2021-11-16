@@ -1,28 +1,43 @@
-is it a good weather for picnic?,WEATHER
-do you want pizza? we can get some together,PIZZA
-check the weather for me,WEATHER
-could you tell me a joke to make me laugh?,JOKE
-what time is it now,TIME
-"jarvis, if you could tell me the time now, that would be helpful",TIME
-is the weather good outside?,WEATHER
-find the best joke and tell me,JOKE
-can you watch the clock over there and tell me what time is it now?,TIME
+Hey Jarvis,GREET
+make me laugh,JOKE
+lets get food,PIZZA
+be humorous,JOKE
+yo,GREET
+how how it is it,WEATHER
+i want food,PIZZA
+lets get delivery,PIZZA
+order me pizza please,PIZZA
+do i need a jacket,WEATHER
+make me laugh,JOKE
+im hungry,PIZZA
+feed me,PIZZA
+temperature,WEATHER
+is it cold?,WEATHER
+How late is it?,TIME
+time,TIME
+be funny,JOKE
+sup g,GREET
+how cold is it,WEATHER
+Do you have the time?,TIME
 tell me a joke,JOKE
-could you please tell me what time is it now?,TIME
-can you get a large size one with cheese? thanks,PIZZA
-can you buy me a pizza downstairs?,PIZZA
-tell me something funny,JOKE
-how do you like the weather,WEATHER
-order me a veggie pizza,PIZZA
-how is the weather,WEATHER
-what will the weather be like tomorrow,WEATHER
-let's order some pizza,PIZZA
-do you know what time is it now/,TIME
-buy me a slice of pizza,PIZZA
-what is your favorite joke?,JOKE
-do you know any joke,JOKE
-"I want a pizza, can you get one for me",PIZZA
-what is the funniest joke in the world,JOKE
-what's the weather like,WEATHER
-check the time please,TIME
-"I'm bored, tell me something amusing",JOKE
+hey,GREET
+do you know any jokes,JOKE
+is it warm?,WEATHER
+lets laugh,JOKE
+Hello Jarvis,GREET
+whats the time,TIME
+when should we,TIME
+joke,JOKE
+pizza,PIZZA
+How early is it?,TIME
+lets get pizza,PIZZA
+hi jarvis,GREET
+Robots will never take over the world. Give up now.,GREET
+lets hear a joke,JOKE
+whats the temperature,WEATHER
+i want pizza,PIZZA
+whats the temp,WEATHER
+What time is it?,TIME
+when do we have to,TIME
+whats the weather,WEATHER
+do you have a sense of humor,JOKE

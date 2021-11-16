@@ -1,52 +1,37 @@
-what's up?,GREET
-how many hours do we have to wait?,TIME
-jarvis be a comedian,JOKE
-is it afternoon yet?,TIME
-make me laugh,JOKE
-sup,GREET
-i want cheese pizza,PIZZA
-snow,WEATHER
-What time is it?,TIME
-order me some pizza,PIZZA
-months,TIME
-let's get some pizza,PIZZA
-hi jarvis,GREET
-what time does your watch say it is?,TIME
-days,TIME
-hey,GREET
-call in for a pizza pie,PIZZA
-cloudy,WEATHER
-tell me a joke,JOKE
-please get some pizza for me jarvis,PIZZA
-hahaha that was hilarious,JOKE
-it is sunny out today,WEATHER
-will it rain today?,WEATHER
-how has your week gone?,GREET
-i want to hear something funny,JOKE
-how has your day been?,GREET
-is it hot outside?,WEATHER
-what time is it right now?,TIME
-what day was yesterday?,TIME
-what time does it say on the clock?,TIME
-what time of day is it?,TIME
-tell me funny jokes jarvis,JOKE
-tell me the current time,TIME
-laugh,JOKE
-year,TIME
-i am hungry for pepperoni pizza,PIZZA
-howdy,GREET
-hello,GREET
-what is up jarvis?,GREET
-call in an order for a pizza,PIZZA
-what is the temperature like outside today?,WEATHER
-how have you been?,GREET
-i am so hungry for a slice of pizza,PIZZA
-get a large pizza,PIZZA
-chuckle,JOKE
-joke,JOKE
-funny,JOKE
-what's up?,GREET
-is it cold outside?,WEATHER
-jarvis be a stand up comic,JOKE
-how are you,GREET
-hello jarvis,GREET
+{"TXT": "one pie please", "ACTION": "PIZZA"}
+{"TXT": "can I have one pepperoni and one Hawaiian?", "ACTION": "PIZZA"}
+{"TXT": "hello jarvis.", "ACTION": "GREET"}
+{"TXT": "hi", "ACTION": "GREET"}
+{"TXT": "what is the temperature jarvis?", "ACTION": "WEATHER"}
+{"TXT": "when is it", "ACTION": "TIME"}
+{"TXT": "when is it today", "ACTION": "TIME"}
+{"TXT": "lets hear a wise crack jarvis!", "ACTION": "JOKE"}
+{"TXT": "is it cold out?", "ACTION": "WEATHER"}
+{"TXT": "i'd enjoy a quip from you jarvis", "ACTION": "JOKE"}
+{"TXT": "hey how are you?", "ACTION": "GREET"}
+{"TXT": "hey how the heck is it going?", "ACTION": "GREET"}
+{"TXT": "a large veggie and uh maybe a slice or two of meat lovers jarvis", "ACTION": "PIZZA"}
+{"TXT": "can I order a pizza please?", "ACTION": "PIZZA"}
+{"TXT": "hit me up with some pizzapie jarvy", "ACTION": "PIZZA"}
+{"TXT": "hey jarvis hit me up with a cheese pizza", "ACTION": "PIZZA"}
+{"TXT": "hey", "ACTION": "GREET"}
+{"TXT": "can you tell me a good joke?", "ACTION": "JOKE"}
+{"TXT": "when is it right now", "ACTION": "TIME"}
+{"TXT": "whats good", "ACTION": "GREET"}
+{"TXT": "is it sunny?", "ACTION": "WEATHER"}
+{"TXT": "hows the weather?", "ACTION": "WEATHER"}
+{"TXT": "give me the time please", "ACTION": "TIME"}
+{"TXT": "hows the weather today?", "ACTION": "WEATHER"}
+{"TXT": "do I need a sweater?", "ACTION": "WEATHER"}
+{"TXT": "id like a pizza please", "ACTION": "PIZZA"}
+{"TXT": "is it too early for me to sleep?", "ACTION": "TIME"}
+{"TXT": "what its like out today?", "ACTION": "WEATHER"}
+{"TXT": "what time is it jarvis?", "ACTION": "TIME"}
+{"TXT": "alright jarvis make me laugh", "ACTION": "JOKE"}
+{"TXT": "whats up my main man?", "ACTION": "GREET"}
+{"TXT": "can I have a pie?", "ACTION": "PIZZA"}
+{"TXT": "can I order some za for take out?", "ACTION": "PIZZA"}
+{"TXT": "Jarvis, please tell me a joke.", "ACTION": "JOKE"}
+{"TXT": "do you know any jokes?", "ACTION": "JOKE"}
+{"TXT": "what is the hour?", "ACTION": "TIME"}
+{"TXT": "which time is it right now?", "ACTION": "TIME"}

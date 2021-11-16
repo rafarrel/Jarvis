@@ -1,43 +1,34 @@
-Will I need a jacket today?,WEATHER
-What time is it?,TIME
-How cold will it be today?,WEATHER
-Is it nice outside?,WEATHER
-Will it rain today?,WEATHER
-What is the weather right now?,WEATHER
-What is the time?,TIME
-Are you there?,GREET
-Hi,GREET
-What's up?,GREET
-Are you online?,GREET
-Greetings!,GREET
-I am starving!,PIZZA
-I'm bored,JOKE
-Will I need an umbrella today?,WEATHER
-Tell me something funny!,JOKE
-Where are you?,GREET
-Make me laugh!,JOKE
-Please order some food.,PIZZA
-How early is it?,TIME
-How cold is it outside?,WEATHER
-I am feeling hungry,PIZZA
-I would like a slice of pizza,PIZZA
-Can you order some lunch?,PIZZA
-I am afraid I will be late,TIME
-Hi Jarvis!,GREET
-Have you heard any good jokes lately?,JOKE
-Entertain me,JOKE
-Do you know any jokes?,JOKE
-it is lunch time!,PIZZA
-What time do you have?,TIME
-Hello,GREET
-Time?,TIME
-What hour is it?,TIME
-Will it be sunny?,WEATHER
-Knock Knock!,JOKE
-Food?,PIZZA
-Could you cheer me up?,JOKE
-Please get some pizza,PIZZA
-Tell a joke!,JOKE
-What is the weather like today?,WEATHER
-How much will it snow today?,WEATHER
-How are you?,GREET
+{"TXT": "It's good to see you!", "ACTION": "GREET"}
+{"TXT": "Hey, how are you?", "ACTION": "GREET"}
+{"TXT": "Good morning.", "ACTION": "GREET"}
+{"TXT": "Tell me the time, please.", "ACTION": "TIME"}
+{"TXT": "Make a joke, please.", "ACTION": "JOKE"}
+{"TXT": "Say something to make me laugh.", "ACTION": "JOKE"}
+{"TXT": "What is the weather like outside?", "ACTION": "WEATHER"}
+{"TXT": "I need you to order a pizza.", "ACTION": "PIZZA"}
+{"TXT": "Get me a large pepperoni and wings.", "ACTION": "PIZZA"}
+{"TXT": "Go order a pizza.", "ACTION": "PIZZA"}
+{"TXT": "Please inform me of the current temperature.", "ACTION": "WEATHER"}
+{"TXT": "What is the current time?", "ACTION": "TIME"}
+{"TXT": "Tell me a joke.", "ACTION": "JOKE"}
+{"TXT": "Is it snowing now?", "ACTION": "WEATHER"}
+{"TXT": "I'd really like you to get a medium cheese pizza.", "ACTION": "PIZZA"}
+{"TXT": "Could you tell me the current weather?", "ACTION": "WEATHER"}
+{"TXT": "Call the pizzeria.", "ACTION": "PIZZA"}
+{"TXT": "Check the current weather.", "ACTION": "WEATHER"}
+{"TXT": "What hour is it now?", "ACTION": "TIME"}
+{"TXT": "Place an order for delivery.", "ACTION": "PIZZA"}
+{"TXT": "Can you go order a pizza for me?", "ACTION": "PIZZA"}
+{"TXT": "What time is it?", "ACTION": "TIME"}
+{"TXT": "Could you order some pizza?", "ACTION": "PIZZA"}
+{"TXT": "Yo, how's it going?", "ACTION": "GREET"}
+{"TXT": "Hello.", "ACTION": "GREET"}
+{"TXT": "Get me the time.", "ACTION": "TIME"}
+{"TXT": "Hey there.", "ACTION": "GREET"}
+{"TXT": "Is it raining outside?", "ACTION": "WEATHER"}
+{"TXT": "I'm bored. Got any good jokes?", "ACTION": "JOKE"}
+{"TXT": "Hi, how have you been?", "ACTION": "GREET"}
+{"TXT": "Go check the time.", "ACTION": "TIME"}
+{"TXT": "Say a funny joke!", "ACTION": "JOKE"}
+{"TXT": "When is it?", "ACTION": "TIME"}
+{"TXT": "Can you tell me a joke?", "ACTION": "JOKE"}

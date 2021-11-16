@@ -1,42 +1,34 @@
-how late is it?,TIME
-"hey, what's new with you?",GREET
-good afternoon,GREET
-what is the time now?,TIME
-what is it like outside,WEATHER
-what time of day is it?,TIME
-tell me the weather right now,WEATHER
-what time is it?,TIME
-can you please order a small pepperoni with cheese please,PIZZA
-please make me laugh,JOKE
-is it nice outside?,WEATHER
-what is the time?,TIME
-I would like a large pepperoni please,PIZZA
-what's the time,GREET
-tell me something funny,JOKE
-what's the current time?,TIME
-what is the temperature?,WEATHER
-please order a pizza,PIZZA
-is it sunny?,WEATHER
-small cheese for me,PIZZA
-please tell me some jokes,JOKE
-what is something funny that you heard lately,JOKE
-tell me the current weather,WEATHER
-have you heard any good jokes lately?,JOKE
-hello,GREET
-please get some pizza for me,PIZZA
-hi,GREET
-pick up the phone and get me some pizza,PIZZA
-what is the weather right ow?,WEATHER
-is it snowing?,WEATHER
-good morning,GREET
-place an order of pizza for me,PIZZA
-what's up?,TIME
-is it raining?,WEATHER
-what is the hour?,TIME
-how's it going?,GREET
-share a joke with me,JOKE
-tell me a joke,JOKE
-nice to meet you,GREET
-I want to hear a joke,JOKE
-do you know the hour?,TIME
-do you know of any jokes?,JOKE
+The joke is funny.,JOKE
+How is it going?,GREET
+Hello.,GREET
+Pepperoni pizza is very salty.,PIZZA
+what time is it now?,TIME
+eating the pizza,PIZZA
+time is money.,TIME
+How's the weather in Boston?,WEATHER
+Was that a joke?,JOKE
+Long time no see.,GREET
+"Great weather, isn't it?",WEATHER
+domino's pizza is delicious.,PIZZA
+tell a joke.,JOKE
+"If you can’t convince them, confuse them.",JOKE
+It's been a long time,TIME
+what's up?,GREET
+Take your time.,TIME
+How’s everything?,GREET
+The weather has improved.,WEATHER
+It is cold today.,WEATHER
+weahter is good!,WEATHER
+Why don't we order pizza?,PIZZA
+I could go for a nice hot pizza right now.,PIZZA
+Do not argue with an idiot. He will drag you down to his level and beat you with experience.,JOKE
+Tom ate the whole pizza by himself.,PIZZA
+Let's greet our guests.,GREET
+What's your favorite pizza topping?,PIZZA
+I like BBQ chicken pizza.,PIZZA
+how are you?,GREET
+It is raining outside.,WEATHER
+Have a good time.,TIME
+You had plenty of time.,TIME
+I need more time,TIME
+I'm used to this cold weather.,WEATHER

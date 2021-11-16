@@ -1,39 +1,36 @@
-Let me know what time it is.,TIME
-"Long time no see, Jarvis!",GREET
-What time is it right now?,TIME
-I hope it's going to be sunny tomorrow.,WEATHER
-Can you tell me the time?,TIME
-Give me a laugh!,JOKE
-Hey Jarvis!,GREET
-How’s it going?,GREET
-"Jarvis, order a pizza from Domino’s",PIZZA
-Say something punny.,JOKE
-What’s the weather outside right now?,WEATHER
-Hi Jarvis,GREET
-Is it going to be cold later?,WEATHER
-What’s the forecast?,WEATHER
-What time is it?,TIME
-Say something funny,JOKE
-Tell me what time it is.,TIME
-I’d like a small cheese with extra tomato sauce.,PIZZA
-Hello,GREET
-What’s the time?,TIME
-Tell me the time,TIME
-How are you?,GREET
-I want a pepperoni pizza,PIZZA
-Tell a funny joke,JOKE
-What’s the temperature?,WEATHER
-What’s the weather forecast for 05401?,WEATHER
-Make a pun.,JOKE
-Is it raining?,WEATHER
-"Hey jarvis, order me a cheese pizza.",PIZZA
-Hello Jarvis,GREET
-Order three extra large pizzas with no mushrooms.,PIZZA
-Can i have a margherita pizza?,PIZZA
-What’s the time right now?,TIME
-When is it supposed to snow?,WEATHER
-Tell a knock-knock joke,JOKE
-Tell me a joke,JOKE
-How much rain are we getting?,WEATHER
-Give me a hoot!,JOKE
-Hi!,GREET
+is it raining?,WEATHER
+what is the weather,WEATHER
+please get me a slice of pizza,PIZZA
+does anyone know the weather?,WEATHER
+i'd like to order some pizza,PIZZA
+i'm really hungry,PIZZA
+whats it like outside today,WEATHER
+anyone want to order food,PIZZA
+can you tell me the time,TIME
+make me laugh,JOKE
+someone get me pizza,PIZZA
+hi,GREET
+hey,GREET
+whats it like outside,WEATHER
+tell me the weather,WEATHER
+i want pizza,PIZZA
+whats the time,TIME
+what is the time?,TIME
+time,TIME
+its been a while,GREET
+say something funny,JOKE
+how about a joke,JOKE
+anyone got the time?,TIME
+tell me a joke,JOKE
+good to see you,GREET
+say a joke,JOKE
+anyone got an idea for a joke?,JOKE
+anyone got a joke they want to tell?,JOKE
+how is the weather today?,WEATHER
+want to order pizza?,PIZZA
+i want to laugh,JOKE
+whats up,GREET
+when is it?,TIME
+im starving,PIZZA
+what time is it right now,TIME
+whats new?,GREET

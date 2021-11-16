@@ -1,34 +1,59 @@
-{"TXT": "It's good to see you!", "ACTION": "GREET"}
-{"TXT": "Hey, how are you?", "ACTION": "GREET"}
-{"TXT": "Good morning.", "ACTION": "GREET"}
-{"TXT": "Tell me the time, please.", "ACTION": "TIME"}
-{"TXT": "Make a joke, please.", "ACTION": "JOKE"}
-{"TXT": "Say something to make me laugh.", "ACTION": "JOKE"}
-{"TXT": "What is the weather like outside?", "ACTION": "WEATHER"}
-{"TXT": "I need you to order a pizza.", "ACTION": "PIZZA"}
-{"TXT": "Get me a large pepperoni and wings.", "ACTION": "PIZZA"}
-{"TXT": "Go order a pizza.", "ACTION": "PIZZA"}
-{"TXT": "Please inform me of the current temperature.", "ACTION": "WEATHER"}
-{"TXT": "What is the current time?", "ACTION": "TIME"}
-{"TXT": "Tell me a joke.", "ACTION": "JOKE"}
-{"TXT": "Is it snowing now?", "ACTION": "WEATHER"}
-{"TXT": "I'd really like you to get a medium cheese pizza.", "ACTION": "PIZZA"}
-{"TXT": "Could you tell me the current weather?", "ACTION": "WEATHER"}
-{"TXT": "Call the pizzeria.", "ACTION": "PIZZA"}
-{"TXT": "Check the current weather.", "ACTION": "WEATHER"}
-{"TXT": "What hour is it now?", "ACTION": "TIME"}
-{"TXT": "Place an order for delivery.", "ACTION": "PIZZA"}
-{"TXT": "Can you go order a pizza for me?", "ACTION": "PIZZA"}
-{"TXT": "What time is it?", "ACTION": "TIME"}
-{"TXT": "Could you order some pizza?", "ACTION": "PIZZA"}
-{"TXT": "Yo, how's it going?", "ACTION": "GREET"}
-{"TXT": "Hello.", "ACTION": "GREET"}
-{"TXT": "Get me the time.", "ACTION": "TIME"}
-{"TXT": "Hey there.", "ACTION": "GREET"}
-{"TXT": "Is it raining outside?", "ACTION": "WEATHER"}
-{"TXT": "I'm bored. Got any good jokes?", "ACTION": "JOKE"}
-{"TXT": "Hi, how have you been?", "ACTION": "GREET"}
-{"TXT": "Go check the time.", "ACTION": "TIME"}
-{"TXT": "Say a funny joke!", "ACTION": "JOKE"}
-{"TXT": "When is it?", "ACTION": "TIME"}
-{"TXT": "Can you tell me a joke?", "ACTION": "JOKE"}
+{"TXT": "I will die of laughter. It is lame joke but funny.", "ACTION": "JOKE"}
+{"TXT": "Hey what's up?", "ACTION": "GREET"}
+{"TXT": "I am making pizza tonight. come over.", "ACTION": "PIZZA"}
+{"TXT": "just put a pizza in the oven.", "ACTION": "PIZZA"}
+{"TXT": "what temperature is it in burlington?", "ACTION": "WEATHER"}
+{"TXT": "Sicilian pizza, sausage pizza", "ACTION": "PIZZA"}
+{"TXT": "I love snow because it all looks magical.", "ACTION": "WEATHER"}
+{"TXT": "do not make a joke out of yourself.", "ACTION": "JOKE"}
+{"TXT": "stop being a joke. It is not funny.", "ACTION": "JOKE"}
+{"TXT": "ha-ha so pathetically gunny", "ACTION": "JOKE"}
+{"TXT": "different people have different ways of making pizza.", "ACTION": "PIZZA"}
+{"TXT": "calzone is also a type of pizza.", "ACTION": "PIZZA"}
+{"TXT": "time is not on my side", "ACTION": "TIME"}
+{"TXT": "tell me a good joke because I want to laugh", "ACTION": "JOKE"}
+{"TXT": "I don't like dark humor.", "ACTION": "JOKE"}
+{"TXT": "make jokes; talk humorously or flippantly.", "ACTION": "JOKE"}
+{"TXT": "wanna go out and get some pizza", "ACTION": "PIZZA"}
+{"TXT": "It is raining", "ACTION": "WEATHER"}
+{"TXT": "lovely sunshine covering my room", "ACTION": "WEATHER"}
+{"TXT": "it was this weather that made her cranky.", "ACTION": "WEATHER"}
+{"TXT": "good afternoon", "ACTION": "GREET"}
+{"TXT": "namastay", "ACTION": "GREET"}
+{"TXT": "anything with chicken, cheese, sauce, more cheese looks the same.", "ACTION": "PIZZA"}
+{"TXT": "have you tried deep dish pizza?", "ACTION": "PIZZA"}
+{"TXT": "this time she got a hat for me", "ACTION": "TIME"}
+{"TXT": "it is going to be foggy, hot, sunny, rainy all in one day.", "ACTION": "WEATHER"}
+{"TXT": "time is money. value it.", "ACTION": "TIME"}
+{"TXT": "I meant funny", "ACTION": "JOKE"}
+{"TXT": "tell me something to light up my mood.", "ACTION": "JOKE"}
+{"TXT": "I just can't stand this hot weather anymore.", "ACTION": "WEATHER"}
+{"TXT": "good evening, good night", "ACTION": "GREET"}
+{"TXT": "Hi, how are you", "ACTION": "GREET"}
+{"TXT": "let's try giardano's flatbread today", "ACTION": "PIZZA"}
+{"TXT": "a trick played on someone for fun.", "ACTION": "JOKE"}
+{"TXT": "tell me more about weather", "ACTION": "WEATHER"}
+{"TXT": "take care", "ACTION": "GREET"}
+{"TXT": "You'd better not go out in this cold weather.", "ACTION": "WEATHER"}
+{"TXT": "come on. pizza is always a good idea.", "ACTION": "PIZZA"}
+{"TXT": "It is nice to see you today", "ACTION": "GREET"}
+{"TXT": "do you need time away from me?", "ACTION": "TIME"}
+{"TXT": "stay warm. It is going to be cold.", "ACTION": "WEATHER"}
+{"TXT": "It is high time that we break up.", "ACTION": "TIME"}
+{"TXT": "have a good day", "ACTION": "GREET"}
+{"TXT": "people are going to laugh regardless. live life.", "ACTION": "JOKE"}
+{"TXT": "Let's go to beach. It is our day", "ACTION": "WEATHER"}
+{"TXT": "it is very humid these days", "ACTION": "WEATHER"}
+{"TXT": "let's play halloween pranks on students", "ACTION": "JOKE"}
+{"TXT": "pizzeria. Let's go get manhattan", "ACTION": "PIZZA"}
+{"TXT": "pizza is always a good idea.", "ACTION": "PIZZA"}
+{"TXT": "good morning", "ACTION": "GREET"}
+{"TXT": "I am just kidding.", "ACTION": "JOKE"}
+{"TXT": "when do you want to go for movie?", "ACTION": "TIME"}
+{"TXT": "do check weather forecast before going out", "ACTION": "WEATHER"}
+{"TXT": "How have you been?", "ACTION": "GREET"}
+{"TXT": "humor is always a good idea.", "ACTION": "JOKE"}
+{"TXT": "time and again I have told you this.", "ACTION": "TIME"}
+{"TXT": "Why don't we go out for pizza tonight?", "ACTION": "PIZZA"}
+{"TXT": "It takes some time to wrap your head around", "ACTION": "TIME"}
+{"TXT": "OMG he was so funny", "ACTION": "JOKE"}

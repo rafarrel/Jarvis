@@ -1,43 +1,61 @@
-{"TXT": "do i need my rain jacket today", "ACTION": "WEATHER"}
-{"TXT": "make me laugh", "ACTION": "JOKE"}
-{"TXT": "is it snowing", "ACTION": "WEATHER"}
-{"TXT": "jarvis order me a slice", "ACTION": "PIZZA"}
-{"TXT": "is the sun out", "ACTION": "WEATHER"}
-{"TXT": "do you have any wisecracks", "ACTION": "JOKE"}
-{"TXT": "i'm hungry, thoughts on pizza", "ACTION": "PIZZA"}
-{"TXT": "i want some pizza", "ACTION": "PIZZA"}
-{"TXT": "it's been a minute", "ACTION": "GREET"}
-{"TXT": "hi jarvis", "ACTION": "GREET"}
-{"TXT": "how cold is it outside", "ACTION": "WEATHER"}
-{"TXT": "is it sunny", "ACTION": "WEATHER"}
-{"TXT": "how are you doing", "ACTION": "GREET"}
-{"TXT": "order me a cheese pizza", "ACTION": "PIZZA"}
-{"TXT": "what's up", "ACTION": "GREET"}
-{"TXT": "time now", "ACTION": "TIME"}
-{"TXT": "what is going on", "ACTION": "GREET"}
-{"TXT": "have any new jokes", "ACTION": "JOKE"}
-{"TXT": "what's the time", "ACTION": "TIME"}
-{"TXT": "tell me something funny", "ACTION": "JOKE"}
-{"TXT": "how is it hanging", "ACTION": "GREET"}
-{"TXT": "cheer me up", "ACTION": "JOKE"}
-{"TXT": "can you tell me the time", "ACTION": "TIME"}
+{"TXT": "how are you today", "ACTION": "GREET"}
+{"TXT": "wazzup", "ACTION": "GREET"}
+{"TXT": "How are you doing today?", "ACTION": "GREET"}
+{"TXT": "I\u2019m ready for less rain and more snow", "ACTION": "WEATHER"}
+{"TXT": "When will you go?", "ACTION": "TIME"}
+{"TXT": "Or a corny joke", "ACTION": "JOKE"}
+{"TXT": "it\u2019s so stormy out", "ACTION": "WEATHER"}
+{"TXT": "When does it end", "ACTION": "TIME"}
 {"TXT": "hi there", "ACTION": "GREET"}
-{"TXT": "yo", "ACTION": "GREET"}
-{"TXT": "make me smile", "ACTION": "JOKE"}
-{"TXT": "tell me the time", "ACTION": "TIME"}
-{"TXT": "time for some za", "ACTION": "PIZZA"}
-{"TXT": "what is your favorite joke", "ACTION": "JOKE"}
-{"TXT": "order me a pie jarvis", "ACTION": "PIZZA"}
-{"TXT": "what is the weather like", "ACTION": "WEATHER"}
-{"TXT": "hello jarvis", "ACTION": "GREET"}
-{"TXT": "what is the weather outside", "ACTION": "WEATHER"}
-{"TXT": "know any jokes", "ACTION": "JOKE"}
-{"TXT": "i need some za", "ACTION": "PIZZA"}
-{"TXT": "should i wear gloves today", "ACTION": "WEATHER"}
-{"TXT": "can you order me some pizza", "ACTION": "PIZZA"}
-{"TXT": "how are you", "ACTION": "GREET"}
-{"TXT": "i need some pepperoni za", "ACTION": "PIZZA"}
-{"TXT": "i need the time", "ACTION": "TIME"}
-{"TXT": "give me your best one-liner", "ACTION": "JOKE"}
-{"TXT": "can you tell me the temperature", "ACTION": "WEATHER"}
-{"TXT": "i could use the current time", "ACTION": "TIME"}
+{"TXT": "what time are you going?", "ACTION": "TIME"}
+{"TXT": "where have you been", "ACTION": "GREET"}
+{"TXT": "What time is it?", "ACTION": "TIME"}
+{"TXT": "what\u2019s up", "ACTION": "GREET"}
+{"TXT": "Hello Jarvis", "ACTION": "GREET"}
+{"TXT": "It\u2019s a beautiful day out today", "ACTION": "WEATHER"}
+{"TXT": "hi-ya", "ACTION": "GREET"}
+{"TXT": "Bonjour!", "ACTION": "GREET"}
+{"TXT": "do you think that storm will hit us", "ACTION": "WEATHER"}
+{"TXT": "do you like tomato sauce or garlic olive oil sauce on your pizza", "ACTION": "PIZZA"}
+{"TXT": "The show starts at 5 PM", "ACTION": "TIME"}
+{"TXT": "Do you know what time it is?", "ACTION": "TIME"}
+{"TXT": "I don\u2019t know a lot of good jokes", "ACTION": "JOKE"}
+{"TXT": "knock knock", "ACTION": "JOKE"}
+{"TXT": "rabbit farts", "ACTION": "JOKE"}
+{"TXT": "it\u2019s so windy out today", "ACTION": "WEATHER"}
+{"TXT": "You look flushed", "ACTION": "JOKE"}
+{"TXT": "do you think it will rain again todau", "ACTION": "WEATHER"}
+{"TXT": "sometimes pizza is also called pie or flatbread", "ACTION": "PIZZA"}
+{"TXT": "I hope more hurricanes don\u2019t hit", "ACTION": "WEATHER"}
+{"TXT": "People seem to like pepperoni pizza a lot and sausage", "ACTION": "PIZZA"}
+{"TXT": "I think it\u2019s 9:52 AM", "ACTION": "TIME"}
+{"TXT": "Do you like a lot of toppings", "ACTION": "PIZZA"}
+{"TXT": "Do you know any funny jokes?", "ACTION": "JOKE"}
+{"TXT": "It\u2019s supposed to snow later this week", "ACTION": "WEATHER"}
+{"TXT": "what kind of pizza should we get", "ACTION": "PIZZA"}
+{"TXT": "It\u2019s pretty cloudy out, but it\u2019s not supposed to rain", "ACTION": "WEATHER"}
+{"TXT": "hey", "ACTION": "GREET"}
+{"TXT": "When does it start", "ACTION": "TIME"}
+{"TXT": "What\u2019s invisible and smells like carrots?", "ACTION": "JOKE"}
+{"TXT": "hahaha", "ACTION": "JOKE"}
+{"TXT": "tell me something hilarious", "ACTION": "JOKE"}
+{"TXT": "but I have to eat the gluten free crust option", "ACTION": "PIZZA"}
+{"TXT": "It snowed this past weekend up on the mountains", "ACTION": "WEATHER"}
+{"TXT": "helloooo", "ACTION": "GREET"}
+{"TXT": "How long until you get here", "ACTION": "TIME"}
+{"TXT": "I love cheese pizza", "ACTION": "PIZZA"}
+{"TXT": "How many pizzas should we order", "ACTION": "PIZZA"}
+{"TXT": "why hello there", "ACTION": "GREET"}
+{"TXT": "greetings", "ACTION": "GREET"}
+{"TXT": "what\u2019s the weather going to be tomorrow", "ACTION": "WEATHER"}
+{"TXT": "It\u2019s so cold outside", "ACTION": "WEATHER"}
+{"TXT": "Do you like pizza?", "ACTION": "PIZZA"}
+{"TXT": "howdy", "ACTION": "GREET"}
+{"TXT": "i LOVE pizza", "ACTION": "PIZZA"}
+{"TXT": "what time do you have to go to class?", "ACTION": "TIME"}
+{"TXT": "who\u2019s there", "ACTION": "JOKE"}
+{"TXT": "lol", "ACTION": "JOKE"}
+{"TXT": "When are you going", "ACTION": "TIME"}
+{"TXT": "welcome", "ACTION": "GREET"}
+{"TXT": "we have a good restaurant in town called American Flatbread that has awesome wood-fired pizza", "ACTION": "PIZZA"}
+{"TXT": "it\u2019s nice to see you again", "ACTION": "GREET"}

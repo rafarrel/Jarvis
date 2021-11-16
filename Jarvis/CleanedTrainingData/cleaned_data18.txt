@@ -1,38 +1,36 @@
-get pizza,PIZZA
-"Nice to meet you, I'm    what is your name?",GREET
-order me a pizza,PIZZA
-what is your purpose?,GREET
-what's the temperature?,WEATHER
-I want pizza,PIZZA
-will it be cold today?,WEATHER
-what does the clock say?,TIME
-weather,WEATHER
-what's it look like outside?,WEATHER
-any precipitation this morning?,WEATHER
-what time is it?,TIME
-time?,TIME
-is it raining?,WEATHER
-"Hello, Jarvis",GREET
-be hilarious,JOKE
-humor me,JOKE
-what time it be?,TIME
-I am hungry,PIZZA
-Hi,GREET
-say something funny,JOKE
-let's see your wit,JOKE
-What's up?,GREET
-is it cloudy?,WEATHER
-pizza,PIZZA
-tell me a joke please,JOKE
+i want pizza,PIZZA
+tell me a joke,JOKE
+hello,GREET
+is it cold out?,WEATHER
+get a pizza for me,PIZZA
+hi jarvis,GREET
+hey there,GREET
+i could use a laugh,JOKE
+good afternoon,GREET
+good morning,GREET
+order a pizza for me,PIZZA
+tell me what time it is,TIME
+is it nice out?,WEATHER
+what is the weather,WEATHER
+good evening,GREET
+hello jarvis,GREET
+make me laugh,JOKE
+i want a pizza with cheese and pepperoni,PIZZA
+could you tell me the time right now?,TIME
 what hour is it?,TIME
-I would really like something to eat,PIZZA
-I want lunch,PIZZA
-weather?,WEATHER
-I'm sad,JOKE
-How are you?,GREET
-cheer me up,JOKE
-Good to see you!,GREET
-what time?,TIME
-It is a fine day. How are you getting on?,GREET
-who are you?,GREET
-what time do you have?,TIME
+what are the weather predictions,WEATHER
+do you know any jokes?,JOKE
+what is the time?,TIME
+tell me something witty,JOKE
+i would like to hear a joke,JOKE
+is it raining or sunny?,WEATHER
+i would like to know the time.,TIME
+i'd like a pizza!,PIZZA
+what is the weather prediction,WEATHER
+what's the forecast,WEATHER
+what's the time?,TIME
+howdy,GREET
+what part of the day is it?,TIME
+how are you?,GREET
+what's the temperature outside?,WEATHER
+i'm hungry for a pizza,PIZZA

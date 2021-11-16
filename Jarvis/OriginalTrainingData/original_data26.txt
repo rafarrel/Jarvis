@@ -1,40 +1,60 @@
-can you tell me the time,TIME
-jarvis tell me the time right now,TIME
-im hungry,PIZZA
-whats up,GREET
-tell me a joke,JOKE
-knock knock,JOKE
-greetings bot,GREET
-what is the time right now,TIME
-whats the weather today,WEATHER
-what time is it currently,TIME
-say something silly,JOKE
-make me giggle,JOKE
-say something goofy,JOKE
-can you get me a pizza,PIZZA
-what will the temperature be today,WEATHER
+give me the hour and minutes please,TIME
+can you please tell me a joke jarvis,JOKE
+im in the mood to hear something funny,JOKE
+im in the mood for something funny,JOKE
+how are you doing,GREET
+what does the clock say right now,TIME
+hi there,GREET
+can i get the time please,TIME
+can you find a restaurant to order from and get me a pizza,PIZZA
+is it dry or humid today,WEATHER
+hey there hi there ho there,GREET
+jarvis what do you think is the funniest thing anyone has ever said to you please tell me,JOKE
 is it going to rain today,WEATHER
-can i ask what is the time,TIME
-make me laugh,JOKE
-is it going to be sunny,WEATHER
-give me the hour and minute,TIME
-crack some jokes,JOKE
+is there something you could do to cheer me up,JOKE
+let me know if its warm enough to not wear a jacket today,WEATHER
+tell me a joke,JOKE
+greetings and salutations jarvis,GREET
+jarvis would you call the pizza place for me,PIZZA
+i am hungry and would like you to order me a pizza,PIZZA
+bonjour jarvis,GREET
+what is the high and low for today,WEATHER
+im hungry can you order a couple deep dishes for the crew,PIZZA
+hi,GREET
 what is the current time,TIME
-order me a pizza please,PIZZA
-tell me the current weather,WEATHER
-hi jarvis,GREET
-pizza for dinner tonight,PIZZA
-please order a cheese pizza from leonardos,PIZZA
-order a large pie,PIZZA
-buy a pizza for me,PIZZA
-nice to see you jarvis,GREET
-be comical,JOKE
-sup jarvis,GREET
-say something funny,JOKE
-whats it gonna be like out today,WEATHER
-i would like a cheese pizza,PIZZA
-hey man,GREET
+is the sky clearing up,WEATHER
+what is the weather right now,WEATHER
+how does it look out there today,WEATHER
+give me a medium with green peppers,PIZZA
+whats the time at this moment,TIME
+what does your watch say jarvis,TIME
+can you order me a pizza,PIZZA
+do you know any good knock knock jokes,JOKE
+howdy there jarvis,GREET
+knock knock,JOKE
+order me a large meat lovers,PIZZA
+id like one of those hot round cheesy things that people eat,PIZZA
+is it sunny or cloudy right now,WEATHER
+what is the temperature outside,WEATHER
+jarvis call the pizza place down the street and order two smalls,PIZZA
 hey jarvis,GREET
-how many degrees is it,WEATHER
-what is the forecast,WEATHER
-clock,TIME
+whats your best joke,JOKE
+are the clouds starting to break,WEATHER
+what part of the day is it right now,TIME
+the current time right now is what jarvis,TIME
+hiya jarvis,GREET
+how is it going at this point in time,GREET
+what time is it,TIME
+get me a large pie and some coca cola too,PIZZA
+do you know any good jokes,JOKE
+is it hot or cold outside,WEATHER
+hola senior,GREET
+i would like a slice of pizza,PIZZA
+should i bring a coat if i am going outside today,WEATHER
+is it raining,WEATHER
+i am in the mood for something round and hot and fresh with cheese and pepperoni can you get me one,PIZZA
+whats shaking good buddy,GREET
+can you get me a pza?,PIZZA
+im hungry so can you order me a pizza please,PIZZA
+hey whats going on with you today,GREET
+i could go for a pizza,PIZZA
