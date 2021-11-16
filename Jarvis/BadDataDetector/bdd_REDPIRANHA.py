@@ -59,11 +59,19 @@ if __name__ == '__main__':
     nltk.download('stopwords', quiet=True)
     
     ############### INSERT FILENAME HERE ################
-    filename = '..\\OriginalTrainingData\\original_data43.txt'
+    filename = '..\\OriginalTrainingData\\original_data7.txt'
     
     
     ############### PERFORM DATA ANALYSIS ###############
     data = load_data(filename)
+    
+    # Initial checks
+    initial_passed = True
+    for d in data:
+        if (d[0] == 'testing time' or 
+            d[0] == 'training time'   or
+            d[0] == 'done'):
+            initial_passed = False
     
     # Get file length
     file_length = len(data)
@@ -121,12 +129,10 @@ if __name__ == '__main__':
                 sus += 1
                 
     # Determine if file is good or bad depending on sus/file_length ratio
-    # Ratios greater than 0.05 will be considered bad.
-    # If bad, at least 5% of data is potentionally wrong and should be
-    # reviewed.
-    if sus / file_length < 0.075:
+    # Ratios greater than threshold will be considered bad.
+    # If bad, at least threshold% of data is potentionally wrong and should 
+    # be reviewed.
+    if sus / file_length <= 0.076 and initial_passed:
         print("good")
     else:
         print("bad")
-            
-    
