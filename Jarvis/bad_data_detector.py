@@ -4,8 +4,6 @@
 """
 import json
 import nltk
-import re
-import pandas as pd
 
 from string        import punctuation
 from nltk.corpus   import stopwords
@@ -46,11 +44,10 @@ def load_data(filename):
                 line_dict = {}
                 line_dict['TXT'   ] = txt
                 line_dict['ACTION'] = action
-
             finally:
                 clean_data(line_dict) 
                 data.append([line_dict['TXT'], line_dict['ACTION']]) 
-                
+    
     return data
     
 
@@ -58,12 +55,13 @@ def load_data(filename):
 #         MAIN CODE          #
 ##############################
 if __name__ == '__main__':
-    # UNCOMMENT THESE IF NEED TO DOWNLOAD
-    #nltk.download('punkt')
-    #nltk.download('stopwords')
+    nltk.download('punkt'    , quiet=True)
+    nltk.download('stopwords', quiet=True)
+    
+    # Specify name of file to analyze for bad data here
+    filename = 'OriginalTrainingData\\original_data4.txt'
     
     # THIS IS FOR TESTING
-    test_data = load_data('OriginalTrainingData\\original_data4.txt')
+    test_data = load_data(filename)
     for line in test_data:
         print(line)
-    
