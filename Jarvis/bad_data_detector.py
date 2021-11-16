@@ -1,6 +1,6 @@
 """
     This script detects dat bad data tho and alerts project personnel
-    so that they can manually review flagged data files.
+    so they can manually review flagged data files.
 """
 import json
 import nltk
@@ -13,7 +13,7 @@ from nltk.tokenize import word_tokenize
 #         FUNCTIONS          #
 ##############################
 def clean_data(data):
-    """Pre-process data to remove things that don't convey mearning."""
+    """Pre-process data to remove things that don't convey meaning."""
     # Stuff to remove
     exclude    = set(punctuation)
     stop_words = stopwords.words('english')
@@ -29,7 +29,7 @@ def clean_data(data):
     
     
 def load_data(filename):
-    """Load data into a pandas dataframe."""
+    """Load data into a list of [txt, action] pairs for processing."""
     data = []
     
     with open(filename, 'r') as file:
