@@ -1,6 +1,7 @@
 # Jarvis specific files/directories to ignore
 Prototyping/
 botsettings.py
+rename_files.py
 jarvis.db
 
 # Byte-compiled / optimized / DLL files
