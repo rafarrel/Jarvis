@@ -42,8 +42,11 @@ def load_data(filename):
                 # Only split on last comma, signifying the separator between
                 # text and action label.
                 txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
-                line_dict   = {'TXT'   :txt,
-                               'ACTION':action}
+                
+                line_dict = {}
+                line_dict['TXT'   ] = txt
+                line_dict['ACTION'] = action
+
             finally:
                 clean_data(line_dict) 
                 data.append([line_dict['TXT'], line_dict['ACTION']]) 
