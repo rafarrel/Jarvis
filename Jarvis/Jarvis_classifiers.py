@@ -99,7 +99,7 @@ def performance_metrics(clf, X_test, y_test):
     plt.show()
 
 
-def pickled_piranha(clf, directory, filename):
+def pickled_piranha(clf, directory, filename, X_train, Y_train):
     """Created .pkl from specified classifier in the given location with given name"""
     vec_clf = Pipeline([('vec', CountVectorizer()),
                         ('tfidf', TfidfTransformer()),
@@ -132,13 +132,15 @@ def open_pickle_jar(directory, filename):
 
 # Load data into list
 cleaned_data = load_data('CleanedTrainingData')
+rc_data = load_data('RecoveryCoachTrainingData')
 
 #Separate into lists of X (text) and Y (actions)
 X, Y = map(list, zip(*cleaned_data))
+X_rc, Y_rc = map(list, zip(*rc_data))
 
 #Vectorize Data
 X_train, X_test, trainX_array, testX_array, Y_train, Y_test = vectorize_data(X, Y)
-
+Xrc_train, Xrc_test, trainXrc_array, testXrc_array, Yrc_train, Yrc_test = vectorize_data(X_rc, Y_rc)
 
 
 ################# MULTINOMIAL NAIVE BAYES CLASSIFIER #############################
@@ -199,8 +201,8 @@ print('***********************************************************************')
 
 #UNCOMMENT ONLY WHEN NEEDED TO SAVE TIME WHEN RUNNING
 # mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'],
-#               'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
-#               'shuffle': [True, False]}
+              # 'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
+              # 'shuffle': [True, False]}
 
 
 
@@ -210,6 +212,13 @@ print('***********************************************************************')
 # print('mlp', 'best params:')
 # print('------------------')
 # print(search.best_params_)
+
+# search_rc = mlp_clf.fit(trainXrc_array, Yrc_train)
+# print()
+# print('mlp_rc', 'best params:')
+# print('------------------')
+# print(search_rc.best_params_)
+
 
 
 
@@ -222,9 +231,20 @@ mlp_tuned.fit(trainX_array, Y_train)
 performance_metrics(mlp_tuned, testX_array, Y_test)
 print('***********************************************************************')
 
+print('****** Competition 3 Multi-Layer Perceptron Classifier Results *********')
+mlp_rc = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
+                          shuffle = True, learning_rate = 'invscaling', activation = 'relu')
+mlp_rc.fit(trainXrc_array, Yrc_train)
+performance_metrics(mlp_rc, testXrc_array, Yrc_test)
+print('***********************************************************************')
+
 
 ############################## PICKLING JARVIS ##################################
 
-pickled_piranha(mlp_tuned, 'Classifiers', 'mlp')
+pickled_piranha(mlp_tuned, 'Classifiers', 'jarvis_REDPIRANHA.pkl', X_train, Y_train)
 mlp_brain = open_pickle_jar('Classifiers', 'jarvis_REDPIRANHA.pkl')
 print('mlp:', mlp_brain.predict(['Hello funny roboooot!']))
+
+pickled_piranha(mlp_rc, 'Classifiers', 'jarvis_comp3_REDPIRANHA', Xrc_train, Yrc_train)
+mlp_rc_brain = open_pickle_jar('Classifiers', 'jarvis_comp3_REDPIRANHA.pkl')
+print('mlp_rc:', mlp_rc_brain.predict(['I feel like I may use']))
