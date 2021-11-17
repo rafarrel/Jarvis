@@ -225,8 +225,9 @@ print('***********************************************************************')
 ################# TUNED MULTI-LAYER PERCEPTRON CLASSIFIER ########################
 
 print('********** Tuned Multi-Layer Perceptron Classifier Results *************')
-mlp_tuned = MLPClassifier(hidden_layer_sizes=400, solver = 'adam',
-                          shuffle = True, learning_rate = 'adaptive', activation = 'relu')
+mlp_tuned = MLPClassifier(hidden_layer_sizes=300, solver = 'adam',
+                          shuffle = True, learning_rate = 'adaptive', 
+                          activation = 'relu', early_stopping = True)
 mlp_tuned.fit(trainX_array, Y_train)
 performance_metrics(mlp_tuned, testX_array, Y_test)
 print('***********************************************************************')
