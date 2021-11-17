@@ -3,6 +3,7 @@ Prototyping/
 botsettings.py
 rename_files.py
 jarvis.db
+jarvis_rc.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
