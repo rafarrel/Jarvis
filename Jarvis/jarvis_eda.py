@@ -14,9 +14,10 @@ from sklearn import metrics
 import statistics as stats
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
+import sklearn.model_selection as model_selection
 from sklearn.feature_extraction.text import CountVectorizer
 from Jarvis_classifiers import performance_metrics, trainX_array, testX_array, Y_train, Y_test
-
+from Jarvis_classifiers import nb, rfc, mlp, dtc, svc, kn
 ##############################
 #         FUNCTIONS          #
 ##############################
@@ -82,6 +83,28 @@ def vectorize_data(X, Y):
     testX_array = testX_vec.toarray()
     
     return trainX_array, testX_array, Y_train, Y_test
+
+def mult_clf_graph(clf_arr, names, X_test, Y_test):
+    """Generates a box plot comparing output from multiple classifiers"""
+    scoring = 'accuracy'
+    results = []
+    accuracies = []
+    n = 0
+    for model in clf_arr:
+        kfold = model_selection.KFold(n_splits=10)
+        cv_results = model_selection.cross_val_score(model, X_test, Y_test, cv=kfold, scoring=scoring)
+        results.append(cv_results)
+        predictions = mlp.predict(X_test)
+        names.append(names[n])
+        accuracies.append(metrics.accuracy_score(Y_test, predictions, normalize=True, sample_weight=None))
+        n += 1
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    plt.boxplot(results)
+    ax.set_xticklabels(names)
+    plt.show()
+    plt.scatter(names, accuracies)
+    plt.show()
     
 ##############################
 #         MAIN CODE          #
@@ -161,3 +184,6 @@ plt.legend(loc = 'lower right')
 plt.ylabel('Number of Occurrences')
 plt.show()
 
+#Boxplots of accuracies for all classifiers tested
+clf_arr = [dtc, kn, mlp, nb, rfc, svc]
+mult_clf_graph(clf_arr, ["DTC", "KN", "MLP", "NB", "RFC", "SVC"], testX_array, Y_test)
