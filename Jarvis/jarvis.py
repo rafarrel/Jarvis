@@ -21,6 +21,9 @@ import pandas as pd
 
 # Jarvis brain
 import pickle
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+
 
 # Slack interaction
 import json 
@@ -180,6 +183,7 @@ class Jarvis:
             ##############################################
             # ADD THE RE-TRAIN JARVIS FUNCTIONALITY HERE #
             ##############################################
+            self.update_brain()
             self.post_message("OK, I'm ready for testing. Write me something and I'll try to figure it out.", channel)
         elif 'done' in message.lower():
             self.current_action = ''
@@ -202,7 +206,33 @@ class Jarvis:
             self.post_message("OK, I think the action you mean is `{}`...".format(self.BRAIN.predict([message.lower()])[0].upper()), channel)
             self.post_message("Write me something else and I'll try to figure it out.", channel)
             
-       
+    # ---------------------------------------------------------------------- #
+    # Jarvis Brain Actions
+    
+    def update_brain(self):
+        df = pd.DataFrame(self.database.retrieve_data())
+        X = df[0]
+        Y = df[1]
+        
+        # Instanatiates a CountVectorizer() object to run frequencies for every unique word in X and put
+        # those frequencies into one 1868 x 952 word frequency matrix where each line is associated with one
+        # TXT and can map to the corresponding entry in Y, which is the label
+        
+        vectorizer = CountVectorizer() 
+        
+        # Split data into training and testing subsets
+        
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
+        
+        # Fitting Vectorizer to training and testing data, then sending to an array 
+        
+        trainX = vectorizer.fit_transform(X_train)
+        trainX_array = trainX.toarray()
+        
+        # Updates Jarvis's brain
+        
+        self.BRAIN.fit(trainX_array, Y_train)
+    
     # ---------------------------------------------------------------------- #
     # Websocket Events
 
