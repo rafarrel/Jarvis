@@ -273,21 +273,11 @@ class Jarvis:
     
     def update_brain(self):
         df = pd.DataFrame(self.database.retrieve_data())
-        X = df[0]
-        Y = df[1]
-        
-        # Instanatiates a CountVectorizer() object to run frequencies for every unique word in X
-        vectorizer = CountVectorizer() 
-        
-        # Split data into training and testing subsets
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y)
-        
-        # Fitting Vectorizer to training and testing data, then sending to an array 
-        trainX = vectorizer.fit_transform(X_train)
-        trainX_array = trainX.toarray()
+        X  = df[0]
+        Y  = df[1]
         
         # Updates Jarvis's brain
-        self.BRAIN.fit(trainX_array, Y_train)
+        self.BRAIN.fit(X, Y)
         
     # ---------------------------------------------------------------------- #
     # Websocket Events
