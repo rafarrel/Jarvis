@@ -35,7 +35,7 @@ def load_data(directory):
     """Load data into a list of nested lists with text, action pairs."""
     data = []
     files = os.listdir(os.path.join(os.getcwd(), directory))
-    
+
     for filename in files:
         filepath = os.path.join(os.getcwd(), directory, filename)
         with open(filepath, 'r') as file:
@@ -51,18 +51,18 @@ def load_data(directory):
                     # Only split on last comma, signifying the separator between
                     # text and action label.
                     txt, action = line.rstrip('\n').rsplit(',', maxsplit=1)
-                    
+
                     if action == 'joke': #check for typo
                         action = 'JOKE'
                     if action == ' PIZZA': #check for typo
-                       action = 'PIZZA' 
-                        
+                       action = 'PIZZA'
+
                     line_dict['TXT'   ] = txt
                     line_dict['ACTION'] = action
                 finally:
-                    data.append([line_dict['TXT'], line_dict['ACTION']]) 
+                    data.append([line_dict['TXT'], line_dict['ACTION']])
     return data
-            
+
 
 def vectorize_data(X, Y):
     """Create training and testing vectors of X and return X vextors and Y lists"""
@@ -70,16 +70,16 @@ def vectorize_data(X, Y):
     jarvis_vectorizer = vectorizer.fit_transform(X)
     jarvis_array = jarvis_vectorizer.toarray()
     jarvis_words = vectorizer.get_feature_names()
-    
+
     # Split data into training and testing subsets
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y) # Split data into training and testing subsets
-    
-    # Fitting Vectorizer to training and testing data, then sending to an array 
+
+    # Fitting Vectorizer to training and testing data, then sending to an array
     trainX_vec = vectorizer.fit_transform(X_train)
     trainX_array = trainX_vec.toarray()
     testX_vec = vectorizer.transform(X_test)
     testX_array = testX_vec.toarray()
-    
+
     return X_train, X_test, trainX_array, testX_array, Y_train, Y_test
 
 
@@ -114,17 +114,17 @@ def pickled_piranha(clf, directory, filename, X_train, Y_train):
         os.mkdir(directory)
         with open(os.path.join(os.getcwd(), directory, filename), 'wb') as file:
             pickle.dump(vec_clf, file)
-            
+
     path = os.path.join(os.getcwd(), directory, filename) + '.pkl'
     with open(path, 'wb') as pickle_jar:
         pickle.dump(vec_clf, pickle_jar)
-        
-        
+
+
 def open_pickle_jar(directory, filename):
     """loads .pkl file"""
     return pickle.load(open(os.path.join(directory, filename), 'rb'))
 
-    
+
 
 ##############################
 #         MAIN CODE          #
@@ -226,7 +226,8 @@ print('***********************************************************************')
 
 print('********** Tuned Multi-Layer Perceptron Classifier Results *************')
 mlp_tuned = MLPClassifier(hidden_layer_sizes=300, solver = 'adam',
-                          shuffle = True, learning_rate = 'adaptive', activation = 'relu')
+                          shuffle = True, learning_rate = 'adaptive',
+                          activation = 'relu', early_stopping = True)
 mlp_tuned.fit(trainX_array, Y_train)
 performance_metrics(mlp_tuned, testX_array, Y_test)
 print('***********************************************************************')
