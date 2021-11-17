@@ -59,7 +59,7 @@ if __name__ == '__main__':
     nltk.download('stopwords', quiet=True)
     
     ############### INSERT FILENAME HERE ################
-    filename = '..\\OriginalTrainingData\\original_data7.txt'
+    filename = 'input.txt'
     
     
     ############### PERFORM DATA ANALYSIS ###############
