@@ -116,12 +116,11 @@ pr01trainX, pr01testX, pr01Ytrain, pr01Ytest = vectorize_data(pr01X, pr01Y)
 combinedtrainX, combinedtestX, combinedYtrain, combinedYtest = vectorize_data(combinedX, combinedY)
 
 
-#run MLP 10 times for each dataset to get range, mean, variance, standard deviation
-
+#run MLP 35 times for each dataset to get range, mean, variance, standard deviation
 clean_perf = []
 pr01_perf = []
 combined_perf = []
-for i in range(0,15):
+for i in range(0,35):
     temp1 = run_mlp(trainX_array, testX_array, Y_train, Y_test)
     temp2 = run_mlp(pr01trainX, pr01testX, pr01Ytrain, pr01Ytest)
     temp3 = run_mlp(combinedtrainX, combinedtestX, combinedYtrain, combinedYtest)
@@ -129,23 +128,27 @@ for i in range(0,15):
     pr01_perf.append(float(temp2[365:369]))
     combined_perf.append(float(temp3[365:369]))
 
-print(min(clean_perf))
-print(max(clean_perf))
-print(stats.mean(clean_perf))
-print(stats.stdev(clean_perf))
-print(stats.variance(clean_perf))
+#statistical metrics on accuracy of MLP for each dataset
+#Cleaned External Data
+min_clean = min(clean_perf) #0.95
+max_clean = max(clean_perf) #0.96
+mean_clean = stats.mean(clean_perf) #0.959
+stdev_clean = stats.stdev(clean_perf) #0.003
+var_clean = stats.variance(clean_perf) #0.00001
 
-print(min(pr01_perf))
-print(max(pr01_perf))
-print(stats.mean(pr01_perf))
-print(stats.stdev(pr01_perf))
-print(stats.variance(pr01_perf))
+#Custom PR01 Data
+min_pr01 = min(pr01_perf) #0.79
+max_pr01 = max(pr01_perf) #0.79
+mean_pr01 = stats.mean(pr01_perf) #0.79
+stdev_pr01 = stats.stdev(pr01_perf) #0
+var_pr01 = stats.variance(pr01_perf) #0
 
-print(min(combined_perf))
-print(max(combined_perf))
-print(stats.mean(combined_perf))
-print(stats.stdev(combined_perf))
-print(stats.variance(combined_perf))
+#Combined Cleaned and PR01 Data
+min_comb = min(combined_perf) #0.95
+max_comb = max(combined_perf) #0.96
+mean_comb = stats.mean(combined_perf) #0.957
+stdev_comb = stats.stdev(combined_perf) #0.005
+var_comb = stats.variance(combined_perf) #0.00002
 
 ##############################
 #      VISUALIZATIONS        #

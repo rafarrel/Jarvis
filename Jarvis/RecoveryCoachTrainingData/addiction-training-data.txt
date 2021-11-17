@@ -1,0 +1,191 @@
+I feel like Im going to drink again,RELAPSE
+I really want to drink,RELAPSE
+I just had a drink,RELAPSE
+I relapsed,RELAPSE
+I broke my sobriety,RELAPSE
+I cant stay sober,RELAPSE
+I dont want to be sober,RELAPSE
+I drank,RELAPSE
+Im going to have a drink,RELAPSE
+I think Im going to relapse,RELAPSE
+I need to go to rehab,RELAPSE
+I need to go to the hospital,RELAPSE
+I drank too much,RELAPSE
+Im scared I might drink,RELAPSE
+I miss drinking,RELAPSE
+Im going to use,RELAPSE
+I used,RELAPSE
+Im tempted,RELAPSE
+I want to use,RELAPSE
+drink,RELAPSE
+drank,RELAPSE
+drunk,RELAPSE
+bar,RELAPSE
+liquor,RELAPSE
+liquor store,RELAPSE
+party,RELAPSE
+partied,RELAPSE
+wine,RELAPSE
+beer,RELAPSE
+used,RELAPSE
+temptation,RELAPSE
+relapse,RELAPSE
+rehab,RELAPSE
+used again,RELAPSE
+drank again,RELAPSE
+went to the bar,RELAPSE
+went to a party,RELAPSE
+alcohol poisoning,RELAPSE
+hospital,RELAPSE
+go to rehab,RELAPSE
+back to drinking,RELAPSE
+I need help,INSPIRATION
+What should I do?,INSPIRATION
+I need a pick me up,INSPIRATION
+Send me some love,INSPIRATION
+I need inspiration,INSPIRATION
+Help me,INSPIRATION
+I could use some kind words,INSPIRATION
+Cheer me up,INSPIRATION
+Pick me up,INSPIRATION
+Kindness,INSPIRATION
+Supportive words,INSPIRATION
+What would Bill tell me to do?,INSPIRATION
+How can I get better?,INSPIRATION
+I need inspiring,INSPIRATION
+I need motivation,INSPIRATION
+I feel unmotivated,INSPIRATION
+help,INSPIRATION
+hope,INSPIRATION
+hopeful,INSPIRATION
+motivation,INSPIRATION
+motivate,INSPIRATION
+inspire,INSPIRATION
+inspiration,INSPIRATION
+be better,INSPIRATION
+love,INSPIRATION
+support,INSPIRATION
+cheer,INSPIRATION
+get better,INSPIRATION
+i want help,INSPIRATION
+I want to be better,INSPIRATION
+helping,INSPIRATION
+big book quote,INSPIRATION
+what would help?,INSPIRATION
+feel better,INSPIRATION
+love and support,INSPIRATION
+encouragement,INSPIRATION
+encourage me to keep going,INSPIRATION
+Energize me,INSPIRATION
+energize,INSPIRATION
+This feels hopeless,MENTAL HEALTH
+Im depressed,MENTAL HEALTH
+Im feeling down,MENTAL HEALTH
+Im feeling sad,MENTAL HEALTH
+Im struggling,MENTAL HEALTH
+I feel useless,MENTAL HEALTH
+I want to die,MENTAL HEALTH
+I want to hurt myself,MENTAL HEALTH
+My mental health is struggling,MENTAL HEALTH
+Im anxious,MENTAL HEALTH
+I feel nervous,MENTAL HEALTH
+My mind is racing,MENTAL HEALTH
+Theres nothing I can do,MENTAL HEALTH
+I dont know what to do,MENTAL HEALTH
+My health is poor,MENTAL HEALTH
+Im having a panic attack,MENTAL HEALTH
+Im having an anxiety attack,MENTAL HEALTH
+I hurt myself,MENTAL HEALTH
+Im not doing well,MENTAL HEALTH
+I need a therapist,MENTAL HEALTH
+depressed,MENTAL HEALTH
+depression,MENTAL HEALTH
+anxious,MENTAL HEALTH
+anxiety,MENTAL HEALTH
+worry,MENTAL HEALTH
+stress,MENTAL HEALTH
+sick,MENTAL HEALTH
+unwell,MENTAL HEALTH
+mental health,MENTAL HEALTH
+mental illness,MENTAL HEALTH
+therapy,MENTAL HEALTH
+death,MENTAL HEALTH
+dying,MENTAL HEALTH
+panic,MENTAL HEALTH
+panicking,MENTAL HEALTH
+panic attack,MENTAL HEALTH
+worrisome,MENTAL HEALTH
+hurting,MENTAL HEALTH
+hopeless,MENTAL HEALTH
+helpless,MENTAL HEALTH
+pain,MENTAL HEALTH
+painful,MENTAL HEALTH
+struggle,MENTAL HEALTH
+uneasy,MENTAL HEALTH
+I havent been to a meeting in a while,MEETINGS
+I need to go to an AA meeting,MEETINGS
+I want to go to Alcoholics Anonymous,MEETINGS
+Are there any meetings near me?,MEETINGS
+I should go to an AA meeting,MEETINGS
+I think a group would be helpful,MEETINGS
+I need to talk to someone,MEETINGS
+Where can I get support?,MEETINGS
+I need sober friends,MEETINGS
+Where can I connect with people?,MEETINGS
+What is the meeting schedule?,MEETINGS
+When is the next AA meeting?,MEETINGS
+I need a sponsor,MEETINGS
+meeting,MEETINGS
+Alcoholics Anonymous,MEETINGS
+sponsor,MEETINGS
+sponsorship,MEETINGS
+community,MEETINGS
+connection,MEETINGS
+big book,MEETINGS
+speaker,MEETINGS
+discussion,MEETINGS
+group,MEETINGS
+next meeting,MEETINGS
+AA,MEETINGS
+Narcotics anonymous,MEETINGS
+meetings,MEETINGS
+friends,MEETINGS
+maintain,MEETINGS
+maintenance,MEETINGS
+groups,MEETINGS
+find friends,MEETINGS
+connect,MEETINGS
+sober people,MEETINGS
+go to a meeting,MEETINGS
+meeting near me,MEETINGS
+AA meeting near me,MEETINGS
+NA meeting near me,MEETINGS
+local meeting,MEETINGS
+I need a distraction,DISTRACTION
+Take my mind off of this,DISTRACTION
+Keep me busy,DISTRACTION
+Distract me,DISTRACTION
+I need to interrupt a craving,DISTRACTION
+I want to do something else,DISTRACTION
+I need some entertainment,DISTRACTION
+I want a break,DISTRACTION
+Give me something to do,DISTRACTION
+game,DISTRACTION
+distract,DISTRACTION
+distraction,DISTRACTION
+something to do,DISTRACTION
+break,DISTRACTION
+busy,DISTRACTION
+entertain,DISTRACTION
+entertainment,DISTRACTION
+breather,DISTRACTION
+I need a breather,DISTRACTION
+games,DISTRACTION
+take a break,DISTRACTION
+take my mind off,DISTRACTION
+take a load off,DISTRACTION
+interrupt,DISTRACTION
+interruption,DISTRACTION
+something else,DISTRACTION
+bored,DISTRACTION
+Im bored,DISTRACTION
