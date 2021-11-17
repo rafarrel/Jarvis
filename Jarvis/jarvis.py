@@ -20,7 +20,6 @@ import sqlite3
 import pandas as pd
 
 # Jarvis brain
-# Jarvis brain
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
@@ -219,7 +218,6 @@ class Jarvis:
                 self.post_message(self.TOPICS[i][response_choice], channel)
         self.post_message('I hope that helped. Do you need more support?', channel)
 
-        
     def interact(self, message, channel):
         # Interact with the Slack Workspace
         if 'training time' in message.lower():
@@ -228,9 +226,7 @@ class Jarvis:
         elif 'testing time' in message.lower():
             self.start_testing()
             self.post_message("I'm training my brain with the data you've already given me...", channel)
-            ##############################################
-            # ADD THE RE-TRAIN JARVIS FUNCTIONALITY HERE #
-            ##############################################
+            self.update_brain()
             self.post_message("OK, I'm ready for testing. Write me something and I'll try to figure it out.", channel)
         elif 'hey coach' in message.lower():
             self.start_chatting()
@@ -272,7 +268,6 @@ class Jarvis:
             else:
                 self.recovery_chat(message, channel)    
      
-        
     # ---------------------------------------------------------------------- #
     # Jarvis Brain Actions
     
@@ -326,7 +321,6 @@ class Jarvis:
         self.database.print_training_data()
         self.database.close_connection()
 
-    
 class Database:
     """Class for interacting with Jarvis' database."""
     def __init__(self):
@@ -380,7 +374,6 @@ class Database:
         self.curr.execute("SELECT * FROM training_data ORDER BY action")
         for row in self.curr.fetchall():
             print(row)
-
 
 # -------------------------------------------------------------------- #
 # This is the main section which is run when the script is run by      #
