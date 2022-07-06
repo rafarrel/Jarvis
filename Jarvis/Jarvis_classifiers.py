@@ -26,10 +26,10 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.pipeline import Pipeline
 import pickle
 
+
 ##############################
 #         FUNCTIONS          #
 ##############################
-
 
 def load_data(directory):
     """Load data into a list of nested lists with text, action pairs."""
@@ -83,7 +83,6 @@ def vectorize_data(X, Y):
     return X_train, X_test, trainX_array, testX_array, Y_train, Y_test
 
 
-
 def performance_metrics(clf, X_test, y_test):
     """Generates performance metrics output and confusion matrix plot for the given classifier"""
     print('\nPERFORMANCE METRICS: ', type(clf))
@@ -125,14 +124,13 @@ def open_pickle_jar(directory, filename):
     return pickle.load(open(os.path.join(directory, filename), 'rb'))
 
     
-
 ##############################
 #         MAIN CODE          #
 ##############################
 
 # Load data into list
-cleaned_data = load_data('CleanedTrainingData')
-rc_data = load_data('RecoveryCoachTrainingData')
+cleaned_data = load_data('Data/CleanedTrainingData')
+rc_data = load_data('Data/RecoveryCoachTrainingData')
 
 #Separate into lists of X (text) and Y (actions)
 X, Y = map(list, zip(*cleaned_data))
@@ -152,7 +150,6 @@ performance_metrics(nb, testX_array, Y_test)
 print('***********************************************************************')
 
 
-
 ####################### RANDOM FOREST CLASSIFIER ##################################
 
 print('**************** Random Forest Classifier Results ***********************')
@@ -169,6 +166,7 @@ mlp = MLPClassifier(hidden_layer_sizes=400)
 mlp.fit(trainX_array, Y_train)
 performance_metrics(mlp, testX_array, Y_test)
 print('***********************************************************************')
+
 
 ###################### DECISION TREE CLASSIFIER #################################
 
@@ -205,7 +203,6 @@ print('***********************************************************************')
               # 'shuffle': [True, False]}
 
 
-
 # mlp_clf = RandomizedSearchCV(mlp, mlp_params, random_state=None, n_jobs = -1)
 # search = mlp_clf.fit(trainX_array, Y_train)
 # print()
@@ -218,8 +215,6 @@ print('***********************************************************************')
 # print('mlp_rc', 'best params:')
 # print('------------------')
 # print(search_rc.best_params_)
-
-
 
 
 ################# TUNED MULTI-LAYER PERCEPTRON CLASSIFIER ########################
