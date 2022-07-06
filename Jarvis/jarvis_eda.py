@@ -88,9 +88,9 @@ def vectorize_data(X, Y):
 ##############################
 
 #load dataframes using load_data for original, cleaned, and PR01 custom data
-original_data = load_data('OriginalTrainingData')
-cleaned_data = load_data('CleanedTrainingData')
-pr01_data = load_data('CustomTrainingDataPR01')
+original_data = load_data('Data/OriginalTrainingData')
+cleaned_data = load_data('Data/CleanedTrainingData')
+pr01_data = load_data('Data/CustomTrainingDataPR01')
 
 #create list of combined clean and custom data
 combined_data = [[]]
