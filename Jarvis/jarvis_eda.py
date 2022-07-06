@@ -1,7 +1,6 @@
 # PROJECT 02 - EXPLORATORY DATA ANALYSIS
 # TEAM RED PIRANHA
 
-
 ##############################
 #          IMPORTS           #
 ##############################
@@ -83,6 +82,7 @@ def vectorize_data(X, Y):
     
     return trainX_array, testX_array, Y_train, Y_test
     
+
 ##############################
 #         MAIN CODE          #
 ##############################
@@ -97,7 +97,6 @@ combined_data = [[]]
 combined_data.extend(cleaned_data)
 combined_data.extend(pr01_data)
 combined_data= combined_data[1:]
-
 
 #get lists of keys and values for original data
 origX, origY = map(list, zip(*original_data))
@@ -114,7 +113,6 @@ combined_counts = Counter(combinedY)
 origtrainX, origtestX, origYtrain, origYtest = vectorize_data(origX, origY)
 pr01trainX, pr01testX, pr01Ytrain, pr01Ytest = vectorize_data(pr01X, pr01Y)
 combinedtrainX, combinedtestX, combinedYtrain, combinedYtest = vectorize_data(combinedX, combinedY)
-
 
 #run MLP 35 times for each dataset to get range, mean, variance, standard deviation
 clean_perf = []
@@ -150,6 +148,7 @@ mean_comb = stats.mean(combined_perf) #0.957
 stdev_comb = stats.stdev(combined_perf) #0.005
 var_comb = stats.variance(combined_perf) #0.00002
 
+
 ##############################
 #      VISUALIZATIONS        #
 ##############################
@@ -160,4 +159,3 @@ clean_count = plt.bar(cleaned_counts.keys(), cleaned_counts.values(), width = 0.
 plt.legend(loc = 'lower right')
 plt.ylabel('Number of Occurrences')
 plt.show()
-

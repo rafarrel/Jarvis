@@ -22,7 +22,7 @@ import pandas as pd
 # Jarvis brain
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection         import train_test_split
 
 # Slack interaction
 import json 
@@ -46,7 +46,9 @@ from botsettings import APP_TOKEN
 # and called down below in the main section.                           #
 # -------------------------------------------------------------------- #
 class Jarvis:
-    """Class that will contain all logic for Jarvis."""
+    """
+        Class that contain's all logic for Jarvis.
+    """
     def __init__(self, WORKSPACE_URL, WORKSPACE_AUTH, POST_AUTH, debug_mode=False, display_mode=False):
         # Jarvis states
         self.IDLE   = 0  # Jarvis remains idle
@@ -99,7 +101,7 @@ class Jarvis:
         self.database = Database()
         
         # Jarvis brain
-        self.BRAIN = pickle.load(open("Classifiers/jarvis_REDPIRANHA.pkl", 'rb'))
+        self.BRAIN    = pickle.load(open("Classifiers/jarvis_REDPIRANHA.pkl", 'rb'))
         self.RC_BRAIN = pickle.load(open("Classifiers/jarvis_comp3_REDPIRANHA.pkl", 'rb'))
         
         # Jarvis settings
@@ -124,7 +126,7 @@ class Jarvis:
     # Jarvis States
     
     def start_action(self):
-        # Start action mode
+        # Start action mode.
         self.current_state = self.ACTION
 
     def start_training(self):
@@ -136,10 +138,11 @@ class Jarvis:
         self.current_state = self.IDLE
     
     def start_testing(self):
-        # Start testing mode
+        # Start testing mode.
         self.current_state = self.TEST
         
     def start_chatting(self):
+        # Start chatting mode.
         self.current_state = self.CHAT
         
     # ---------------------------------------------------------------------- #
@@ -169,7 +172,7 @@ class Jarvis:
                 self.interact(msg_text, channel)
                 
     def remove_jarvis_tag(self, message):
-        # Remove Jarvis user ID from message
+        # Remove Jarvis user ID from message.
         id_start_index = message.find('<@')
         id_end_index   = message.find('>', id_start_index)
         id_full_string = message[id_start_index:id_end_index+1]
@@ -178,7 +181,7 @@ class Jarvis:
         return message
     
     def remove_punctuation(self, message):
-        # Remove punctuation from message
+        # Remove punctuation from message.
         removePunc = str.maketrans({punc: None for punc in string.punctuation})
         message    = message.translate(removePunc)
         
@@ -200,7 +203,7 @@ class Jarvis:
             print('--------------------------')
             
     def post_message(self, message, channel):
-        # Send messages back to the Slack repo
+        # Send messages back to the Slack repo.
         # ------------------------------------
         # Message payload
         message = {'channel': channel,
@@ -210,6 +213,7 @@ class Jarvis:
         requests.post(self.POST_MESSAGE_URL, data=message, headers=self.POST_AUTH)
 
     def recovery_chat(self, message, channel):
+        # Logic for Jarvis conversation in recovery mode.
         result = self.RC_BRAIN.predict([message])
         for i in self.TOPICS.keys():
             if result == i:
@@ -219,7 +223,7 @@ class Jarvis:
         self.post_message('I hope that helped. Do you need more support?', channel)
 
     def interact(self, message, channel):
-        # Interact with the Slack Workspace
+        # Interact with the Slack Workspace.
         if 'training time' in message.lower():
             self.start_action()
             self.post_message("OK, I'm ready for training. What NAME should this ACTION be?", channel)
@@ -233,14 +237,9 @@ class Jarvis:
             self.post_message("Recovery and a better life is possible. \nI'm here for you. \nTell me what's going on for you right now.", channel)
         elif 'done' in message.lower():
             self.current_action = ''
-            if self.current_state == self.TRAIN:
-                self.start_idle()
+            self.start_idle()
+            if self.current_state == self.TRAIN or self.current_state == self.TEST:
                 self.post_message("OK, I'm finished training.", channel)
-            elif self.current_state == self.TEST:
-                self.start_idle()
-                self.post_message("OK, I'm finished testing.", channel)
-            else:
-                self.start_idle()
         elif self.current_state == self.ACTION:
             self.start_training()
             self.current_action = message.upper()
@@ -340,6 +339,7 @@ class Database:
         self.conn.commit()
     
     def clear_table(self):
+        # Clears training data in the database.
         self.curr.execute("DELETE FROM training_data")
         self.curr.commit()
         
@@ -351,10 +351,12 @@ class Database:
         print("{} rows inserted into training data".format(df.size/2))
 
     def retrieve_data(self):
+        # Get training data from the database.
         returned_data = []
         self.curr.execute("SELECT * FROM training_data")
         for row in self.curr.fetchall():
             returned_data.append(row)
+
         return returned_data
     
     def print_training_data(self):
