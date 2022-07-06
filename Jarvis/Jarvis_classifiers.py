@@ -6,17 +6,14 @@
 #          IMPORTS           #
 ##############################
 
-import os
 import json
-from string import punctuation
-import pandas as pd
-import numpy as  np
+import os
+import pickle
 from matplotlib import pyplot as plt
 from sklearn import metrics
 from sklearn import ensemble
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -24,7 +21,6 @@ from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.pipeline import Pipeline
-import pickle
 
 
 ##############################

@@ -10,13 +10,12 @@
 #          IMPORTS           #
 ##############################
 
+import json
 import os
 import re
-import json
-from string import punctuation
-from collections import Counter
-import nltk
+from string      import punctuation
 from nltk.corpus import stopwords
+from collections import Counter
 
 ##############################
 #         FUNCTIONS          #

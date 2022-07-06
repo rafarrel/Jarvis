@@ -5,12 +5,12 @@
 #          IMPORTS           #
 ##############################
 
-import os
 import json
+import os
+import statistics as stats
 from matplotlib import pyplot as plt
 from collections import Counter
 from sklearn import metrics
-import statistics as stats
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer

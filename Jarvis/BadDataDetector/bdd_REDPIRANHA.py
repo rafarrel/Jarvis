@@ -4,8 +4,6 @@
 """
 import json
 import nltk
-import sys
-
 from string        import punctuation
 from nltk.corpus   import stopwords
 from nltk.tokenize import word_tokenize

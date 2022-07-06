@@ -22,14 +22,13 @@ import pandas as pd
 # Jarvis brain
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection         import train_test_split
 
 # Slack interaction
 import json 
+import random
 import requests
 import string
 import websocket
-import random
 try:
     import thread 
 except ImportError:
