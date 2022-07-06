@@ -197,7 +197,7 @@ print('***********************************************************************')
 
 ################################ GRID SEARCH ####################################
 
-#UNCOMMENT ONLY WHEN NEEDED TO SAVE TIME WHEN RUNNING
+# ***UNCOMMENT ONLY WHEN NEEDED TO SAVE TIME WHEN RUNNING***
 # mlp_params = {'activation': ['identity', 'logistic', 'tanh', 'relu'],
               # 'solver': ['lbfgs', 'sgd', 'adam'],'learning_rate': ['constant', 'invscaling', 'adaptive'],
               # 'shuffle': [True, False]}

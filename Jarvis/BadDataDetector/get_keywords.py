@@ -1,10 +1,10 @@
 """
-This file was used to generate the keywords used in the bad data detector.
-We manually edited/cleaned the generated keywords after to better reflect the
-data and remove fringe/minimally related keywords that don't convey any 
-meaning.
+    This file was used to generate the keywords used in the bad data detector.
+    We manually edited/cleaned the generated keywords after to better reflect the
+    data and remove fringe/minimally related keywords that don't convey any 
+    meaning.
 
-DO NOT RUN THIS FILE as it will overwrite our cleaned keywords.
+    DO NOT RUN THIS FILE as it will overwrite our cleaned keywords.
 """
 ##############################
 #          IMPORTS           #
